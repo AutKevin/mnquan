@@ -1,0 +1,1 @@
+<% request.getSession().setAttribute("contextPath",""+request.getContextPath()); %>

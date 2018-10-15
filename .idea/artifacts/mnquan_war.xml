@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="mnquan:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="mnquan-1.0.war">
+      <element id="artifact" artifact-name="mnquan:war exploded" />
+    </root>
+  </artifact>
+</component>

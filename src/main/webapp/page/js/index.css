@@ -1,0 +1,24 @@
+/**
+ * static.cms - v1.0.0  License By 
+ * WEB小组 
+ */
+#return-top{position:fixed;bottom:10%;right:50px; width:60px;height:60px;text-align:center;display:none;}
+#return-top a{text-decoration:none;}
+.home_ant_voucher{overflow:hidden;position:relative;z-index:0}
+.home_ant_brand .swiper-container,.home_ant_voucher .swiper-container{margin-bottom:5px;padding:.5rem 5px 10px 10px}
+.home_ant_brand .swiper-wrapper,.home_ant_voucher .swiper-wrapper{display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex}
+.home_ant_brand div.swiper-slide,.home_ant_voucher div.swiper-slide{-webkit-flex-shrink:0;-ms-flex:0 0 auto;display:block;flex-shrink:0;width:40%}
+.home_ant_brand div.swiper-slide .img,.home_ant_voucher div.swiper-slide .img{display:block;position:relative;zoom:1;z-index:1;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;-o-border-radius:5px;-ms-border-radius:5px}
+.home_ant_brand div.swiper-slide .img img,.home_ant_voucher div.swiper-slide .img img{width:100%;display:block;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;-o-border-radius:5px;-ms-border-radius:5px}
+.home_ant_brand div.swiper-slide .img .text,.home_ant_voucher div.swiper-slide .img .text{position:absolute;zoom:1;z-index:10;bottom:0;left:-4px;width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;-o-border-radius:5px;-ms-border-radius:5px;background:-moz-linear-gradient(left,rgba(255,113,233,.91) 0,rgba(254,92,158,.91) 100%);background:-webkit-gradient(linear,left top,left right,color-stop(0,rgba(255,113,233,.91)),color-stop(100%,rgba(254,92,158,.91)));background:-webkit-linear-gradient(left,rgba(255,113,233,.91) 0,rgba(254,92,158,.91) 100%);background:-o-linear-gradient(left,rgba(255,113,233,.91) 0,rgba(254,92,158,.91) 100%);background:-ms-linear-gradient(left,rgba(255,113,233,.91) 0,rgba(254,92,158,.91) 100%);background:linear-gradient(to left,rgba(255,113,233,.91) 0,rgba(254,92,158,.91) 100%);color:#fff;padding:3px 4px;font-size:.785rem;text-align:center}
+.home_ant_brand div.swiper-slide .img .text span,.home_ant_voucher div.swiper-slide .img .text span{font-size:.7rem}
+.home_ant_brand div.swiper-slide .img .text i,.home_ant_voucher div.swiper-slide .img .text i{font-style:normal;opacity:.6}
+.home_ant_brand div.swiper-slide .img .msg,.home_ant_voucher div.swiper-slide .img .msg{position:absolute;zoom:1;z-index:2;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;-o-border-radius:5px;-ms-border-radius:5px;color:#fff;width:100%;height:100%;background:rgba(0,0,0,.4);left:0;top:0;line-height:100%;text-align:center;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center}
+.home_ant_brand div.swiper-slide .name,.home_ant_voucher div.swiper-slide .name{line-height:2rem;font-size:1rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.home_ant_brand div.swiper-slide .money,.home_ant_voucher div.swiper-slide .money{color:#FC4D52;font-size:1.2rem;padding-bottom:10px}
+.home_ant_brand div.swiper-slide .money i,.home_ant_voucher div.swiper-slide .money i{font-style:normal;font-size:.7rem;margin-right:3px}
+.home_ant_brand div.swiper-slide .money del,.home_ant_voucher div.swiper-slide .money del{color:#bbb;font-size:1rem}
+.home_ant_brand div.swiper-slide .swiper-cent,.home_ant_voucher div.swiper-slide .swiper-cent{margin-right:5px;height:100%}
+.home_ant_brand div.swiper-slide .swiper-cent .cent,.home_ant_voucher div.swiper-slide .swiper-cent .cent{padding:10px 10px 0;border-radius:8px 8px 0 0;box-shadow:0 2px 10px 0 rgba(0,0,0,.1);position:relative;z-index:1;zoom:1}
+.home_ant_brand div.swiper-slide .swiper-cent .cent .progress,.home_ant_voucher div.swiper-slide .swiper-cent .cent .progress{position:absolute;z-index:1;zoom:1;left:0;overflow:hidden;height:3px;background-color:#FFD6EC;width:100%}
+.home_ant_brand div.swiper-slide .swiper-cent .cent .progress i,.home_ant_voucher div.swiper-slide .swiper-cent .cent .progress i{display:block;height:3px;overflow:hidden;background-color:#FF66B7;width:5px;transition:all 1s ease 0s;-o-transition:all 1s ease 0s;-moz-transition:all 1s ease 0s;-webkit-transition:all 1s ease 0s;transform-origin:center}
