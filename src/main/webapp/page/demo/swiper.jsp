@@ -68,28 +68,9 @@
     <!-- Add Pagination -->
     <div class="swiper-pagination pagination1"></div>
 </div>
-
-<div class="swiper-container container2">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide">Slide 1</div>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 3</div>
-        <div class="swiper-slide">Slide 4</div>
-    </div>
-    <!-- Add Pagination -->
-    <div class="swiper-pagination pagination2"></div>
-</div>
 <!-- Initialize Swiper -->
 <script>
     new Swiper('.container1', {
-        pagination: '.pagination1',
-        pagination: {
-            el: '.swiper-pagination',
-        },
-    });
-
-    new Swiper('.container2', {
-        pagination: '.pagination2',
         pagination: {
             el: '.swiper-pagination',
         },

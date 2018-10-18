@@ -7,20 +7,22 @@
     <meta http-equiv="x-dns-prefetch-control" content="on"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta content="telephone=no" name="format-detection"/>
-    <meta name="version" version="201810101200">
+    <meta name="version" version="201809291636">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
-    <title>搜券宝</title>
+    <title>${optionalDo.shortTitle}</title>
     <meta name="keywords" content="9.9包邮，白菜价，天天特价，优惠卷,搜券宝"/>
     <meta name="description" content="9.9包邮，白菜价，天天特价"/>
-    <script src="../../page/js/clipboard.min.js" type="text/javascript"></script>
-    <script src="../../page/js/jquery.min.js" type="text/javascript"></script>
-    <script src="../../page/js/bootstrap.min.js"></script>
-    <script src="../../page/js/swiper-4.4.1.min.js" type="text/javascript"></script>
     <link rel="stylesheet" href="../../page/js/swiper-4.4.1.min.css">
+    <script src="../../page/js/jquery.min.js" type="text/javascript"></script>
+    <script src="../../page/js/swiper-4.4.1.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="../../page/js/bootstrap.min.css">
+    <script src="../../page/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../../page/js/detail.css">
 </head>
 
 <body data-appid="489217" data-in="1">
+
+
 <div class="header_pr header_goods ">
     <header class="icon_header">
         <a ui-back   class="iconfont icon-zuojiantou" onclick="window.location.href=document.referrer;"></a>
@@ -40,21 +42,23 @@
         </div>
     </header>
 </div>
+
 <!-- 购物车快捷入口 必须加在layout上面 -->
+
 <div class="goods_shop_cart" ui-footprint data-item='goodsItem' data-type="1" >
     <div class="cent row-s">
         <div class="col-12-2 text-center but">
             <a href="/app" ui-show data-parents=".goods_shop_cart">
                 <p class="img">
-                    <img src="${contextPath}/page/img/index.png" alt="" style="width: 40%">
+                    <img src="${contextPath}/page/img/index.png" alt="">
                 </p>
-                首页
+               首页
             </a>
         </div>
         <div class="col-12-2 text-center but" style=" position: relative; left: -.7rem;">
             <a href="javascript:;" ui-add-collection data-id="16606735">
                 <p class="img">
-                    <img src="${contextPath}/page/img/shart_button.png" alt="" style="width: 40%">
+                    <img src="${contextPath}/page/img/shart_button.png" alt="">
                 </p>
                 分享
             </a>
@@ -62,7 +66,7 @@
         <!-- 领券购买 淘口令 -->
         <div class="col-12-8">
             <div class="btn btn-primary btn-block row-s">
-                <a href="javascript:;" id="token_buy" id="tbkText" name="${optionalDo.token}" class="col-12-5 active">口令购买</a>
+                <a href="javascript:;" onclick="getToken()" id="tbkText" name="${optionalDo.token}" class="col-12-5 active">口令购买</a>
                 <a href="https:${optionalDo.couponShareUrl}" ui-open-taobao data-money="${optionalDo.couponAmount}" data-id="16606735" class="col-12-7 getGoodsLink">领券购买</a>
             </div>
         </div>
@@ -71,7 +75,7 @@
 </div>
 <div class="layout row" id="anchors_info" ui-up-app data-location="top" data-top="">
     <div class="goods_swiper"  >
-        <div class="swiper-container swiper-container-horizontal swiper-container1" >
+        <div class="swiper-container swiper-container-horizontal swiper-container1">
             <div class="swiper-wrapper" >
                 <c:forEach items="${images}" var="item" varStatus="tbkCoupon">
                     <div class="swiper-slide" >
@@ -81,10 +85,9 @@
                     </div>
                 </c:forEach>
             </div>
-            <div class="swiper-pagination"></div>
+            <div class="swiper-pagination swiper-p1"></div>
         </div>
     </div>
-    <!--banner-->
     <div class="goods_info">
         <h1 class="col-mar">
             <c:if test="${itemDetail.userType == 0}">
@@ -102,7 +105,7 @@
                 已售${itemDetail.volume}
             </div>
             <div class="col-12-6 text-left col-888">
-                原价 ¥${itemDetail.zkFinalPrice}
+                价格 ¥${itemDetail.zkFinalPrice}
             </div>
             <div class="col-12-6 text-right auth">
                 <c:if test="${itemDetail.freeShipment == true}">
@@ -110,22 +113,6 @@
                 </c:if>
             </div>
         </div>
-
-        <div class="goods_quan row-s">
-            <!--  -->
-            <a class="row getGoodsLink" ui-open-taobao data-money="${optionalDo.couponAmount}" data-id="16762440" href="https:${optionalDo.couponShareUrl}" >
-                <div class="col-12-8 money">
-                    <p><span>${optionalDo.couponAmount}</span> 元优惠券</p>
-                    使用期限:${optionalDo.couponStartTime}-${optionalDo.couponEndTime}                </div>
-                <div class="col-12-4 name">
-                    <span>立即领券</span>
-                </div>
-            </a>
-
-            <img src="http://cmsstatic.dataoke.com//wap_new/main/images/goods_quan.png?v=201810101200" alt="">
-        </div>
-        <div class="goods_desc col-mar col-888">
-            ${optionalDo.title}        </div>
     </div>
     <div class="hr"></div>
     <div class="ov_h" id="anchors_title" ></div>
@@ -138,73 +125,29 @@
         </div>
     </div>
 </div>
-<!--淘口令购买弹出层-->
-<style>
-    .t_token{
-        position: fixed;
-        left: 6%;
-        top: 25%;
-        background: white;
-        width: 86%;
-        height: 35%;
-        border-radius: 7px;
-        z-index: 10000;
-         display: none;
-    }
-    .t_token .modal-header{
-        background-image: url("/page/img/close.png");
-        position:absolute;
-        right:50px;width:30px;
-        height: 30px;
-        background-size: cover;
-        background-repeat: no-repeat;
-        bottom: -18px;
-        margin-right: -60px;
-        box-shadow: 0 2px 5px #999;
-        border: 2px solid #fff;
-        border-radius: 50px;
-    }
-    .t_token .modal-body{
-        margin:auto;
-        border:2px dashed #e35132;
-        width:300px;
-        height:88px;
-        margin-top: 4%;
-    }
-    .t_token .modal-body p{
-        color: #e35132;
-        text-align: center;
-        position: absolute;
-        width: 89%;
-        padding-top: 7%;}
-
-    .t_token .modal-footer{
-        text-align: center;
-        margin-top: 8%
-    }
-    .t_token .modal-footer .modelButto{
-        width: 73%;
-        line-height: 40px;
-        background-color: #ff3300;
-        border-radius: 24px;
-        color: #F5F5F5;
-        border: 0px;
-    }
-</style>
-<div class="t_token">
-    <div class="modal-header">
-    </div>
-    <div class="modal-body">
-        <p id="modalText" style="color:#e35132;">
-            复制框内整段文字，打开【手淘APP】即可领券购买 ${optionalDo.token}。
-        </p>
-    </div>
-    <div class="modal-footer">
-        <button class="modelButto"  type="button">
-            一键复制
-        </button>
-    </div>
+<!-- 模态框（Modal） -->
+<div style="text-align:center;"class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div style="width:320px;height:200px;margin: auto;margin-top: 100px;" class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+            </div>
+            <div style="margin:auto;border:3px dashed #e35132;width:300px;height:80px;" class="modal-body">
+                <p id="modalText" style="color:#e35132;"></p>
+            </div>
+            <div class="modal-footer" style="text-align: center">
+                <button id="modelButto" onclick="cp1(document.getElementById('modalText'))" type="button" class="btn btn-primary">
+                    一键复制
+                </button>
+            </div>
+            <div class="taokaobox"><a href="javascript:;" class="taokao taokaocopy"><img src="${contextPath}/page/img/androidcopy.png" style="width:100%;max-width:650px"></a></div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
 </div>
+<div style="display: none;"></div>
+</body>
 <script>
     new Swiper('.swiper-container1', {
         pagination: '.swiper-p1',
@@ -227,28 +170,36 @@
         }
     });
 
-    $("#token_buy").click(function () {
-        $(".t_token").css("display","inline");
-    });
-    $(".modal-header").click(function () {
-        $(".t_token").css("display","none");
-    });
-</script>
-<script>
-    var clipboard = new ClipboardJS('.modelButto', {
-        text: function() {
-            var text = $("#modalText").text();
-            return text;
+    function getToken() {
+        console.log("bei")
+        $('#myModal').modal('show');
+    }
+    //调用模态框时动态传入参数
+    $('#myModal').on('show.bs.modal', function () {
+        document.getElementById("modalText").innerHTML = "复制框内整段文字，打开【手淘APP】即可领券购买。"+$("#tbkText").attr("name");
+        // 执行一些动作...
+        document.getElementById("modelButto").className = "modelButtonRed";
+    })
+
+    function selectText1(x) {
+        if (document.selection) {
+            var range = document.body.createTextRange();//ie
+            range.moveToElementText(x);
+            range.select();
+        } else if (window.getSelection) {
+            var selection = window.getSelection();
+            var range = document.createRange();
+            selection.removeAllRanges();
+            range.selectNodeContents(x);
+            selection.addRange(range);
         }
-    });
-    clipboard.on('success', function() {
-        $(".modelButto").css("background-color","#EE30A7");
-        $(".modelButto").text("复制成功");
-    });
-    clipboard.on('error', function() {
-        $(".modelButto").css("background-color","#CD6889");
-        $(".modelButto").text("请再复制一次");
-    });
+        document.getElementById("modelButto").innerHTML = "复制成功";
+        document.getElementById("modelButto").className = "modelButtonOlivedrab";
+    }
+
+    function cp1(x) {
+        selectText1(x);
+        document.execCommand("copy");
+    }
 </script>
-</body>
 </html>
