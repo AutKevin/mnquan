@@ -43,6 +43,9 @@
             <li>
                 <a href="/app/query/query.do"><i class="iconfontv2 icon-detail_search"></i>搜索</a>
             </li>
+            <li>
+                <a href="/app/user/centre.do"><i class="iconfontv2 icon-gerenzhongxin"></i>我的</a>
+            </li>
         </ul>
     </div>
 </nav>
@@ -91,7 +94,7 @@
             <span><a data-sort="shop_dsr" class="" href="javascript:void(0);" key="desc">人气</a></span>
         </li>
         <li class="theme-border-bottom-color-1 cur">
-            <span><a data-sort="latest" href="javascript:void(0);" class="theme-color-1" key="desc">最新</a></span>
+            <span><a data-sort="latest" href="javascript:void(0);" key="desc">最新</a></span>
         </li>
         <li class="">
             <span><a data-sort="volume" href="javascript:void(0);" key="desc">销量</a></span>
@@ -157,7 +160,7 @@
         spaceBetween:0,
     });
 
-    var px = "";
+    var px = "latest desc";
     // 修改排序
     $(".order-nav li").on("click",function(){
         $(".goods-list div.goods-item").remove();
@@ -268,7 +271,7 @@
         if(oper_type == 3){
             window.location.href = domain+"/app/detail/skipProductDetail.do?numIid="+item;
         }
-        var progress = 80;
+        var progress = 40;
         var progressId = setInterval(function(){
             progress= progress+5;
             $("#my_progress").css({width:progress+"%"});

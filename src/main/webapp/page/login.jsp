@@ -100,6 +100,14 @@
         }
     })
 
+    $(document).ready(function(){
+        $("#my_submit").hover(function(){
+            $("#my_submit").css("background-color","#009933");
+        },function(){
+            $("#my_submit").css("background-color","#eee");
+        });
+    });
+
     $('#my_submit').on('click',function(){
         if(!accountFlag){
             $("#form_input_item_01").attr("error","true");
@@ -128,7 +136,7 @@
                     window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
                 }
                 if("3" == data){//登陆成功
-                    window.location.href = domain+"/app/login/register.do";
+                    window.location.href = domain+"/app/user/centre.do";
                 }
             }
         });

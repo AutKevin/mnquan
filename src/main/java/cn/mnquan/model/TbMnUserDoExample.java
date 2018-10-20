@@ -671,6 +671,146 @@ public class TbMnUserDoExample {
             addCriterionForJDBCDate("updated_at not between", value1, value2, "updatedAt");
             return (Criteria) this;
         }
+
+        public Criteria andUserNameIsNull() {
+            addCriterion("user_name is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserNameIsNotNull() {
+            addCriterion("user_name is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserNameEqualTo(String value) {
+            addCriterion("user_name =", value, "userName");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserNameNotEqualTo(String value) {
+            addCriterion("user_name <>", value, "userName");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserNameGreaterThan(String value) {
+            addCriterion("user_name >", value, "userName");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserNameGreaterThanOrEqualTo(String value) {
+            addCriterion("user_name >=", value, "userName");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserNameLessThan(String value) {
+            addCriterion("user_name <", value, "userName");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserNameLessThanOrEqualTo(String value) {
+            addCriterion("user_name <=", value, "userName");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserNameLike(String value) {
+            addCriterion("user_name like", value, "userName");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserNameNotLike(String value) {
+            addCriterion("user_name not like", value, "userName");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserNameIn(List<String> values) {
+            addCriterion("user_name in", values, "userName");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserNameNotIn(List<String> values) {
+            addCriterion("user_name not in", values, "userName");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserNameBetween(String value1, String value2) {
+            addCriterion("user_name between", value1, value2, "userName");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserNameNotBetween(String value1, String value2) {
+            addCriterion("user_name not between", value1, value2, "userName");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsAgencyIsNull() {
+            addCriterion("is_agency is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsAgencyIsNotNull() {
+            addCriterion("is_agency is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsAgencyEqualTo(String value) {
+            addCriterion("is_agency =", value, "isAgency");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsAgencyNotEqualTo(String value) {
+            addCriterion("is_agency <>", value, "isAgency");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsAgencyGreaterThan(String value) {
+            addCriterion("is_agency >", value, "isAgency");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsAgencyGreaterThanOrEqualTo(String value) {
+            addCriterion("is_agency >=", value, "isAgency");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsAgencyLessThan(String value) {
+            addCriterion("is_agency <", value, "isAgency");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsAgencyLessThanOrEqualTo(String value) {
+            addCriterion("is_agency <=", value, "isAgency");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsAgencyLike(String value) {
+            addCriterion("is_agency like", value, "isAgency");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsAgencyNotLike(String value) {
+            addCriterion("is_agency not like", value, "isAgency");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsAgencyIn(List<String> values) {
+            addCriterion("is_agency in", values, "isAgency");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsAgencyNotIn(List<String> values) {
+            addCriterion("is_agency not in", values, "isAgency");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsAgencyBetween(String value1, String value2) {
+            addCriterion("is_agency between", value1, value2, "isAgency");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsAgencyNotBetween(String value1, String value2) {
+            addCriterion("is_agency not between", value1, value2, "isAgency");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

@@ -37,6 +37,14 @@
     </h1>
 
     <form action="" autocomplete="off" ui-login data-type="1" data-url="?r=login/register" onSubmit="return false;" data-mta-case="register" >
+        <div class="col-mar form_input_item" id="form_input_item_04">
+            <i class="iconfont tab_fl icon-yanzhengma"></i>
+            <div class="inputtext">
+                <input type="number" autocomplete="off" id="code" name="code" placeholder="请输入用户名"  />
+                <i class="iconfont icon-closecircle tab col-hr close"></i>
+            </div>
+            <p class="input_msg">用户名不能为空！</p>
+        </div>
         <div class="col-mar form_input_item" id="form_input_item_01" error >
             <i class="iconfont tab_fl icon-phone"></i>
             <div class="inputtext">
@@ -61,16 +69,6 @@
             </div>
             <p class="input_msg">密码为8-16位的数字或字母！</p>
         </div>
-        <div class="col-mar form_input_item" id="form_input_item_04">
-            <i class="iconfont tab_fl icon-yanzhengma"></i>
-            <div class="inputtext">
-                <input type="number" autocomplete="off" id="code" name="code" placeholder="请输入邀请码"  />
-                <i class="iconfont icon-closecircle tab col-hr close"></i>
-                <%--<a class="btn btn-outline btn-min getPhone" data-url="?r=login/codeeg" data-nc_appkey="FFFF0000000001798134" data-scene="register">获取验证码</a>--%>
-            </div>
-            <p class="input_msg">验证码不能为空！</p>
-        </div>
-
         <div class="col-mar login_submit">
             <input id="my_submit" type="submit" class="btn btn-default btn-block btn-max"  value= "注册" >
             <p></p>
@@ -84,7 +82,7 @@
 </div>
 
 <footer class="login_footer text-center">
-    已有账号？点击<a href="/app/user/center.do" class="col-link">登录</a>
+    已有账号？点击<a href="/app/login/toLogin.do" class="col-link">登录</a>
 </footer>
 <div style="display: none;"></div>
 </body>
@@ -125,6 +123,14 @@
             pwdFlat = true;
         }
     })
+
+    $(document).ready(function(){
+        $("#my_submit").hover(function(){
+            $("#my_submit").css("background-color","#009933");
+        },function(){
+            $("#my_submit").css("background-color","#eee");
+        });
+    });
 
     $('#my_submit').on('click',function(){
         if(!accountFlag){

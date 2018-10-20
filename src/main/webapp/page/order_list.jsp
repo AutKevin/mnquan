@@ -52,6 +52,7 @@
     }
 </style>
 <body  data-appid="489217" data-in="1">
+<input type="hidden" id="tb_status" value="${tbMnOrderDo.tkStatus}"/>
 <div class="main-title clearfix theme-bg-color-1" style="height: 8%;">
     <a href="javascript:void(0);" onclick="window.location.href=document.referrer;" class="main-back" style="margin-left: 0%;"></a>
     <div class="menu-detail">
@@ -70,23 +71,26 @@
             <li>
                 <a href="/app/query/query.do"><i class="iconfontv2 icon-detail_search"></i>搜索</a>
             </li>
+            <li>
+                <a href="/app/user/centre.do"><i class="iconfontv2 icon-gerenzhongxin"></i>我的</a>
+            </li>
         </ul>
     </div>
 </nav>
 <!-- 主界面具体展示内容 -->
 <div class="order-nav" style="margin-top: 10%;">
     <ul>
-        <li class="theme-border-bottom-color-1 cur" data-type="" key="" >
+        <li class="theme-border-bottom-color-1 cur" key="1" >
             <span><a  href="javascript:void(0);">全部</a></span>
         </li>
-        <li class="" data-type="total_sales_" key="des">
+        <li class="" data-type="total_sales_" key="14">
             <span><a  href="javascript:void(0);"  >待结算</a></span>
         </li>
-        <li class="" data-type="tk_rate_" key="des" >
+        <li class="" data-type="tk_rate_" key="3" >
             <span><a  href="javascript:void(0);" >已结算</a></span>
         </li>
-        <li class="" data-type="price_" key="des" >
-            <span><a href="javascript:void(0);">退款</a></span>
+        <li class="" data-type="price_" key="12" >
+            <span><a href="javascript:void(0);">已付款</a></span>
         </li>
     </ul>
 </div>
@@ -116,7 +120,7 @@
 
 </style>
 <div class="scrollable" id="scrollable">
-    <div class="sort_main ads-list2">
+    <%--<div class="sort_main ads-list2">
         <a href="#" >
             <div class="div_up">
                 <img src="https://gd3.alicdn.com/imgextra/i1/792382564/TB2zdmdeN6I8KJjy0FgXXXXzVXa_!!792382564.jpg_310x310.jpg">
@@ -143,96 +147,8 @@
                 <p class="col-12-8">2018-10-10 15:33:57 创建</p>
             </div>
         </a>
-    </div>
-
-    <div class="sort_main ads-list2">
-        <a href="#" >
-            <div class="div_up">
-                <img src="https://gd3.alicdn.com/imgextra/i1/792382564/TB2zdmdeN6I8KJjy0FgXXXXzVXa_!!792382564.jpg_310x310.jpg">
-                <div class="div_up_left">
-                    <p class="col-12-8 title">2018秋冬018秋冬018秋冬款018秋冬018秋冬018秋冬018秋冬018秋冬018秋冬</p>
-                    <p class="col-12-8 shop">所属店铺:泰晤士小镇 </p>
-                </div>
-            </div>
-            <div class="div_centre">
-                <div class="div_centre_left">
-                    <p class="col-12-8">¥17.2</p>
-                    <p class="col-12-8 text-left">
-                        付款金额
-                    </p>
-                </div>
-                <div class="div_centre_left">
-                    <p class="col-12-8">¥0.25</p>
-                    <p class="col-12-8 text-left">
-                        预估收入
-                    </p>
-                </div>
-            </div>
-            <div class="div_bottom">
-                <p class="col-12-8">2018-10-10 15:33:57 创建</p>
-            </div>
-        </a>
-    </div>
-
-    <div class="sort_main ads-list2">
-        <a href="#" >
-            <div class="div_up">
-                <img src="https://gd3.alicdn.com/imgextra/i1/792382564/TB2zdmdeN6I8KJjy0FgXXXXzVXa_!!792382564.jpg_310x310.jpg">
-                <div class="div_up_left">
-                    <p class="col-12-8 title">2018秋冬018秋冬018秋冬款018秋冬018秋冬018秋冬018秋冬018秋冬018秋冬</p>
-                    <p class="col-12-8 shop">所属店铺:泰晤士小镇 </p>
-                </div>
-            </div>
-            <div class="div_centre">
-                <div class="div_centre_left">
-                    <p class="col-12-8">¥17.2</p>
-                    <p class="col-12-8 text-left">
-                        付款金额
-                    </p>
-                </div>
-                <div class="div_centre_left">
-                    <p class="col-12-8">¥0.25</p>
-                    <p class="col-12-8 text-left">
-                        预估收入
-                    </p>
-                </div>
-            </div>
-            <div class="div_bottom">
-                <p class="col-12-8">2018-10-10 15:33:57 创建</p>
-            </div>
-        </a>
-    </div>
-    <div class="sort_main ads-list2">
-        <a href="#" >
-            <div class="div_up">
-                <img src="https://gd3.alicdn.com/imgextra/i1/792382564/TB2zdmdeN6I8KJjy0FgXXXXzVXa_!!792382564.jpg_310x310.jpg">
-                <div class="div_up_left">
-                    <p class="col-12-8 title">2018秋冬018秋冬018秋冬款018秋冬018秋冬018秋冬018秋冬018秋冬018秋冬</p>
-                    <p class="col-12-8 shop">所属店铺:泰晤士小镇 </p>
-                </div>
-            </div>
-            <div class="div_centre">
-                <div class="div_centre_left">
-                    <p class="col-12-8">¥17.2</p>
-                    <p class="col-12-8 text-left">
-                        付款金额
-                    </p>
-                </div>
-                <div class="div_centre_left">
-                    <p class="col-12-8">¥0.25</p>
-                    <p class="col-12-8 text-left">
-                        预估收入
-                    </p>
-                </div>
-            </div>
-            <div class="div_bottom">
-                <p class="col-12-8">2018-10-10 15:33:57 创建</p>
-            </div>
-        </a>
-    </div>
-
-
-    <div  class="pullup-goods" style="position: absolute;width: 100%;background-color: #ebe;">
+    </div>--%>
+    <div  class="pullup-goods" style="display: none;position: absolute;width: 100%;background-color: #ebe;">
         <div class="label">商品加载中...</div>
     </div>
 </div>
@@ -251,66 +167,59 @@
 <script>
     var pageSize = 30;
     var pageNo = 1;
-    var px = "";
-    // 修改排序
+    var tkStatus = $("#tb_status").val();
+
+    // 修改查询条件
     $(".order-nav li").on("click",function(){
-        $("#scrollable div.ads-list2").remove();
+        $(".scrollable div.ads-list2").remove();
         $('#scrollable').scrollTop(0);
         pageNo = 1;
         $(".order-nav li").removeClass('cur');
         $(this).addClass('cur');
-        if($(this).index()==$(".order-nav li").length-1){
-            var key = $(this).attr("key") == "asc" ? "dec" : 'asc';
-            if(key != "asc"){
-                $("#price-ico").removeClass("price-ico-up");
-                $("#price-ico").addClass("price-ico-down");
-            }else{
-                $("#price-ico").removeClass("price-ico-down");
-                $("#price-ico").addClass("price-ico-up");
-            }
-            $(this).attr("key",key);
-        }
-        px = $(this).attr("data-type")+$(this).attr("key");
-        get_list(px);
+        tkStatus = $(this).attr("key");
+        get_list(tkStatus);
     });
 
-    function get_list(sort) {
-        var _q = $("#search_area").attr("value");
+    function get_list(tkStatus) {
+        console.log(tkStatus);
         $.ajax({
-            url:""+"/app/query/superQueryList.do",
+            url:""+"/app/order/queryOrders.do",
             async:false,
-            data: {'pageSize':pageSize,'pageNo':pageNo,'sort':sort,'q':_q,'hasCoupon':"false"},
+            data: {'pageSize':pageSize,'pageNo':pageNo,'tkStatus':tkStatus},
             dataType:'json',
             type:"post",
             success:function(data){
+                console.log(data);
                 var arrLen = data.length;
                 if(arrLen > 0){
-                    var superQueryListHtml = '';
+                    var myOrderListHeml = '';
                     $.each(data,function(index,item){
-                        var couponAmt = 0;
-                        if(null != item.couponInfo  && '' != item.couponInfo){
-                            var temp = item.couponInfo;
-                            var temp1 = temp.replace("满","").replace("元","").replace("元","").split("减");
-                            couponAmt = temp1[1];
-                        }
-                        superQueryListHtml+='<div class="sort_main ads-list2">' +
-                            '<div class="goods-item clearfix">' +
-                            '<a data-transition="slide" href="/app/detail/skipProductDetail.do?type=1&numIid='+item.numIid+'" class="img ui-link">' +
-                            '<img src="'+item.pictUrl+'"></a><div class="text"><div>' +
-                            '<a data-transition="slide" href="/app/detail/skipProductDetail.do?type=1&numIid='+item.numIid+'" class="title ui-link">'+item.shortTitle+'<div class="share-wrapper">' +
-                            '<img src="../../page/img/share.png"><p>分享</p><span class="coupon-wrapper  theme-bg-color-1">券<b>'+couponAmt+'</b></span></div><div class="price-wrapper1">' +
-                            '<span class="price_yj">现价</span><span class="price">￥<span>'+item.zkFinalPrice+'</span></span>' +
-                            '<span class="text">销量 </span><span class="sold-num">'+item.volume+'</span><div class="price-wrapper2">' +
-                            '<span class="price_qh">券后</span><span class="price">￥<span>'+accSub(item.zkFinalPrice,couponAmt)+'</span></span><span class="text">剩余 </span><span class="sold-num">'+item.couponRemainCount+'</span>' +
-                            '</div></div></a></div></div></div></div>';
+                        myOrderListHeml+='<div class="sort_main ads-list2"><a href="#" >' +
+                            '<div class="div_up"><img src="'+item.pictUrl+'"><div class="div_up_left">' +
+                            '<p class="col-12-8 title">'+item.itemTitle+'</p><p class="col-12-8 shop">所属店铺:'+item.sellerNick+'</p></div></div>' +
+                            '<div class="div_centre"><div class="div_centre_left"><p class="col-12-8">¥'+formatDecimal(item.alipayTotalPrice,2)+'</p>' +
+                            '<p class="col-12-8 text-left">付款金额</p></div><div class="div_centre_left"><p class="col-12-8">¥'+formatDecimal(item.pubSharePreFee,2)+'</p>' +
+                            '<p class="col-12-8 text-left">预估收入</p></div></div><div class="div_bottom"><p class="col-12-8">'+item.createTime+' 创建</p></div></a></div>';
                     });
-                    $(".pullup-goods").before(superQueryListHtml);
+                    $(".pullup-goods").before(myOrderListHeml);
                     pageNo++;
+                }else {
+
                 }
             }
         });
     }
 
+    function formatDecimal(num, decimal) {
+        num = num.toString()
+        var index = num.indexOf('.')
+        if (index !== -1) {
+            num = num.substring(0, decimal + index + 1)
+        } else {
+            num = num.substring(0)
+        }
+        return parseFloat(num).toFixed(decimal)
+    }
     //减法避免丢失精度
     function accSub(arg1, arg2) {
         if(0 == arg2){
@@ -325,22 +234,24 @@
     }
 
     $(function(){
-        get_list();
-
+        get_list(tkStatus);
         $('.scrollable').scroll(function (e) {
             var h = $(this).height();//div可视区域的高度
             var st =$(this)[0].scrollTop;//滚动条的高度，即滚动条的当前位置到div顶部的距离
             var sh = $(this)[0].scrollHeight;//滚动的高度，$(this)指代jQuery对象，而$(this)[0]指代的是dom节点
             if((sh - h - st) < 10){
-                get_list(px);
+                get_list(tkStatus);
             }
         });
     })
-</script>
-<script>
 
-    $('.sub_str_srarch').on('click',function(){
-        $('#my-search').submit();
+    $("#cat-action-menu").click(function () {
+        var tabByStyle = $("#detail-top-menu").attr("class");
+        if(null != tabByStyle && ""!= tabByStyle){
+            document.getElementById("detail-top-menu").className = "";
+        }else {
+            document.getElementById("detail-top-menu").className = "show";
+        }
     });
 </script>
 </html>

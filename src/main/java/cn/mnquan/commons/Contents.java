@@ -11,7 +11,8 @@ public class Contents {
     public final static String MATERIAL_OPTIONAL_URL = "https://eco.taobao.com/router/rest";
     public final static String appkey = "24810297";
     public final static String secret = "76250cfab3f567fdb5e90e7d03c1b10c";
-    public final static long adzone_id = 272988181;
-    public final static String HM_APPKEY = "105bc582-a6b2-9c26-4e9d-e5bb9657c2c8";
-    public final static String HM_URL = "https://api.open.21ds.cn/apiv1/gettkorder";
+    public final static long adzone_id = 45446900332L;
+    public final static String HM_APPKEY = "131815744";
+    public final static String HM_APPSECRET = "8941b70e857b42eb700f2c5f078981ef";
+    public final static String HM_URL = "https://www.heimataoke.com/api-qdOrder";
 }

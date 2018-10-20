@@ -18,6 +18,8 @@
 
     <!-- 数据源配置文件 -->
     <import resource="spring-datasource.xml"/>
+    <!-- 数据源配置文件 -->
+    <import resource="elastic-job.xml"/>
 
     <!-- 配置事务管理器 -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">

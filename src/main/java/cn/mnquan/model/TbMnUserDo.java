@@ -19,15 +19,9 @@ public class TbMnUserDo {
 
     private Date updatedAt;
 
-    private String agencyCode;
+    private String userName;
 
-    public String getAgencyCode() {
-        return agencyCode;
-    }
-
-    public void setAgencyCode(String agencyCode) {
-        this.agencyCode = agencyCode;
-    }
+    private String isAgency;
 
     public String getAccount() {
         return account;
@@ -91,5 +85,21 @@ public class TbMnUserDo {
 
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getIsAgency() {
+        return isAgency;
+    }
+
+    public void setIsAgency(String isAgency) {
+        this.isAgency = isAgency;
     }
 }

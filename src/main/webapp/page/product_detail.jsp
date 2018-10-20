@@ -36,6 +36,7 @@
             <div>
                 <a href="/app"><i class="iconfont icon-detail_home"></i>首页</a>
                 <a href="/app/query/query.do"><i class="iconfont icon-detail_search"></i>搜索</a>
+                <a href="/app/user/centre.do"><i class="iconfont icon-gerenzhongxin"></i>我的</a>
             </div>
         </div>
     </header>
@@ -52,7 +53,7 @@
             </a>
         </div>
         <div class="col-12-2 text-center but" style=" position: relative; left: -.7rem;">
-            <a href="javascript:;" ui-add-collection data-id="16606735">
+            <a href="javascript:;"  ui-add-collection id="cou-share">
                 <p class="img">
                     <img src="${contextPath}/page/img/shart_button.png" alt="" style="width: 40%">
                 </p>
@@ -205,6 +206,92 @@
         </button>
     </div>
 </div>
+<!--分享-->
+<style>
+    .t_share{
+        position: fixed;
+        left: 20%;
+        top: 13%;
+        background: white;
+        width: 65%;
+        height: 65%;
+        border-radius: 7px;
+        z-index: 10000;
+        display: none;
+    }
+    .t_share .share-header{
+        background-image: url("/page/img/close.png");
+        position:absolute;
+        right:50px;width:30px;
+        height: 30px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        bottom: 356px;
+        margin-right: -60px;
+        box-shadow: 0 2px 5px #999;
+        border: 2px solid #fff;
+        border-radius: 50px;
+    }
+    .t_share .share-body{
+
+    }
+    .t_share .share-body img{
+        padding-left: 6%;
+        width: 88%;
+        padding-top: 7%;
+    }
+    .t_share .share-body{
+        font-size: small;
+    }
+    .t_share .share-body .share-text-1{
+        width: 89%;
+        padding-top: 7%;
+    }
+    .t_share .share-body .share-text-2{
+        color: red;
+    }
+
+    .t_share .share-footer{
+        text-align: center;
+        margin-top: 7%
+    }
+    .t_share .share-footer .share-butto{
+        width: 35%;
+        line-height: 29px;
+        background-color: #3366CC;
+        color: #F5F5F5;
+        border: 0px;
+    }
+</style>
+<div class="t_share">
+    <div class="share-header">
+    </div>
+    <div class="share-body">
+        <img src="${optionalDo.pictUrl}">
+            <p class="share-text-1">
+                ${optionalDo.title}
+            </p>
+            <p class="share-text-2">
+                券后价：${afterAmount}
+            </p>
+            <p class="share-text-3">
+                搜券宝，专享优惠购买商品！！
+            </p>
+        </img>
+        <div id="share-text" style="display: none">
+            ${optionalDo.title}
+            【券后价】:${afterAmount}
+            ------------------------
+            复制这条消息，${optionalDo.token},打开【手机淘宝】立即购买。
+            数量有限！！速度买！！
+        </div>
+    </div>
+    <div class="share-footer">
+        <button class="share-butto"  type="button">
+            复制文案
+        </button>
+    </div>
+</div>
 <script>
     new Swiper('.swiper-container1', {
         pagination: '.swiper-p1',
@@ -233,6 +320,13 @@
     $(".modal-header").click(function () {
         $(".t_token").css("display","none");
     });
+
+    $("#cou-share").click(function () {
+        $(".t_share").css("display","inline");
+    });
+    $(".share-header").click(function () {
+        $(".t_share").css("display","none");
+    });
 </script>
 <script>
     var clipboard = new ClipboardJS('.modelButto', {
@@ -248,6 +342,21 @@
     clipboard.on('error', function() {
         $(".modelButto").css("background-color","#CD6889");
         $(".modelButto").text("请再复制一次");
+    });
+
+    var clipboard = new ClipboardJS('.share-butto', {
+        text: function() {
+            var text = $("#share-text").text();
+            return text;
+        }
+    });
+    clipboard.on('success', function() {
+        $(".share-butto").css("background-color","#EE30A7");
+        $(".share-butto").text("复制成功");
+    });
+    clipboard.on('error', function() {
+        $(".share-butto").css("background-color","#CD6889");
+        $(".share-butto").text("请再复制一次");
     });
 </script>
 </body>

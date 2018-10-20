@@ -4,6 +4,7 @@ import com.taobao.api.ApiException;
 import com.taobao.api.request.TbkDgMaterialOptionalRequest;
 import com.taobao.api.request.TbkItemGetRequest;
 import com.taobao.api.response.TbkDgMaterialOptionalResponse;
+import com.taobao.api.response.TbkItemInfoGetResponse;
 
 import java.util.List;
 
@@ -15,4 +16,8 @@ import java.util.List;
  */
 public interface ITaobaoApiManager {
     List<TbkDgMaterialOptionalResponse.MapData> getSuperQueryList(TbkDgMaterialOptionalRequest request)throws ApiException;
+
+    public TbkDgMaterialOptionalResponse.MapData getProductByItemUrl(String itemUrl,Long adzoneId) throws ApiException;
+
+    TbkItemInfoGetResponse.NTbkItem queryProductItem(String numIid)throws ApiException;
 }

@@ -2,6 +2,7 @@ package cn.mnquan.manager.impl;
 
 import cn.mnquan.commons.Contents;
 import cn.mnquan.manager.IDtkManager;
+import cn.mnquan.manager.ITaobaoApiManager;
 import cn.mnquan.mapper.TbMnCatItemMapper;
 import cn.mnquan.mapper.TbMnMaterialOptionalMapper;
 import cn.mnquan.mapper.TbMnProductDetailMapper;
@@ -48,6 +49,8 @@ public class DtkManagerImpl implements IDtkManager {
     private TbMnMaterialOptionalMapper tbMnMaterialOptionalMapper;
     @Autowired
     private TbMnProductDetailMapper tbMnProductDetailMapper;
+    @Autowired
+    private ITaobaoApiManager taobaoApiManager;
 
     /**
      * 业务入口
@@ -117,11 +120,7 @@ public class DtkManagerImpl implements IDtkManager {
                     tbMnMaterialOptionalMapper.insertSelective(record);
 
                     //获取商品详情
-                    TbkItemInfoGetRequest request = new TbkItemInfoGetRequest();
-                    request.setNumIids(String.valueOf(mapData.getNumIid()));
-                    TbkItemInfoGetResponse response = client.execute(request);
-                    List<TbkItemInfoGetResponse.NTbkItem>  items = response.getResults();
-                    TbkItemInfoGetResponse.NTbkItem item = items.get(0);
+                    TbkItemInfoGetResponse.NTbkItem item = taobaoApiManager.queryProductItem(String.valueOf(mapData.getNumIid()));
                     TbMnProductDetailDo productDetailDo = BeanMapperUtil.objConvert(item,TbMnProductDetailDo.class);
                     tbMnProductDetailMapper.insertSelective(productDetailDo);
                 }

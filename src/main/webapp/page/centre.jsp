@@ -22,11 +22,11 @@
     <link rel="stylesheet" href="../../page/js/common.css">
     <link rel="stylesheet" href="../../page/js/main.css">
     <script src="../../page/js/jquery.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../page/js/xcConfirm.css"/>
+    <script src="../../page/js/xcConfirm.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
 <body data-appid="489217" data-in="1">
-
-
 <link rel="stylesheet" href="../../page/js/user.css" />
 
 <div class="ui_bot_tab" data-mta_name="首页-底部导航" ui-mta-modular>
@@ -57,8 +57,6 @@
             <span style="color: rgb(253, 87, 92);
 ">我的</span>
         </a>
-
-
     </div>
 </div>
 
@@ -70,27 +68,37 @@
             <div class="col-mar row-s">
                 <a href="" class="img"><img src="http://cmsstatic.dataoke.com//wap_new/user/images/user_info_tx.png?v=201810101200" alt=""></a>
                 <div class="info">
-                    <p class="name off"><a href="/app/user/centre.do">登录</a>/<a href="/app/login/register.do">注册</a></p>
+                    <c:if test="${null != userDo}">
+                        <p class="name off">欢迎：${userDo.userName}</p>
+                    </c:if>
+                    <c:if test="${null == userDo}">
+                        <p class="name off"><a href="/app/login/toLogin.do">登录</a>/<a href="/app/login/register.do">注册</a></p>
+                    </c:if>
                 </div>
             </div>
         </div>
-        <%--<a href="/index.php?r=user/setuser" class="iconfont icon-shez setup"></a>--%>
         <canvas ui-user-info-canvas id="canvas"></canvas>
     </div>
     <style>
-        .ui_nav_list_01 li{float: left;width: 50%;padding:1rem 0;background:#fff;font-size:1rem;color:#666}
+        .ui_nav_list_01 li{float: left;width: 33%;padding:1rem 0;background:#fff;font-size:1rem;color:#666}
         .ui_nav_list_01 p{text-align: center;}
         .ui_nav_list_01 .text-left{text-align: center;width: 100%}
     </style>
     <ul class="ui_nav_list_01">
         <li class="row-s">
-            <p>0.0</p>
+            <p>${totalAmt}</p>
             <p class="col-12-8 text-left">
-                即将到账(元)
+                可提现(元)
             </p>
         </li>
         <li class="row-s">
-            <p>0.0</p>
+            <p>${totalAmt}</p>
+            <p class="col-12-8 text-left">
+                上月收益(元)
+            </p>
+        </li>
+        <li class="row-s">
+            <p>${totalAmt}</p>
             <p class="col-12-8 text-left">
                 累计收益(元)
             </p>
@@ -107,17 +115,16 @@
     </style>
     <div class="div_nav_list">
         <div class="div_nav_list_01">
-            <a href="/app/order/order.do">
+            <a href="javascript:void(0);" onclick="myOrder('1');">
                 <p class="col-12-8 text-left">
-                    <%--<i class="iconfont "><img src="http://cmsstatic.dataoke.com//wap_new/user/images/icon/wode_icon_feedback.svg" alt=""></i>--%>
                     我的订单
                 </p>
-                <p class="col-12-4 text-right" style="font-size: 5px;">查看全部<i class="iconfont icon-youjiantou"></i></p>
+                <p class="col-12-4 text-right" style="font-size: 10px;">查看全部<i class="iconfont icon-youjiantou"></i></p>
             </a>
         </div>
         <ul class="ui_nav_list">
             <li class="row-s">
-                <a  href="/app/order/order.do">
+                <a  href="javascript:void(0);" onclick="myOrder('1');">
                     <i class="iconfont "><img src="../../page/img/quanbu.png" alt=""></i>
                     <p class="col-12-8">
                         全部
@@ -125,7 +132,7 @@
                 </a>
             </li>
             <li class="row-s">
-                <a  href="/app/order/order.do">
+                <a  href="javascript:void(0);" onclick="myOrder('14');">
                     <i class="iconfont "><img src="../../page/img/daifukuan.png" alt=""></i>
                     <p class="col-12-8">
                         待结算
@@ -133,7 +140,7 @@
                 </a>
             </li>
             <li class="row-s">
-                <a  href="/app/order/order.do">
+                <a  href="javascript:void(0);" onclick="myOrder('3');">
                     <i class="iconfont "><img src="../../page/img/yifukuan.png" alt=""></i>
                     <p class="col-12-8">
                         已结算
@@ -141,10 +148,10 @@
                 </a>
             </li>
             <li class="row-s">
-                <a  href="/app/order/order.do">
+                <a  href="javascript:void(0);" onclick="myOrder('13');">
                     <i class="iconfont "><img src="../../page/img/quxiao.png" alt=""></i>
                     <p class="col-12-8">
-                        已退款
+                        失效
                     </p>
                 </a>
             </li>
@@ -163,7 +170,7 @@
     <div class="div2_nav_list">
         <ul class="ui_nav_list_2">
             <li class="row-s row-s-2">
-                <a  href="#">
+                <a  href="javascript:void(0);">
                     <i class="iconfont "><img src="../../page/img/tuijianhaoyou.png" alt=""></i>
                     <p class="col-12-8">
                         推荐好友
@@ -171,7 +178,7 @@
                 </a>
             </li>
             <li class="row-s row-s-2">
-                <a  href="#">
+                <a  href="javascript:void(0);">
                     <i class="iconfont "><img src="../../page/img/czozuozhinan.png" alt=""></i>
                     <p class="col-12-8">
                         操作指南
@@ -179,7 +186,7 @@
                 </a>
             </li>
             <li class="row-s row-s-2">
-                <a  href="#">
+                <a  href="javascript:void(0);">
                     <i class="iconfont "><img src="../../page/img/wodetuijian.png" alt=""></i>
                     <p class="col-12-8">
                         我的推荐
@@ -187,7 +194,7 @@
                 </a>
             </li>
             <li class="row-s row-s-2">
-                <a  href="#">
+                <a  href="javascript:void(0);">
                     <i class="iconfont "><img src="../../page/img/tiqujilu.png" alt=""></i>
                     <p class="col-12-8">
                         提取记录
@@ -196,8 +203,25 @@
             </li>
         </ul>
     </div>
-
 </div>
-<div style="display: none;"></div>
 </body>
+<script>
+    function myOrder(tkStatus){
+        $.ajax({
+            url:""+"/app/order/queryOrderCheckLoginStats.do",
+            async:false,
+            dataType:'json',
+            type:"post",
+            success:function(data){
+                console.log(data);
+                if("true" == data){//用户已登陆
+                    window.location.href = "/app/order/skipOrderPage.do?tkStatus="+tkStatus;
+                }else{//用户未登陆
+                    var txt=  "小主，请先登陆！";
+                    window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
+                }
+            }
+        });
+    }
+</script>
 </html>

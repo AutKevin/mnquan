@@ -4,8 +4,11 @@ import cn.mnquan.commons.Contents;
 import cn.mnquan.manager.IDtkManager;
 import cn.mnquan.manager.ITaoBaoManager;
 import cn.mnquan.manager.ITaobaoApiManager;
+import cn.mnquan.manager.IUserManager;
 import cn.mnquan.model.*;
 import cn.mnquan.utils.BeanMapperUtil;
+import cn.mnquan.utils.DateUtil;
+import cn.mnquan.utils.UuidUtil;
 import com.alibaba.fastjson.JSON;
 import com.taobao.api.ApiException;
 import com.taobao.api.DefaultTaobaoClient;
@@ -22,8 +25,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.math.BigDecimal;
+import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * <p>
@@ -41,6 +47,8 @@ public class TaoBaoController extends BaseController{
     private ITaobaoApiManager taobaoApiManager;
     @Autowired
     private IDtkManager dtkManager;
+    @Autowired
+    private IUserManager userManager;
     /**
      * app优惠券入口
      * @return
@@ -56,8 +64,10 @@ public class TaoBaoController extends BaseController{
      */
     @RequestMapping(value="/app/index/getProductList.do")
     public void getPageList(TbMnMaterialOptionalDo optionalDo, HttpServletResponse response){
-        log.info("获取首页元素,optionalDo:{}",optionalDo.toString());
+        String uuid = UuidUtil.getUuid();
+        log.info("开始获取商品元素,uuid:{},dat:{}",uuid,DateUtil.getCurrentTimeBySecond());
         List<TbMnMaterialOptionalDo> optionalDos = taoBaoManager.getProductList(optionalDo);
+        log.info("结束获取商品元素,uuid:{},dat:{}",uuid,DateUtil.getCurrentTimeBySecond());
         sendMessages(response, JSON.toJSONString(optionalDos));
     }
 
@@ -68,8 +78,10 @@ public class TaoBaoController extends BaseController{
      */
     @RequestMapping(value="/app/index/getCentreList.do")
     public void getCentreList(Page page, HttpServletResponse response){
-        log.info("获取首页中心滚动图元素,page:{}",page.toString());
+        String uuid = UuidUtil.getUuid();
+        log.info("开始获取首页中心滚动图元素,uuid:{},dat:{}",uuid,DateUtil.getCurrentTimeBySecond());
         List<TbMnMaterialOptionalDo> tbkItems = taoBaoManager.getCentreList(page);
+        log.info("结束获取首页中心滚动图元素,uuid:{},dat:{}",uuid,DateUtil.getCurrentTimeBySecond());
         sendMessages(response, JSON.toJSONString(tbkItems));
     }
 
@@ -136,58 +148,50 @@ public class TaoBaoController extends BaseController{
      * @param model
      */
     @RequestMapping(value="/app/detail/skipProductDetail.do",method = RequestMethod.GET)
-    public String skipProductDetail(TbMnMaterialOptionalDo optionalDo, Model model){
-        log.info("跳转到产品列表,optionalDo:{}",optionalDo.toString());
+    public String skipProductDetail(TbMnMaterialOptionalDo optionalDo, Model model, HttpSession session){
+        log.info("开始跳转到商品详情,numIid:{},date:{}",optionalDo.getNumIid(), DateUtil.getCurrentTimeBySecond());
+        Object accountNo = session.getAttribute("accountNo");
+
+        //判断用户是否登陆，登陆后才能获取到返利，否则算是自己的
+        Long adzoneId = Contents.adzone_id;
+        if(accountNo != null){
+            TbMnUserDo tbMnUserDo = userManager.queryUserByAccountNo(String.valueOf(accountNo));
+            adzoneId = Long.valueOf(tbMnUserDo.getId());
+        }
         TbMnProductDetailDo itemDetail = null;
         TbMnMaterialOptionalDo optionalDo1 = null;
-        if("1".equals(optionalDo.getType())){//超级查询
-            String itemUrl = "https://detail.tmall.com/item.htm?id="+optionalDo.getNumIid();
-            //通过物料搜索接口获取优惠券信息
-            TaobaoClient client = new DefaultTaobaoClient(Contents.MATERIAL_OPTIONAL_URL, Contents.appkey, Contents.secret);
-            TbkDgMaterialOptionalRequest req = new TbkDgMaterialOptionalRequest();
-            req.setQ(itemUrl);
-            req.setAdzoneId(Contents.adzone_id);
-            String couponAmonunt = null;
-            String smallImages = null;
-            String command = null;
-            try {
-                TbkDgMaterialOptionalResponse optionalResponse = client.execute(req);
-                TbkDgMaterialOptionalResponse.MapData mapData = optionalResponse.getResultList().get(0);
-                optionalDo1 = BeanMapperUtil.objConvert(mapData,TbMnMaterialOptionalDo.class);
-                smallImages = getSmallImages(mapData.getSmallImages());
-
-                if(null != optionalDo1.getCouponEndTime()){
-                    couponAmonunt = dtkManager.getCouponAmount(mapData);
-                }else {
-                    couponAmonunt = "0";
-                }
-                command = dtkManager.getCommand(mapData);
-                optionalDo1.setCouponAmount(couponAmonunt);
-                optionalDo1.setSmallImages(smallImages);
-                optionalDo1.setToken(command);
-                optionalDo1.setCouponShareUrl(optionalDo1.getUrl());
-
-                //获取商品详情
-                TbkItemInfoGetRequest request = new TbkItemInfoGetRequest();
-                request.setNumIids(String.valueOf(mapData.getNumIid()));
-                TbkItemInfoGetResponse response = client.execute(request);
-                List<TbkItemInfoGetResponse.NTbkItem>  items = response.getResults();
-                TbkItemInfoGetResponse.NTbkItem item = items.get(0);
-                itemDetail = BeanMapperUtil.objConvert(item,TbMnProductDetailDo.class);
-            } catch (ApiException e) {
-                e.printStackTrace();
+        String itemUrl = "https://detail.tmall.com/item.htm?id="+optionalDo.getNumIid();
+        //通过物料搜索接口获取优惠券信息
+        String couponAmonunt = null;
+        String smallImages = null;
+        String command = null;
+        try {
+            TbkDgMaterialOptionalResponse.MapData mapData = taobaoApiManager.getProductByItemUrl(itemUrl,adzoneId);
+            optionalDo1 = BeanMapperUtil.objConvert(mapData,TbMnMaterialOptionalDo.class);
+            smallImages = getSmallImages(mapData.getSmallImages());
+            if(null != optionalDo1.getCouponEndTime()){
+                couponAmonunt = dtkManager.getCouponAmount(mapData);
+            }else {
+                couponAmonunt = "0";
             }
-        }else{
-            List<TbMnMaterialOptionalDo> optionalDos = taoBaoManager.getProductList(optionalDo);
-            optionalDo1 = optionalDos.get(0);
+            command = dtkManager.getCommand(mapData);
+            optionalDo1.setCouponAmount(couponAmonunt);
+            optionalDo1.setSmallImages(smallImages);
+            optionalDo1.setToken(command);
+            optionalDo1.setCouponShareUrl(optionalDo1.getUrl());
             //获取商品详情
-            itemDetail = taoBaoManager.getProductDetail(optionalDo.getNumIid());
+            TbkItemInfoGetResponse.NTbkItem item = taobaoApiManager.queryProductItem(String.valueOf(mapData.getNumIid()));
+            itemDetail = BeanMapperUtil.objConvert(item,TbMnProductDetailDo.class);
+        } catch (ApiException e) {
+            e.printStackTrace();
         }
+
         String afterAmount = getAfterAmount(optionalDo1);
         model.addAttribute("optionalDo",optionalDo1);
         model.addAttribute("images",optionalDo1.getSmallImages().split(","));
         model.addAttribute("itemDetail",itemDetail);
         model.addAttribute("afterAmount",afterAmount);
+        log.info("结束跳转到商品详情,numIid:{},date:{}",optionalDo.getNumIid(), DateUtil.getCurrentTimeBySecond());
         return "page/product_detail";
     }
 

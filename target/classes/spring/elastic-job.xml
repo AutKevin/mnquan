@@ -10,9 +10,9 @@
                         http://www.dangdang.com/schema/ddframe/job
                         http://www.dangdang.com/schema/ddframe/job/job.xsd
                         ">
-    <!--配置作业注册中心 -->
+    <!--配置作业注册中心 172.31.40.25-->
     <reg:zookeeper id="regCenter"
-                   server-lists="47.104.192.49:2181"
+                   server-lists="172.31.40.25:2181"
                    namespace="mnquan-job"
                    base-sleep-time-milliseconds="1000"
                    max-sleep-time-milliseconds="3000"
@@ -24,6 +24,13 @@
             class="cn.mnquan.task.DtkTask"
             registry-center-ref="regCenter"
             cron="0 20 1  * * ?"
+            sharding-total-count="1"/>
+
+    <job:simple
+            id="orderManagerTask"
+            class="cn.mnquan.task.OrderManagerTask"
+            registry-center-ref="regCenter"
+            cron="0 0/1 * * * ?"
             sharding-total-count="1"/>
 
 </beans>

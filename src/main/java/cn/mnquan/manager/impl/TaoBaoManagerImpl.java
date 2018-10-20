@@ -56,8 +56,10 @@ public class TaoBaoManagerImpl implements ITaoBaoManager{
         if(null != optionalDo.getCategoryId()){
             criteria.andCategoryIdEqualTo(optionalDo.getCategoryId());
         }
-        if(null != optionalDo.getSort() && !optionalDo.getSort().contains("latest")){
+        if(null != optionalDo.getSort() && ""  != optionalDo.getSort() && !optionalDo.getSort().contains("latest")){
             example.setOrderByClause(optionalDo.getSort());
+        }else {
+            example.setOrderByClause("token_time desc");
         }
 
         List<TbMnMaterialOptionalDo> optionalDos = tbMnMaterialOptionalMapper.selectByExample(example);

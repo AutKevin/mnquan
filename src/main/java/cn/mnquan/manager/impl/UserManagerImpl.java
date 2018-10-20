@@ -40,15 +40,13 @@ public class UserManagerImpl implements IUserManager{
 
         //如果用户输入邀请码，则进行校验
         String agencyId = "000001";
-        if(!agencyId.equals(tbMnUserDo.getAgencyCode())){
+        if(!agencyId.equals(tbMnUserDo.getAgencyId())){
             TbMnAgencyDoExample agencyDoExample = new TbMnAgencyDoExample();
-            agencyDoExample.createCriteria().andAgencyCodeEqualTo(tbMnUserDo.getAgencyCode());
+            agencyDoExample.createCriteria().andAgencyCodeEqualTo(tbMnUserDo.getAgencyId());
 
             List<TbMnAgencyDo> agencyDos = tbMnAgencyMapper.selectByExample(agencyDoExample);
             if(null != agencyDos && agencyDos.size() > 0){
                 agencyId = agencyDos.get(0).getId();
-            }else {
-                return "3";//输入的邀请码不存在
             }
         }
 
@@ -61,5 +59,27 @@ public class UserManagerImpl implements IUserManager{
 
         tbMnUserMapper.insertSelective(record);
         return "4";
+    }
+
+    public TbMnUserDo queryUserByAccountNo(String account) {
+        TbMnUserDoExample example = new TbMnUserDoExample();
+        example.createCriteria().andAccountEqualTo(account);
+        TbMnUserDo tbMnUserDo = null;
+        List<TbMnUserDo> list = tbMnUserMapper.selectByExample(example);
+        if(null != list && list.size() > 0){
+            tbMnUserDo = list.get(0);
+        }
+        return tbMnUserDo;
+    }
+
+    /**
+     * 查出整个团队的广告位id
+     * @param tbMnUserDo
+     * @return
+     */
+    public List<TbMnUserDo> queryUserList(TbMnUserDo tbMnUserDo) {
+        TbMnUserDoExample example = new TbMnUserDoExample();
+        example.createCriteria().andAgencyIdEqualTo(tbMnUserDo.getId());
+        return tbMnUserMapper.selectByExample(example);
     }
 }

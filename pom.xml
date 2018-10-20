@@ -39,18 +39,17 @@
       <version>4.12</version>
       <scope>test</scope>
     </dependency>
-
     <dependency>
       <groupId>com.google.zxing</groupId>
       <artifactId>core</artifactId>
       <version>${goole.zxing.version}</version>
     </dependency>
 
-    <dependency>
+    <!--<dependency>
       <groupId>com.google.code.gson</groupId>
       <artifactId>gson</artifactId>
       <version>${goole.gson.version}</version>
-    </dependency>
+    </dependency>-->
     <dependency>
       <groupId>net.sf.json-lib</groupId>
       <artifactId>json-lib</artifactId>
@@ -244,15 +243,15 @@
       <version>1.2.28</version>
     </dependency>
 
-    <dependency>
-      <groupId>com.dangdang</groupId>
-      <artifactId>elastic-job-lite-core</artifactId>
-      <version>2.1.1</version>
-    </dependency>
+      <dependency>
+          <groupId>com.dangdang</groupId>
+          <artifactId>elastic-job-lite-core</artifactId>
+          <version>2.1.5</version>
+      </dependency>
     <dependency>
       <groupId>com.dangdang</groupId>
       <artifactId>elastic-job-lite-spring</artifactId>
-      <version>2.1.1</version>
+      <version>2.1.5</version>
     </dependency>
 
   </dependencies>

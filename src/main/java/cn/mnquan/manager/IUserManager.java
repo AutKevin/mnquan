@@ -1,6 +1,10 @@
 package cn.mnquan.manager;
 
-import cn.mnquan.model.TbMnUserDo; /**
+import cn.mnquan.model.TbMnUserDo;
+
+import java.util.List;
+
+/**
  * <p>
  * 描述
  * </p>
@@ -8,4 +12,8 @@ import cn.mnquan.model.TbMnUserDo; /**
  */
 public interface IUserManager {
     String addUser(TbMnUserDo tbMnUserDo);
+
+    TbMnUserDo queryUserByAccountNo(String s);
+
+    List<TbMnUserDo> queryUserList(TbMnUserDo tbMnUserDo);
 }

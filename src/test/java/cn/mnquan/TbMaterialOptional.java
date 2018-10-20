@@ -1,5 +1,6 @@
 package cn.mnquan;
 
+import cn.mnquan.commons.Contents;
 import com.taobao.api.ApiException;
 import com.taobao.api.DefaultTaobaoClient;
 import com.taobao.api.TaobaoClient;
@@ -27,7 +28,7 @@ public class TbMaterialOptional{
     public final static String url = "https://eco.taobao.com/router/rest";
     public final static String appkey = "24810297";
     public final static String secret = "76250cfab3f567fdb5e90e7d03c1b10c";
-    public final static long adzone_id = 272988181;
+    public final static long adzone_id = 71344394;
 
     @Test
     public void getProducts() throws ApiException {
@@ -38,7 +39,8 @@ public class TbMaterialOptional{
         req.setSort("total_sales");//按销量排序
         req.setQ("女装");
         req.setHasCoupon(true);
-        req.setAdzoneId(adzone_id);
+        req.setAdzoneId(Contents.adzone_id);
+        req.setPlatform(2l);
         TbkDgMaterialOptionalResponse rsp = client.execute(req);
         List<TbkDgMaterialOptionalResponse.MapData> mapData =  rsp.getResultList();
     }

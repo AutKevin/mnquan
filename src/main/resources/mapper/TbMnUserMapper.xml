@@ -10,6 +10,8 @@
     <result column="error_times" jdbcType="VARCHAR" property="errorTimes" />
     <result column="created_at" jdbcType="DATE" property="createdAt" />
     <result column="updated_at" jdbcType="DATE" property="updatedAt" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="is_agency" jdbcType="VARCHAR" property="isAgency" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -70,7 +72,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    account, id, pwd, state, agency_id, error_times, created_at, updated_at
+    account, id, pwd, state, agency_id, error_times, created_at, updated_at, user_name, 
+    is_agency
   </sql>
   <select id="selectByExample" parameterType="cn.mnquan.model.TbMnUserDoExample" resultMap="BaseResultMap">
     select
@@ -95,10 +98,12 @@
   <insert id="insert" parameterType="cn.mnquan.model.TbMnUserDo">
     insert into tb_mn_user (account, id, pwd, 
       state, agency_id, error_times, 
-      created_at, updated_at)
+      created_at, updated_at, user_name, 
+      is_agency)
     values (#{account,jdbcType=VARCHAR}, #{id,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR}, 
       #{state,jdbcType=VARCHAR}, #{agencyId,jdbcType=VARCHAR}, #{errorTimes,jdbcType=VARCHAR}, 
-      #{createdAt,jdbcType=DATE}, #{updatedAt,jdbcType=DATE})
+      #{createdAt,jdbcType=DATE}, #{updatedAt,jdbcType=DATE}, #{userName,jdbcType=VARCHAR}, 
+      #{isAgency,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.mnquan.model.TbMnUserDo">
     insert into tb_mn_user
@@ -127,6 +132,12 @@
       <if test="updatedAt != null">
         updated_at,
       </if>
+      <if test="userName != null">
+        user_name,
+      </if>
+      <if test="isAgency != null">
+        is_agency,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="account != null">
@@ -152,6 +163,12 @@
       </if>
       <if test="updatedAt != null">
         #{updatedAt,jdbcType=DATE},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="isAgency != null">
+        #{isAgency,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -188,6 +205,12 @@
       <if test="record.updatedAt != null">
         updated_at = #{record.updatedAt,jdbcType=DATE},
       </if>
+      <if test="record.userName != null">
+        user_name = #{record.userName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isAgency != null">
+        is_agency = #{record.isAgency,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -202,7 +225,9 @@
       agency_id = #{record.agencyId,jdbcType=VARCHAR},
       error_times = #{record.errorTimes,jdbcType=VARCHAR},
       created_at = #{record.createdAt,jdbcType=DATE},
-      updated_at = #{record.updatedAt,jdbcType=DATE}
+      updated_at = #{record.updatedAt,jdbcType=DATE},
+      user_name = #{record.userName,jdbcType=VARCHAR},
+      is_agency = #{record.isAgency,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -231,6 +256,12 @@
       <if test="updatedAt != null">
         updated_at = #{updatedAt,jdbcType=DATE},
       </if>
+      <if test="userName != null">
+        user_name = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="isAgency != null">
+        is_agency = #{isAgency,jdbcType=VARCHAR},
+      </if>
     </set>
     where account = #{account,jdbcType=VARCHAR}
   </update>
@@ -242,7 +273,9 @@
       agency_id = #{agencyId,jdbcType=VARCHAR},
       error_times = #{errorTimes,jdbcType=VARCHAR},
       created_at = #{createdAt,jdbcType=DATE},
-      updated_at = #{updatedAt,jdbcType=DATE}
+      updated_at = #{updatedAt,jdbcType=DATE},
+      user_name = #{userName,jdbcType=VARCHAR},
+      is_agency = #{isAgency,jdbcType=VARCHAR}
     where account = #{account,jdbcType=VARCHAR}
   </update>
 </mapper>

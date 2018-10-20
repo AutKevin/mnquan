@@ -99,7 +99,7 @@
                enableDeleteByExample="false">
         </table>
 
-        <table tableName="tb_mn_agency" mapperName="TbMnAgencyMapper"
+        <!--<table tableName="tb_mn_agency" mapperName="TbMnAgencyMapper"
                domainObjectName="TbMnAgencyDo"
                enableInsert="true"
                enableSelectByPrimaryKey="true"
@@ -109,7 +109,19 @@
                enableSelectByExample="true"
                enableUpdateByExample="true"
                enableDeleteByExample="false">
-        </table>
+        </table>-->
+
+        <!--<table tableName="tb_mn_order" mapperName="TbMnOrderMapper"
+               domainObjectName="TbMnOrderDo"
+               enableInsert="true"
+               enableSelectByPrimaryKey="true"
+               enableUpdateByPrimaryKey="true"
+               enableDeleteByPrimaryKey="false"
+               enableCountByExample="true"
+               enableSelectByExample="true"
+               enableUpdateByExample="true"
+               enableDeleteByExample="false">
+        </table>-->
     </context>
 
 </generatorConfiguration>

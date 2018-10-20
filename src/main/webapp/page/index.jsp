@@ -487,7 +487,7 @@
         if(oper_type == 3){
             window.location.href = domain+"/app/detail/skipProductDetail.do?numIid="+item;
         }
-        var progress = 80;
+        var progress = 40;
         var progressId = setInterval(function(){
             progress= progress+5;
             $("#my_progress").css({width:progress+"%"});

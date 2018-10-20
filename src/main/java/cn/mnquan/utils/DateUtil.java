@@ -556,5 +556,13 @@ public class DateUtil {
         String sourceDate = sf.format(date);
         return  sf.parse(sourceDate);
     }
+
+    public static String getTenBeforeDate() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Calendar beforeTime = Calendar.getInstance();
+        beforeTime.add(Calendar.MINUTE,-10);
+        String time = sdf.format(beforeTime.getTime());
+        return time;
+    }
 }
 

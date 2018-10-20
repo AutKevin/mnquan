@@ -45,18 +45,21 @@
             <li>
                 <a href="/app/query/query.do"><i class="iconfontv2 icon-detail_search"></i>搜索</a>
             </li>
+            <li>
+                <a href="/app/user/centre.do"><i class="iconfontv2 icon-gerenzhongxin"></i>我的</a>
+            </li>
         </ul>
     </div>
 </nav>
 <div class="icon_nav_tab_bg" style="height: 47px;"></div>
 <div class="cat_tab_list_load" style="display: none;"></div>
-<div class="order-nav" style="position: relative; top: 0px; margin-top: 0px;">
+<div class="order-nav" style="position: fixed; top: 40px; margin-top: 0px;">
     <ul>
         <li class="">
             <span><a data-sort="shop_dsr" class="" href="javascript:void(0);" key="desc">人气</a></span>
         </li>
         <li class="theme-border-bottom-color-1 cur">
-            <span><a data-sort="latest" href="javascript:void(0);" class="theme-color-1" key="desc">最新</a></span>
+            <span><a data-sort="latest" href="javascript:void(0);" key="desc">最新</a></span>
         </li>
         <li class="">
             <span><a data-sort="volume" href="javascript:void(0);" key="desc">销量</a></span>
@@ -70,7 +73,7 @@
     </ul>
 </div>
 
-<div class="order-nav-bg ov_h " style="height: 0"></div>
+<div class="order-nav-bg ov_h " style="height: 48px"></div>
 
 <style>
     .scrollable{
@@ -122,7 +125,7 @@
     var catId = $("#catId").attr("value");
     var categoryId = $("#categoryId").attr("value");
 
-    var px = "";
+    var px = "latest desc";
     // 修改排序
     $(".order-nav li").on("click",function(){
         $(".goods-list div.goods-item").remove();
@@ -153,6 +156,7 @@
 
     //加载页面元素
     function get_list(sort){
+        console.log("sort="+sort)
         $.ajax({
             url:""+"/app/index/getProductList.do",
             async:false,
@@ -219,17 +223,9 @@
             return false;
         })
     });
-    function myProgress(item,oper_type) {
-        if(oper_type == 1){
-            window.location.href = domain+"/app/classify/skipProduct.do?catId="+item;
-        }
-        if(oper_type == 2){
-            window.location.href = domain+item;
-        }
-        if(oper_type == 3){
-            window.location.href = domain+"/app/detail/skipProductDetail.do?numIid="+item;
-        }
-        var progress = 80;
+    function myProgress(item) {
+        window.location.href = domain+"/app/detail/skipProductDetail.do?numIid="+item;
+        var progress = 40;
         var progressId = setInterval(function(){
             progress= progress+5;
             $("#my_progress").css({width:progress+"%"});

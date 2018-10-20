@@ -56,4 +56,13 @@ public class LoginController extends BaseController {
     public String register(){
         return "page/register";
     }
+
+    /**
+     * 跳转登陆页面
+     * @return
+     */
+    @RequestMapping("/app/login/toLogin.do")
+    public String toLogin(){
+        return "page/login";
+    }
 }
