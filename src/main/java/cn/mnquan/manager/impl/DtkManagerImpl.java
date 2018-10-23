@@ -120,9 +120,9 @@ public class DtkManagerImpl implements IDtkManager {
                     tbMnMaterialOptionalMapper.insertSelective(record);
 
                     //获取商品详情
-                    TbkItemInfoGetResponse.NTbkItem item = taobaoApiManager.queryProductItem(String.valueOf(mapData.getNumIid()));
+                    /*TbkItemInfoGetResponse.NTbkItem item = taobaoApiManager.queryProductItem(String.valueOf(mapData.getNumIid()));
                     TbMnProductDetailDo productDetailDo = BeanMapperUtil.objConvert(item,TbMnProductDetailDo.class);
-                    tbMnProductDetailMapper.insertSelective(productDetailDo);
+                    tbMnProductDetailMapper.insertSelective(productDetailDo);*/
                 }
             }
         }

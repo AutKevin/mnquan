@@ -42,6 +42,15 @@
             <img style="width:100%;" src="../page/img/live_weixin.png" alt="微信打开"><span id="close" title="关闭" class="close">×</span></p>
     </div>
 </body>
+<script>
+    document.addEventListener("plusready", function() {
+        // 注册返回按键事件
+        plus.key.addEventListener('backbutton', function() {
+            // 事件处理
+            window.history.back();
+        }, false);
+    });
+</script>
 <script type="text/javascript">
     var is_weixin = (function () { return navigator.userAgent.toLowerCase().indexOf('micromessenger') !== -1 })();
     window.onload = function () {

@@ -10,7 +10,7 @@
     <meta content="telephone=no" name="format-detection"/>
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
     <title>我的订单</title>
-    <meta name="keywords" content="9.9包邮，白菜价，天天特价，优惠卷,淘券宝"/>
+    <meta name="keywords" content="9.9包邮，白菜价，天天特价，优惠卷,搜券宝"/>
     <meta name="description" content="9.9包邮，白菜价，天天特价"/>
     <script src="../../page/js/jquery.js" type="text/javascript"></script>
     <link href="../../page/js/wap_common.css" rel="stylesheet">
@@ -74,23 +74,31 @@
             <li>
                 <a href="/app/user/centre.do"><i class="iconfontv2 icon-gerenzhongxin"></i>我的</a>
             </li>
+            <li>
+                <a href="/app/user/logout.do"><i class="iconfontv2 icon-datail_feedback"></i>退出</a>
+            </li>
         </ul>
     </div>
 </nav>
 <!-- 主界面具体展示内容 -->
-<div class="order-nav" style="margin-top: 10%;">
+<style>
+    .order-nav ul li{
+        line-height: 65px;
+    }
+</style>
+<div class="order-nav" style="margin-top: 10%;line-height: 50px;height: 50px;/*border-bottom: #999 solid 1px;*/">
     <ul>
         <li class="theme-border-bottom-color-1 cur" key="1" >
             <span><a  href="javascript:void(0);">全部</a></span>
         </li>
-        <li class="" data-type="total_sales_" key="14">
+        <li class=""  id="order-ul-li-01" key="14">
             <span><a  href="javascript:void(0);"  >待结算</a></span>
         </li>
-        <li class="" data-type="tk_rate_" key="3" >
+        <li class="" id="order-ul-li-02" key="3" >
             <span><a  href="javascript:void(0);" >已结算</a></span>
         </li>
-        <li class="" data-type="price_" key="12" >
-            <span><a href="javascript:void(0);">已付款</a></span>
+        <li class="" id="order-ul-li-03" key="13" >
+            <span><a href="javascript:void(0);">已失效</a></span>
         </li>
     </ul>
 </div>
@@ -165,10 +173,18 @@
 <!--搜索弹窗-->
 </body>
 <script>
+    document.addEventListener("plusready", function() {
+        // 注册返回按键事件
+        plus.key.addEventListener('backbutton', function() {
+            // 事件处理
+            window.history.back();
+        }, false);
+    });
+</script>
+<script>
     var pageSize = 30;
     var pageNo = 1;
     var tkStatus = $("#tb_status").val();
-
     // 修改查询条件
     $(".order-nav li").on("click",function(){
         $(".scrollable div.ads-list2").remove();
@@ -234,6 +250,18 @@
     }
 
     $(function(){
+        if(tkStatus == 14){
+            $(".order-nav li").removeClass('cur');
+            $("#order-ul-li-01").addClass('cur');
+        }
+        if(tkStatus == 3){
+            $(".order-nav li").removeClass('cur');
+            $("#order-ul-li-02").addClass('cur');
+        }
+        if(tkStatus == 12){
+            $(".order-nav li").removeClass('cur');
+            $("#order-ul-li-03").addClass('cur');
+        }
         get_list(tkStatus);
         $('.scrollable').scroll(function (e) {
             var h = $(this).height();//div可视区域的高度

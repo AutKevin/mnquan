@@ -62,7 +62,7 @@
         <a data-mold="1" data-el="2" href="javascript:void(0);" class="col-10-2 ">
             <em class="num" style="background-image: -webkit-gradient(linear, left 20, right 0, from(#DC143C), to(	#FF0000));-webkit-background-clip: text;-webkit-text-fill-color: transparent;">新</em>
             <i class="iconfont"><img src="https://img.alicdn.com/imgextra/i4/2053469401/TB23GLTn77mBKNjSZFyXXbydFXa-2053469401.png"></i>
-            <span style="color: rgb(102, 102, 102);">9.9包邮</span>
+            <span style="color: rgb(102, 102, 102);">准备中</span>
         </a>
 
         <a data-mold="1" data-el="3" href="/app/classify" class="col-10-2 ">
@@ -259,7 +259,7 @@
         </div>
     </div>
         <div class="hr"></div>
-        <div class="home_nav" style="layout:2;margin-bottom:5px;">
+        <%--<div class="home_nav" style="layout:2;margin-bottom:5px;">
             <ul class="row-s" ui-mta-modular="" data-mta_name="首页-图标导航" isload="true">
                 <li class="col-12-3">
                     <a href="javascript:void(0);" data-mold="0" data-el="1" data-addr="/index.php?r=nine">
@@ -284,7 +284,7 @@
                     </i>小编力荐</a></li>
             </ul>
         </div>
-        <div class="hr"></div>
+        <div class="hr"></div>--%>
         <div class="home_ant_voucher" style="layout:2;margin-bottom:10px;">
             <h3 class="home_h3 row-s">
                 <div class="col-mar">
@@ -338,6 +338,17 @@
     </a>
 </div>
 </body>
+<script>
+    document.addEventListener("plusready", function() {
+        // 注册返回按键事件
+        plus.key.addEventListener('backbutton', function() {
+            // 事件处理
+            plus.nativeUI.confirm("退出程序？", function(event) {
+                plus.runtime.quit();
+            }, null, ["取消", "确定"]);
+        }, false);
+    });
+</script>
 <script>
     var pageNo = 1;
     var domain = "http://"+window.location.host;

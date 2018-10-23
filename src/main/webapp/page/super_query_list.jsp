@@ -9,12 +9,13 @@
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta content="telephone=no" name="format-detection"/>
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
-    <title>女装新款淘券宝</title>
-    <meta name="keywords" content="9.9包邮，白菜价，天天特价，优惠卷,淘券宝"/>
+    <title>超级查询</title>
+    <meta name="keywords" content="9.9包邮，白菜价，天天特价，优惠卷,搜券宝"/>
     <meta name="description" content="9.9包邮，白菜价，天天特价"/>
-    <script src="${contextPath}/page/js/jquery.js" type="text/javascript"></script>
-    <link href="${contextPath}/page/js/wap_common.css" rel="stylesheet">
-    <link href="${contextPath}/page/js/wap_search.css" rel="stylesheet"/>
+    <script src="../../page/js/jquery.js" type="text/javascript"></script>
+    <link href="../../page/js/wap_common.css" rel="stylesheet">
+    <link href="../../page/js/wap_search.css" rel="stylesheet"/>
+    <link href="../../page/js/style.css" rel="stylesheet">
 </head>
 
 <style>
@@ -33,7 +34,8 @@
         font-size: 14px;
     }
     .search-land li{
-        width: 90%;  border-bottom: 1px solid #f7f7f7;font-size: 13px;padding:9px 0;margin: 0 auto;
+        width: 90%;
+        border-bottom: 1px solid #f7f7f7;font-size: 13px;padding:9px 0;margin: 0 auto;
     }
     .search-land li a{
         color: #232326;width: 100%;
@@ -50,10 +52,27 @@
         height: 28px;
         z-index: 9999;
     }
+    .main-title{
+        background: -moz-linear-gradient(left,#FA4DBE 0,#FBAA58 100%);
+        background: -webkit-gradient(linear,left top,left right,color-stop(0,#FA4DBE),color-stop(100%,#FBAA58));
+        background: -webkit-linear-gradient(left,#FA4DBE 0,#FBAA58 100%);
+        background: -o-linear-gradient(left,#FA4DBE 0,#FBAA58 100%);
+        background: -ms-linear-gradient(left,#FA4DBE 0,#FBAA58 100%);
+        background: linear-gradient(to left,#FA4DBE 0,#FBAA58 100%);
+        border-bottom-color: transparent;
+        padding: 0px 10px;
+        position: fixed;
+        top: 0px;
+        left: 0;
+        width: 100%;
+        z-index: 120;
+        display: block;
+        box-sizing: border-box;
+    }
 </style>
 <body  data-appid="489217" data-in="1">
 <div class="search-pop" style="display:block;">
-    <div class="main-title clearfix theme-bg-color-1" style="height: 60px">
+    <div class="main-title clearfix theme-bg-color-1" style="height: 48px">
         <input type="hidden" name="wsw-status" value="1">
 
         <a href="/app" class="close-src" style="margin-top: 10px"></a>
@@ -104,11 +123,85 @@
         </li>
     </ul>
 </div>
+<style>
+    .ifCoupon{
+        height: 30px;
+        margin-top: 88px;
+        position: fixed;
+        width: 100%;
+        background:#fff;
+    }
+    .ifCoupon img{
+        float: left;
+        padding-left: 10px;
+        padding-top: 5px;
+    }
+    .ifCoupon p{
+        padding-top: 5px;
+        font-size: 15px;
+        float: left;
+        padding-left: 10px;
+    }
 
+    .row {
+        width: 20%;
+        display: block;
+        line-height: 20px;
+        text-align: right;
+        float: right;
+        padding-top: 2px;
+    }
+    input[type="checkbox"] {
+        display: none;
+    }
+    input[type="checkbox"] + label {
+        display: inline-block;
+        width: 40px;
+        height: 20px;
+        position: relative;
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+        margin: 2px 20px;
+        box-sizing: border-box;
+    }
+    input[type="checkbox"] + label:after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 20px;
+        height: 20px;
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+    #simple_1:checked + label:after{
+        left: calc(100% - 20px);
+    }
+    #simple_1 + label{
+        background: #ddd;
+        border-radius: 20px;
+        box-shadow: 1px 1px 3px #aaa;
+    }
+    #simple_1 + label:after{
+        background: #fff;
+        border-radius: 50%;
+        box-shadow: 1px 1px 3px #aaa;
+    }
+</style>
+<div class="ifCoupon">
+    <img src="../../page/img/coupon.png">
+    <p>仅显示优惠券商品</p>
+    <div class="row">
+        <input type="checkbox" id="simple_1">
+        <label for="simple_1" id="if-coupon-label"></label>
+    </div>
+</div>
 <style>
     .scrollable{
         position: absolute;
-        top: 115px;
+        top: 120px;
         left: 0;
         right: 0;
         bottom: 0;
@@ -117,42 +210,72 @@
         -webkit-box-flex: 1;
         background-color: #faf5f6;
     }
+    .scrollable .ads-list2 .clearfix .text .ui-link{
+        position: relative;
+    }
+
+    .scrollable .ads-list2 .clearfix .text .ui-link .share-wrapper .text{
+        color: #888;
+        font-size: 12px;
+    }
+    .scrollable .ads-list2 .clearfix .text .price-wrapper1 .price{
+        font-size: 14px;
+    }
+    .scrollable .ads-list2 .clearfix .text .price-wrapper2{
+       margin-top: 70px;
+    }
 </style>
 <div class="scrollable" id="scrollable">
     <%--<div class="sort_main ads-list2">
         <div class="goods-item clearfix">
-            <a data-transition="slide" href="javascript:void(0);" class="img ui-link">
-                <img src="https://gd3.alicdn.com/imgextra/i1/792382564/TB2zdmdeN6I8KJjy0FgXXXXzVXa_!!792382564.jpg_310x310.jpg">
+            <a data-transition="slide" href="/app/detail/skipProductDetail.do?type=1&amp;numIid=576260478455" class="img ui-link">
+                <img src="https://img.alicdn.com/bao/uploaded/i1/720853322/O1CN011aPWBc17dwRgE94_!!720853322.jpg">
             </a>
             <div class="text">
                 <div>
-                    <a data-transition="slide" href="javascript:void(0);" class="title ui-link">欧美街头蝙蝠衫不规则长袖套头宽松外套
+                    <a data-transition="slide" href="/app/detail/skipProductDetail.do?type=1&amp;numIid=576260478455" class="title ui-link">网红毛衣2018秋季新款百搭针织衫
                         <div class="share-wrapper">
                             <img src="../../page/img/share.png">
-                            <p>分享赚￥77</p>
-                            <span class="coupon-wrapper  theme-bg-color-1">券<b>10</b></span>
+                            <span class="price_yj">现价199.99</span>
+                            <span class="text">已售88件</span>
+                            <p>赚￥5.67</p>
                         </div>
                         <div class="price-wrapper1">
-                            <span class="price_yj">现价</span>
-                            <span class="price">￥<span>77</span></span>
-                            <span class="text">销量 </span>
-                            <span class="sold-num">303</span>
-                            <div class="price-wrapper2">
-                                <span class="price_qh">券后</span>
-                                <span class="price">￥<span>77</span></span>
-                                <span class="text">销量 </span>
-                                <span class="sold-num">303</span>
-                            </div>
+                            <span class="price_qh">券后</span><span class="price">￥<span>199.99</span></span>
+                        </div>
+                        <div class="price-wrapper2">
+                            <span class="coupon-wrapper  theme-bg-color-1">券<b>140</b></span>
+                            <span class="price_qh">剩余199.99张</span>
                         </div>
                     </a>
                 </div>
             </div>
         </div>
     </div>--%>
-
-        <div  class="pullup-goods">
-            <div class="label">商品加载中...</div>
+    <%--<div class="sort_main ads-list2">
+        <div class="goods-item clearfix">
+            <a data-transition="slide" href="/app/detail/skipProductDetail.do?type=1&amp;numIid=576260478455" class="img ui-link">
+                <img src="https://img.alicdn.com/bao/uploaded/i1/720853322/O1CN011aPWBc17dwRgE94_!!720853322.jpg">
+            </a>
+            <div class="text">
+                <div>
+                    <a data-transition="slide" href="/app/detail/skipProductDetail.do?type=1&amp;numIid=576260478455" class="title ui-link">网红毛衣2018秋季新款百搭针织衫
+                        <div class="share-wrapper">
+                            <img src="../../page/img/share.png">
+                            <span class="text">已售88777件</span>
+                            <p>赚￥5.67</p>
+                        </div>
+                        <div class="price-wrapper1">
+                            <span class="price_qh">现价</span><span class="price">￥<span>199.99</span></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
+    </div>
+    --%><div  class="pullup-goods">
+        <div class="label">商品加载中...</div>
+    </div>
 </div>
 <div class="toTop">&#xe6a4;</div>
 <div style="display: none;">
@@ -167,6 +290,15 @@
 <!--搜索弹窗-->
 </body>
 <script>
+    document.addEventListener("plusready", function() {
+        // 注册返回按键事件
+        plus.key.addEventListener('backbutton', function() {
+            // 事件处理
+            window.history.back();
+        }, false);
+    });
+</script>
+<script>
     var pageSize = 30;
     var pageNo = 1;
     var px = "";
@@ -180,11 +312,11 @@
         if($(this).index()==$(".order-nav li").length-1){
             var key = $(this).attr("key") == "asc" ? "dec" : 'asc';
             if(key != "asc"){
-                $("#price-ico").removeClass("price-ico-up");
-                $("#price-ico").addClass("price-ico-down");
-            }else{
                 $("#price-ico").removeClass("price-ico-down");
                 $("#price-ico").addClass("price-ico-up");
+            }else{
+                $("#price-ico").removeClass("price-ico-up");
+                $("#price-ico").addClass("price-ico-down");
             }
             $(this).attr("key",key);
         }
@@ -192,12 +324,32 @@
         get_list(px);
     });
 
+    var hasCoupon = false;
+    $("#simple_1").on("click",function(){
+        var flag = $("#simple_1").is(':checked');
+        if(flag){
+            $("#scrollable div.ads-list2").remove();
+            $('#scrollable').scrollTop(0);
+            pageNo = 1;
+            $("#if-coupon-label").css("background","red");
+            hasCoupon = true;
+            get_list(px);
+        }else {
+            $("#scrollable div.ads-list2").remove();
+            $('#scrollable').scrollTop(0);
+            pageNo = 1;
+            $("#if-coupon-label").css("background","#bbb");
+            hasCoupon = false;
+            get_list(px)
+        }
+    });
+
     function get_list(sort) {
         var _q = $("#search_area").attr("value");
         $.ajax({
             url:""+"/app/query/superQueryList.do",
             async:false,
-            data: {'pageSize':pageSize,'pageNo':pageNo,'sort':sort,'q':_q,'hasCoupon':"false"},
+            data: {'pageSize':pageSize,'pageNo':pageNo,'sort':sort,'q':_q,'hasCoupon':hasCoupon},
             dataType:'json',
             type:"post",
             success:function(data){
@@ -206,21 +358,44 @@
                     var superQueryListHtml = '';
                     $.each(data,function(index,item){
                         var couponAmt = 0;
+                        var strCouponAmt = '';
+                        var strCouponCount = '';
                         if(null != item.couponInfo  && '' != item.couponInfo){
                             var temp = item.couponInfo;
                             var temp1 = temp.replace("满","").replace("元","").replace("元","").split("减");
                             couponAmt = temp1[1];
+                            /*strCouponAmt = '<span class="coupon-wrapper  theme-bg-color-1">券<b>'+couponAmt+'</b></span>';
+                            strCouponCount = '<span class="text">剩余 </span><span class="sold-num">'+item.couponRemainCount+'</span>';*/
+                            superQueryListHtml+='<div class="sort_main ads-list2"><div class="goods-item clearfix">' +
+                                '<a data-transition="slide" href="/app/detail/skipProductDetail.do?type=1&numIid='+item.numIid+'" class="img ui-link">' +
+                                '<img src="'+item.pictUrl+'"></a><div class="text"><div>' +
+                                '<a data-transition="slide" href="/app/detail/skipProductDetail.do?type=1&numIid='+item.numIid+'" class="title ui-link">'+item.shortTitle+'<div class="share-wrapper">' +
+                                '<img src="../../page/img/share.png"><span class="price_yj">现价'+item.zkFinalPrice+'</span><span class="text">已售'+item.volume+'件</span>' +
+                                '<p>赚￥'+getRate(item.zkFinalPrice,item.commissionRate)+'</p></div><div class="price-wrapper1">' +
+                                '<span class="price_qh">券后</span><span class="price">￥<span>'+accSub(item.zkFinalPrice,couponAmt)+'</span></span></div>' +
+                                '<div class="price-wrapper2"><span class="coupon-wrapper  theme-bg-color-1">券<b>'+couponAmt+'</b></span>' +
+                                '<span class="price_qh">剩余'+item.couponRemainCount+'张</span></div></a></div></div></div></div>';
+                        }else {
+                            superQueryListHtml+='<div class="sort_main ads-list2">' +
+                                '<div class="goods-item clearfix">' +
+                                '<a data-transition="slide" href="/app/detail/skipProductDetail.do?type=1&numIid='+item.numIid+'" class="img ui-link">' +
+                                '<img src="'+item.pictUrl+'"></a><div class="text"><div>' +
+                                '<a data-transition="slide" href="/app/detail/skipProductDetail.do?type=1&numIid='+item.numIid+'" class="title ui-link">'+item.shortTitle+'<div class="share-wrapper">' +
+                                '<img src="../../page/img/share.png"><span class="text">已售'+item.volume+'件</span><p>赚￥'+getRate(item.zkFinalPrice,item.commissionRate)+'</p></div>' +
+                                '<div class="price-wrapper1"><span class="price_qh">现价</span><span class="price">￥<span>'+item.zkFinalPrice+'</span></span></div></a></div></div></div></div>';
+
                         }
-                        superQueryListHtml+='<div class="sort_main ads-list2">' +
+                        /*superQueryListHtml+='<div class="sort_main ads-list2">' +
                             '<div class="goods-item clearfix">' +
                                 '<a data-transition="slide" href="/app/detail/skipProductDetail.do?type=1&numIid='+item.numIid+'" class="img ui-link">' +
                                     '<img src="'+item.pictUrl+'"></a><div class="text"><div>' +
                                      '<a data-transition="slide" href="/app/detail/skipProductDetail.do?type=1&numIid='+item.numIid+'" class="title ui-link">'+item.shortTitle+'<div class="share-wrapper">' +
-                            '<img src="../../page/img/share.png"><p>分享</p><span class="coupon-wrapper  theme-bg-color-1">券<b>'+couponAmt+'</b></span></div><div class="price-wrapper1">' +
+                            '<img src="../../page/img/share.png"><p>赚￥'+getRate(item.zkFinalPrice,item.commissionRate)+'</p>'+strCouponAmt+
+                            '</div><div class="price-wrapper1">' +
                             '<span class="price_yj">现价</span><span class="price">￥<span>'+item.zkFinalPrice+'</span></span>' +
                             '<span class="text">销量 </span><span class="sold-num">'+item.volume+'</span><div class="price-wrapper2">' +
-                            '<span class="price_qh">券后</span><span class="price">￥<span>'+accSub(item.zkFinalPrice,couponAmt)+'</span></span><span class="text">剩余 </span><span class="sold-num">'+item.couponRemainCount+'</span>' +
-                            '</div></div></a></div></div></div></div>';
+                            '<span class="price_qh">券后</span><span class="price">￥<span>'+accSub(item.zkFinalPrice,couponAmt)+'</span></span>'+strCouponCount +
+                            '</div></div></a></div></div></div></div>';*/
                     });
                     $(".pullup-goods").before(superQueryListHtml);
                     pageNo++;
@@ -241,10 +416,13 @@
         n = (r1 >= r2) ? r1 : r2;
         return ((arg1 * m - arg2 * m) / m).toFixed(n);
     }
+    function getRate(arg1,arg2)
+    {
+        return (Number(arg1)*Number(arg2)*Number(55)/1000000).toFixed(2);
+    }
 
     $(function(){
         get_list();
-
         $('.scrollable').scroll(function (e) {
             var h = $(this).height();//div可视区域的高度
             var st =$(this)[0].scrollTop;//滚动条的高度，即滚动条的当前位置到div顶部的距离
@@ -256,7 +434,6 @@
     })
 </script>
 <script>
-
     $('.sub_str_srarch').on('click',function(){
         $('#my-search').submit();
     });

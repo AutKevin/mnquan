@@ -55,20 +55,17 @@
     min-height: 143.28px; height: 143px;
 }
 .ads-list2 .goods-item .text .ui-link .share-wrapper{
-    margin-left: 45%;
     margin-top: 8px;
     position: absolute;
 }
 .ads-list2 .goods-item .text .ui-link img{
     position: absolute;
+    margin-left: 140px;
 }
 .ads-list2 .goods-item .text .ui-link p{
     font-size: 12px;
     color: red;
-   /* right: 15px;*/
-    /*position: relative;*/
-    padding-top: 27px;
-    /*margin-bottom: 114%;*/
+    margin-left: 130px;
 }
 .ads-list2 .goods-item .text .ui-link .price-wrapper1{
     font-size: 12px;position: absolute;height: 30px;bottom: 39px;

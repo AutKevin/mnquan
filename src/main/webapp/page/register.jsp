@@ -12,7 +12,7 @@
     <meta name="version" version="201810101200">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
     <title>注册_搜券宝</title>
-    <meta name="keywords" content="9.9包邮，白菜价，天天特价，优惠卷,淘券宝"/>
+    <meta name="keywords" content="9.9包邮，白菜价，天天特价，优惠卷,搜券宝"/>
     <meta name="description" content="9.9包邮，白菜价，天天特价"/>
     <meta itemprop="image" content="_50x50.jpg" />
     <link rel="stylesheet" href="../../page/js/common.css">
@@ -37,10 +37,10 @@
     </h1>
 
     <form action="" autocomplete="off" ui-login data-type="1" data-url="?r=login/register" onSubmit="return false;" data-mta-case="register" >
-        <div class="col-mar form_input_item" id="form_input_item_04">
-            <i class="iconfont tab_fl icon-yanzhengma"></i>
+        <div class="col-mar form_input_item" id="form_input_item_05">
+            <i class="iconfont tab_fl icon-shoppingbag"></i>
             <div class="inputtext">
-                <input type="number" autocomplete="off" id="code" name="code" placeholder="请输入用户名"  />
+                <input type="text" autocomplete="off" id="userName" name="userName" placeholder="请输入用户名"  />
                 <i class="iconfont icon-closecircle tab col-hr close"></i>
             </div>
             <p class="input_msg">用户名不能为空！</p>
@@ -59,7 +59,7 @@
                 <input type="password" autocomplete="off" maxLength="18" id="pwd1" name="pwd1" placeholder="请输入密码"  />
                 <i class="iconfont icon-eyeclose tab col-text showPassword"></i>
             </div>
-            <p class="input_msg">密码为8-16位的数字或字母！</p>
+            <p class="input_msg">密码为8-16位的数字和字母！</p>
         </div>
         <div class="col-mar form_input_item" id="form_input_item_03">
             <i class="iconfont tab_fl icon-path"></i>
@@ -67,7 +67,14 @@
                 <input type="password" autocomplete="off" maxLength="18" id="pwd2" name="pwd2" placeholder="请再次输入密码"  />
                 <i class="iconfont icon-eyeclose tab col-text showPassword"></i>
             </div>
-            <p class="input_msg">密码为8-16位的数字或字母！</p>
+            <p class="input_msg">密码为8-16位的数字和字母！</p>
+        </div>
+        <div class="col-mar form_input_item" id="form_input_item_04">
+            <i class="iconfont tab_fl icon-yanzhengma"></i>
+            <div class="inputtext">
+                <input type="number" autocomplete="off" id="code" name="code" placeholder="请输入邀请码"  />
+                <i class="iconfont icon-closecircle tab col-hr close"></i>
+            </div>
         </div>
         <div class="col-mar login_submit">
             <input id="my_submit" type="submit" class="btn btn-default btn-block btn-max"  value= "注册" >
@@ -75,7 +82,7 @@
         </div>
 
        <%-- <div class="col-mar col-888 font-size-12">
-            点击“注册”表示您已同意 <a href="/index.php?r=user/agreement" class="col-link">《淘券宝用户协议》</a>
+            点击“注册”表示您已同意 <a href="/index.php?r=user/agreement" class="col-link">《搜券宝用户协议》</a>
         </div>--%>
     </form>
 
@@ -90,6 +97,17 @@
     var domain = "http://"+window.location.host;
     var accountFlag = true;
     var pwdFlat = true;
+
+    $("#userName").blur(function(){
+        var userName = $("#userName").val(); //获取用户名
+        //如果手机号码不能通过验证
+        if(null == userName || "" == userName){
+            $("#form_input_item_05").attr("error","true");
+        }else {
+            $("#form_input_item_05").attr("error","false");
+        }
+    })
+
     $("#accountNo").blur(function(){
         var tel = $("#accountNo").val(); //获取手机号
         //如果手机号码不能通过验证
@@ -141,46 +159,48 @@
             $("#form_input_item_02").attr("error","true");
             return;
         }
+
+        var userName = $("#userName").val(); //获取用户名
+        //如果手机号码不能通过验证
+        if(null == userName || "" == userName){
+            var txt=  "用户名不能为空！";
+            window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
+            return;
+        }
+
         var accountNo = $("#accountNo").val(); //获取手机号
         var pwd1 = $("#pwd1").val(); //第一次输入的密码
         var pwd2 = $("#pwd2").val(); //第二次输入的密码
-        var agencyCode = $("#code").val(); //邀请码
-        console.log("pwd1="+pwd1)
-        console.log("pwd2="+pwd2)
+        var agencyId = $("#code").val(); //邀请码
         if(pwd1 != pwd2){
             var txt=  "两次输入的密码不一致！";
             window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
             return;
         }
-        console.log(agencyCode)
-
-        if("" == agencyCode){
-            agencyCode = "000001";
-        }
         $.ajax({
             url:""+"/app/user/register.do",
             async:false,
-            data: {'account':accountNo,'pwd':pwd1,'agencyCode':agencyCode},
+            data: {'account':accountNo,'pwd':pwd1,'agencyId':agencyId,'userName':userName},
             dataType:'json',
             type:"post",
             success:function(data){
                 console.log(data);
-                if("1" == data){//用户名或密码不能为空！
-                    var txt=  "用户名或密码不能为空,请重新登陆！";
+                if("1" == data){//手机号已经存在，请去登陆！
+                    var txt=  "手机号已经存在，请去登陆！";
                     window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
                 }
-                if("2" == data){//手机号已被注册，请去登陆！
-                    var txt=  "用户名或密码错误,请重新登陆！";
+                if("2" == data){//没有匹配到此邀请码的用户！
+                    var txt=  "没有匹配到此邀请码的用户！";
                     window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
                 }
-                if("3" == data){//登陆成功
-                    var txt=  "您输入的邀请码不存在！";
+                if("3" == data){//没有广告位了
+                    var txt=  "注册失败，请联系管理员！";
                     window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
                 }
                 if("4" == data){//注册成功
-                    var txt=  "您已注册成功，请去登陆";
+                    var txt=  "您已注册成功，请去登陆！";
                     window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.success);
-                    window.location.href = domain+"/app/user/center.do";
+                    window.location.href = domain+"/app/user/centre.do";
                 }
             }
         });

@@ -7,61 +7,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="036c6599-5d60-47ab-a709-64eccd12f462" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/mnquan/manager/IOrderManager.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/mnquan/manager/impl/OrderManagerImpl.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/mnquan/mapper/TbMnOrderMapper.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/mnquan/model/JsonBean.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/mnquan/model/TbMnOrderDo.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/mnquan/model/TbMnOrderDoExample.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/mnquan/utils/UuidUtil.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/mapper/TbMnOrderMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/mnquan_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/mnquan_war_exploded.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_dangdang_elastic_job_common_core_2_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_dangdang_elastic_job_common_core_2_1_5.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_dangdang_elastic_job_lite_core_2_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_dangdang_elastic_job_lite_core_2_1_5.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_dangdang_elastic_job_lite_spring_2_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_dangdang_elastic_job_lite_spring_2_1_5.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_2_4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_6_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/taobao_sdk_java_auto_1508141130900_20180918_source.xml" afterPath="" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/mnquan/mapper/TbMnAdzoneMapper.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/mnquan/model/TbMnAdzoneDo.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/mnquan/model/TbMnAdzoneDoExample.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/mapper/TbMnAdzoneMapper.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/page/img/coupon.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/page/js/style.css" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/mnquan.iml" afterPath="$PROJECT_DIR$/mnquan.iml" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/mnquan/commons/Contents.java" afterPath="$PROJECT_DIR$/src/main/java/cn/mnquan/commons/Contents.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/mnquan/controller/LoginController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/mnquan/controller/LoginController.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/mnquan/controller/OrderController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/mnquan/controller/OrderController.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/mnquan/controller/TaoBaoController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/mnquan/controller/TaoBaoController.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/mnquan/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/mnquan/controller/UserController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/mnquan/manager/ITaobaoApiManager.java" afterPath="$PROJECT_DIR$/src/main/java/cn/mnquan/manager/ITaobaoApiManager.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/mnquan/manager/IUserManager.java" afterPath="$PROJECT_DIR$/src/main/java/cn/mnquan/manager/IUserManager.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/mnquan/manager/IOrderManager.java" afterPath="$PROJECT_DIR$/src/main/java/cn/mnquan/manager/IOrderManager.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/mnquan/manager/impl/DtkManagerImpl.java" afterPath="$PROJECT_DIR$/src/main/java/cn/mnquan/manager/impl/DtkManagerImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/mnquan/manager/impl/LoginManagerImpl.java" afterPath="$PROJECT_DIR$/src/main/java/cn/mnquan/manager/impl/LoginManagerImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/mnquan/manager/impl/OrderManagerImpl.java" afterPath="$PROJECT_DIR$/src/main/java/cn/mnquan/manager/impl/OrderManagerImpl.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/mnquan/manager/impl/TaoBaoApiManagerImpl.java" afterPath="$PROJECT_DIR$/src/main/java/cn/mnquan/manager/impl/TaoBaoApiManagerImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/mnquan/manager/impl/TaoBaoManagerImpl.java" afterPath="$PROJECT_DIR$/src/main/java/cn/mnquan/manager/impl/TaoBaoManagerImpl.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/mnquan/manager/impl/UserManagerImpl.java" afterPath="$PROJECT_DIR$/src/main/java/cn/mnquan/manager/impl/UserManagerImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/mnquan/model/TbMnUserDo.java" afterPath="$PROJECT_DIR$/src/main/java/cn/mnquan/model/TbMnUserDo.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/mnquan/model/TbMnUserDoExample.java" afterPath="$PROJECT_DIR$/src/main/java/cn/mnquan/model/TbMnUserDoExample.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/mnquan/task/OrderManagerTask.java" afterPath="$PROJECT_DIR$/src/main/java/cn/mnquan/task/OrderManagerTask.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/mnquan/utils/DateUtil.java" afterPath="$PROJECT_DIR$/src/main/java/cn/mnquan/utils/DateUtil.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/TbMnUserMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/TbMnUserMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/properties/config.properties" afterPath="$PROJECT_DIR$/src/main/resources/properties/config.properties" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/spring/applicationContext.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring/applicationContext.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/mnquan/mapper/TbMnOrderMapper.java" afterPath="$PROJECT_DIR$/src/main/java/cn/mnquan/mapper/TbMnOrderMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/TbMnOrderMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/TbMnOrderMapper.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/spring/elastic-job.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring/elastic-job.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/page/centre.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/page/centre.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/choiceness.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/page/choiceness.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/classify.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/page/classify.jsp" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/page/classify_product.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/page/classify_product.jsp" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/page/classify_product_list.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/page/classify_product_list.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/classify_product_list_bak.jsp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/download.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/page/download.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/img/share.png" afterPath="$PROJECT_DIR$/src/main/webapp/page/img/share.png" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/page/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/page/index.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/index_bak.jsp" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/page/js/wap_common.css" afterPath="$PROJECT_DIR$/src/main/webapp/page/js/wap_common.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/js/wap_search.css" afterPath="$PROJECT_DIR$/src/main/webapp/page/js/wap_search.css" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/page/login.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/page/login.jsp" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/page/order_list.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/page/order_list.jsp" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/page/product_detail.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/page/product_detail.jsp" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/page/register.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/page/register.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/super_query.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/page/super_query.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/super_query_list.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/page/super_query_list.jsp" />
       <change beforePath="$PROJECT_DIR$/src/test/java/cn/mnquan/DBTest.java" afterPath="$PROJECT_DIR$/src/test/java/cn/mnquan/DBTest.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/cn/mnquan/OrderQueryTest.java" afterPath="$PROJECT_DIR$/src/test/java/cn/mnquan/OrderQueryTest.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/cn/mnquan/TbMaterialOptional.java" afterPath="$PROJECT_DIR$/src/test/java/cn/mnquan/TbMaterialOptional.java" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/mybatis-generator/generatorConfig.xml" afterPath="$PROJECT_DIR$/src/test/resources/mybatis-generator/generatorConfig.xml" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/TbMnUserMapper.xml" afterPath="$PROJECT_DIR$/target/classes/mapper/TbMnUserMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/target/classes/properties/config.properties" afterPath="$PROJECT_DIR$/target/classes/properties/config.properties" />
-      <change beforePath="$PROJECT_DIR$/target/classes/rebel.xml" afterPath="$PROJECT_DIR$/target/classes/rebel.xml" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/applicationContext.xml" afterPath="$PROJECT_DIR$/target/classes/spring/applicationContext.xml" />
       <change beforePath="$PROJECT_DIR$/target/classes/spring/elastic-job.xml" afterPath="$PROJECT_DIR$/target/classes/spring/elastic-job.xml" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/mybatis-generator/generatorConfig.xml" afterPath="$PROJECT_DIR$/target/test-classes/mybatis-generator/generatorConfig.xml" />
     </list>
@@ -78,97 +62,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TaoBaoController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/controller/TaoBaoController.java">
+      <file leaf-file-name="centre.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/page/centre.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="164" column="36" lean-forward="false" selection-start-line="164" selection-start-column="36" selection-end-line="164" selection-end-column="36" />
+            <state relative-caret-position="1892">
+              <caret line="92" column="16" lean-forward="false" selection-start-line="92" selection-start-column="16" selection-end-line="92" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TbMaterialOptional.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/cn/mnquan/TbMaterialOptional.java">
+      <file leaf-file-name="order_list.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/page/order_list.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+            <state relative-caret-position="4422">
+              <caret line="201" column="42" lean-forward="false" selection-start-line="201" selection-start-column="31" selection-end-line="201" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+      <file leaf-file-name="OrderController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/controller/OrderController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="254" column="17" lean-forward="false" selection-start-line="254" selection-start-column="17" selection-end-line="254" selection-end-column="17" />
+            <state relative-caret-position="1320">
+              <caret line="74" column="64" lean-forward="false" selection-start-line="74" selection-start-column="46" selection-end-line="74" selection-end-column="64" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="logback.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/logback.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="14" column="27" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TaoBaoManagerImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/manager/impl/TaoBaoManagerImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="45" column="40" lean-forward="false" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="elastic-job.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/spring/elastic-job.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="14" column="45" lean-forward="false" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.properties" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/properties/config.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="5" column="18" lean-forward="false" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OrderManagerTask.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/task/OrderManagerTask.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="21" column="29" lean-forward="false" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SimpleJob.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/com/dangdang/elastic-job-common-core/2.1.1/elastic-job-common-core-2.1.1.jar!/com/dangdang/ddframe/job/api/simple/SimpleJob.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-              <folding>
-                <marker date="1531878855758" expanded="false" signature="0:104" ph="/.../" />
-                <marker date="1531878855758" expanded="false" signature="159:252" ph="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -176,8 +95,71 @@
       <file leaf-file-name="OrderManagerImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/manager/impl/OrderManagerImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="62">
-              <caret line="41" column="16" lean-forward="false" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
+            <state relative-caret-position="1980">
+              <caret line="110" column="118" lean-forward="false" selection-start-line="110" selection-start-column="15" selection-end-line="110" selection-end-column="118" />
+              <folding>
+                <element signature="e#5470#5471#0" expanded="true" />
+                <element signature="e#5536#5537#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TaoBaoController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/controller/TaoBaoController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2948">
+              <caret line="167" column="100" lean-forward="false" selection-start-line="167" selection-start-column="81" selection-end-line="167" selection-end-column="100" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TaoBaoApiManagerImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/manager/impl/TaoBaoApiManagerImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="968">
+              <caret line="58" column="34" lean-forward="false" selection-start-line="58" selection-start-column="34" selection-end-line="58" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/controller/UserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="924">
+              <caret line="57" column="58" lean-forward="false" selection-start-line="57" selection-start-column="58" selection-end-line="57" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="elastic-job.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/spring/elastic-job.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="22">
+              <caret line="14" column="45" lean-forward="false" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TbMnOrderDoExample.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/model/TbMnOrderDoExample.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="23430">
+              <caret line="1087" column="56" lean-forward="false" selection-start-line="1087" selection-start-column="38" selection-end-line="1087" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/properties/config.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -194,40 +176,41 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>icon_header&gt;a</find>
-      <find>modelButto</find>
-      <find>seller</find>
-      <find>siteId</find>
-      <find>JsonWriter</find>
-      <find>goole</find>
-      <find>gson</find>
-      <find>guava</find>
-      <find>item_num</find>
-      <find>seller_nick</find>
-      <find>/app/order/order.do</find>
-      <find>pageH</find>
-      <find>scrollable</find>
-      <find>titl</find>
-      <find>alipa</find>
-      <find>/app/order/skipOrderPage.do</find>
-      <find>pub</find>
-      <find>crea</find>
-      <find>createTime</find>
       <find>alipayTotalPrice</find>
-      <find>icon-detail_search</find>
       <find>/app/index/getProductList</find>
       <find>oper_type</find>
       <find>order-nav-bg ov_h</find>
       <find>selectTeamAmt</find>
-      <find>selectOwmAmt</find>
       <find>/app/detail/skipProductDetail.do</find>
       <find>/app/query/superQueryList.do</find>
       <find>getCentreList</find>
       <find>quartz</find>
+      <find>45446900332</find>
+      <find>tbMnOrderDo</find>
+      <find>tb_status</find>
+      <find>data-type</find>
+      <find>icon-yanzhengma</find>
+      <find>agencyId</find>
+      <find>selectOwmAmt</find>
+      <find>session</find>
+      <find>淘券宝</find>
+      <find>${contextPath}</find>
+      <find>淘券</find>
+      <find>.ads-list2 .goods-item .text .ui-link p</find>
+      <find>.ads-list2 .goods-item .text .ui-link .share-wrapper</find>
+      <find>.order-na</find>
+      <find>icon-gerenzhongxin</find>
+      <find>iconfontv2</find>
+      <find>logout</find>
+      <find>icon-detail_search</find>
+      <find>BigDecimal</find>
+      <find>queryOrders</find>
+      <find>new BigDecimal</find>
     </findStrings>
     <replaceStrings>
       <replace>src</replace>
       <replace>javascript:void(0);</replace>
+      <replace>../..</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -241,53 +224,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/cn/mnquan/task/DeletePorductsTask.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/page/demo/swiper.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/page/product_detail_bakk.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/page/product_detail_bak.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/page/bak_product_detail.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/page/js/detail.css" />
         <option value="$PROJECT_DIR$/src/main/java/cn/mnquan/model/JsonBean.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/mnquan/controller/LoginController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/spring/applicationContext.xml" />
         <option value="$PROJECT_DIR$/src/main/java/cn/mnquan/utils/DateUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/mnquan/manager/IrderManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/mnquan/manager/impl/DtkManagerImpl.java" />
         <option value="$PROJECT_DIR$/src/test/java/cn/mnquan/OrderQueryTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/mnquan/manager/impl/LoginManagerImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/mnquan/model/TbMnOrderDo.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/page/centre.jsp" />
-        <option value="$PROJECT_DIR$/src/test/resources/mybatis-generator/generatorConfig.xml" />
         <option value="$PROJECT_DIR$/src/main/java/cn/mnquan/mapper/TbMnUserMapper.java" />
         <option value="$PROJECT_DIR$/src/test/java/cn/mnquan/mapper/TbMnUserMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/mnquan/manager/IUserManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/mnquan/manager/impl/UserManagerImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/mnquan/controller/OrderController.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/mnquan/manager/impl/TaoBaoManagerImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/page/js/wap_common.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/page/order_list.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/page/product_detail.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/page/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/page/classify_product.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/page/classify_product_list.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/mnquan/manager/IOrderManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/mnquan/mapper/TbMnOrderMapper.java" />
-        <option value="$PROJECT_DIR$/src/test/java/cn/mnquan/DBTest.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/TbMnOrderMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/cn/mnquan/commons/Contents.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/mnquan/manager/impl/TaoBaoApiManagerImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/mnquan/manager/ITaobaoApiManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/mnquan/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/mnquan/utils/UuidUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/page/login.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/page/register.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/mnquan/manager/impl/OrderManagerImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/mnquan/task/OrderManagerTask.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/spring/elastic-job.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/mnquan/controller/TaoBaoController.java" />
         <option value="$PROJECT_DIR$/src/test/java/cn/mnquan/TbMaterialOptional.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/page/download.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/mnquan/controller/OrderController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/page/index.jsp" />
+        <option value="$PROJECT_DIR$/src/test/resources/mybatis-generator/generatorConfig.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/mnquan/mapper/TbMnAdzoneMapper.java" />
+        <option value="$PROJECT_DIR$/src/test/java/cn/mnquan/DBTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/mnquan/manager/impl/UserManagerImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/mnquan/manager/impl/DtkManagerImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/page/super_query.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/page/classify.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/page/register.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/page/login.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/page/classify_product_list_bak.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/page/index_bak.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/page/choiceness.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/page/js/wap_search.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/page/super_query_list.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/page/js/wap_common.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/page/classify_product_list.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/page/classify_product.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/page/product_detail.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/mnquan/mapper/TbMnOrderMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/TbMnOrderMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/mnquan/manager/IOrderManager.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/page/order_list.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/mnquan/manager/impl/OrderManagerImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/page/centre.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/mnquan/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/properties/config.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring/elastic-job.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/mnquan/controller/TaoBaoController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/mnquan/manager/impl/TaoBaoApiManagerImpl.java" />
       </list>
     </option>
   </component>
@@ -328,7 +315,19 @@
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
           <item name="mnquan" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="mnquan" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+          <item name="clean" type="36feed69:MavenProjectsStructure$PluginNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="mnquan" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+          <item name="mybatis-generator" type="36feed69:MavenProjectsStructure$PluginNode" />
         </path>
       </expand>
       <select />
@@ -338,9 +337,8 @@
     <option name="skipTests" value="true" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="y" value="2" />
-    <option name="width" value="1378" />
+    <option name="x" value="-6" />
+    <option name="width" value="659" />
     <option name="height" value="733" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -361,9 +359,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -442,27 +439,48 @@
               <item name="mnquan" type="b2602c69:ProjectViewProjectNode" />
               <item name="mnquan" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mnquan" type="b2602c69:ProjectViewProjectNode" />
               <item name="mnquan" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mnquan" type="b2602c69:ProjectViewProjectNode" />
               <item name="mnquan" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mnquan" type="b2602c69:ProjectViewProjectNode" />
               <item name="mnquan" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mnquan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mnquan" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -471,8 +489,8 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="F:/taobao-sdk-java-auto_1508141130900-20181021.jar!/" />
-    <property name="SearchEverywhereHistoryKey" value="login&#9;FILE&#9;file://F:/tbk/project/mnquan/src/main/webapp/page/login.jsp" />
+    <property name="last_opened_file_path" value="E:/minsheng/minsheng-verify" />
+    <property name="SearchEverywhereHistoryKey" value="wap_common&#9;FILE&#9;file://F:/tbk/project/mnquan/src/main/webapp/page/js/wap_common.css&#10;login&#9;FILE&#9;file://F:/tbk/project/mnquan/src/main/webapp/page/login.jsp" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -483,10 +501,10 @@
       <recent name="cn.mnquan.mapper" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\tbk\project\mnquan\src\main\java\cn\mnquan\model" />
-      <recent name="F:\tbk\project\mnquan\src\main\resources\mapper" />
-      <recent name="F:\tbk\project\mnquan\src\main\webapp\page\js" />
       <recent name="F:\tbk\project\mnquan\src\main\webapp\page\img" />
+      <recent name="F:\tbk\project\mnquan\src\main\webapp\page\js" />
+      <recent name="F:\tbk\project\mnquan\src\main\resources\mapper" />
+      <recent name="F:\tbk\project\mnquan\src\main\java\cn\mnquan\model" />
       <recent name="F:\tbk\project\mnquan\src\main\webapp\page" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -517,14 +535,14 @@
       <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
-    <configuration name="OrderManagerImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="UserManagerImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="cn.mnquan.manager.impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="cn.mnquan.manager.impl.OrderManagerImpl" />
+      <option name="MAIN_CLASS_NAME" value="cn.mnquan.manager.impl.UserManagerImpl" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -550,7 +568,7 @@
       <module name="" />
       <envs />
     </configuration>
-    <configuration name="DBTest.queryTotalAmt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DBTest.addUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="cn.mnquan.*" />
@@ -562,32 +580,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="cn.mnquan" />
       <option name="MAIN_CLASS_NAME" value="cn.mnquan.DBTest" />
-      <option name="METHOD_NAME" value="queryTotalAmt" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="DtkTest.getProducts" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="cn.mnquan.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="mnquan" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="cn.mnquan" />
-      <option name="MAIN_CLASS_NAME" value="cn.mnquan.DtkTest" />
-      <option name="METHOD_NAME" value="getProducts" />
+      <option name="METHOD_NAME" value="addUser" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -625,7 +618,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="TbMaterialOptional.getProducts" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OrderQueryTest.queryOrder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="cn.mnquan.*" />
@@ -636,8 +629,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="cn.mnquan" />
-      <option name="MAIN_CLASS_NAME" value="cn.mnquan.TbMaterialOptional" />
-      <option name="METHOD_NAME" value="getProducts" />
+      <option name="MAIN_CLASS_NAME" value="cn.mnquan.OrderQueryTest" />
+      <option name="METHOD_NAME" value="queryOrder" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -990,6 +983,29 @@
         </option>
       </method>
     </configuration>
+    <configuration name="mnquan [mybatis-generator:generate]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="mybatis-generator:generate" />
+              </list>
+            </option>
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -1032,19 +1048,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Jetty Server.jetty" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.DBTest.queryTotalAmt" />
-      <item index="2" class="java.lang.String" itemvalue="Application.OrderManagerImpl" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.DtkTest.getProducts" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.DtkTest.getProductsFromDTK" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.TbMaterialOptional.getProducts" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.OrderQueryTest.queryOrder" />
+      <item index="2" class="java.lang.String" itemvalue="Maven.mnquan [mybatis-generator:generate]" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.DBTest.addUser" />
+      <item index="4" class="java.lang.String" itemvalue="Application.UserManagerImpl" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.DtkTest.getProductsFromDTK" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.TbMaterialOptional.getProducts" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.DtkTest.getProductsFromDTK" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.DtkTest.getProducts" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.DBTest.queryTotalAmt" />
-        <item index="4" class="java.lang.String" itemvalue="Application.OrderManagerImpl" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.DtkTest.getProductsFromDTK" />
+        <item index="1" class="java.lang.String" itemvalue="Application.UserManagerImpl" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.DBTest.addUser" />
+        <item index="3" class="java.lang.String" itemvalue="Maven.mnquan [mybatis-generator:generate]" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.OrderQueryTest.queryOrder" />
       </list>
     </recent_temporary>
   </component>
@@ -1074,43 +1090,56 @@
       <workItem from="1539910158407" duration="14286000" />
       <workItem from="1539946633241" duration="9647000" />
       <workItem from="1540012453967" duration="27994000" />
+      <workItem from="1540088381712" duration="30885000" />
+      <workItem from="1540169182613" duration="21771000" />
+      <workItem from="1540211410613" duration="8165000" />
+      <workItem from="1540256658389" duration="363000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DBTest_queryTotalAmt - 2018.10.20 at 20h 56m 05s.xml">
-      <configuration name="DBTest.queryTotalAmt" configurationId="JUnit" />
+    <history-entry file="DBTest_addUser - 2018.10.21 at 15h 45m 36s.xml">
+      <configuration name="DBTest.addUser" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DtkTest_getProducts - 2018.10.20 at 20h 56m 53s.xml">
-      <configuration name="DtkTest.getProducts" configurationId="JUnit" />
+    <history-entry file="DBTest_addUser - 2018.10.21 at 15h 48m 21s.xml">
+      <configuration name="DBTest.addUser" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DtkTest_getProductsFromDTK - 2018.10.20 at 21h 45m 10s.xml">
+    <history-entry file="DBTest_addUser - 2018.10.21 at 15h 50m 01s.xml">
+      <configuration name="DBTest.addUser" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DBTest_addUser - 2018.10.21 at 15h 50m 44s.xml">
+      <configuration name="DBTest.addUser" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DBTest_addUser - 2018.10.21 at 15h 51m 18s.xml">
+      <configuration name="DBTest.addUser" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DBTest_addUser - 2018.10.21 at 15h 52m 21s.xml">
+      <configuration name="DBTest.addUser" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DBTest_addUser - 2018.10.21 at 15h 54m 08s.xml">
+      <configuration name="DBTest.addUser" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DtkTest_getProductsFromDTK - 2018.10.21 at 18h 01m 41s.xml">
       <configuration name="DtkTest.getProductsFromDTK" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TbMaterialOptional_getProducts - 2018.10.20 at 22h 44m 30s.xml">
-      <configuration name="TbMaterialOptional.getProducts" configurationId="JUnit" />
+    <history-entry file="DtkTest_getProductsFromDTK - 2018.10.21 at 18h 18m 17s.xml">
+      <configuration name="DtkTest.getProductsFromDTK" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TbMaterialOptional_getProducts - 2018.10.20 at 22h 47m 38s.xml">
-      <configuration name="TbMaterialOptional.getProducts" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TbMaterialOptional_getProducts - 2018.10.20 at 22h 49m 22s.xml">
-      <configuration name="TbMaterialOptional.getProducts" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TbMaterialOptional_getProducts - 2018.10.20 at 22h 49m 40s.xml">
-      <configuration name="TbMaterialOptional.getProducts" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TbMaterialOptional_getProducts - 2018.10.20 at 22h 51m 59s.xml">
-      <configuration name="TbMaterialOptional.getProducts" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TbMaterialOptional_getProducts - 2018.10.20 at 22h 52m 26s.xml">
-      <configuration name="TbMaterialOptional.getProducts" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TbMaterialOptional_getProducts - 2018.10.20 at 22h 58m 04s.xml">
-      <configuration name="TbMaterialOptional.getProducts" configurationId="JUnit" />
+    <history-entry file="DtkTest_getProductsFromDTK - 2018.10.21 at 20h 18m 47s.xml">
+      <configuration name="DtkTest.getProductsFromDTK" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106418000" />
+    <option name="totallyTimeSpent" value="167602000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1118,8 +1147,8 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45034248" sideWeight="0.5060514" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
-      <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49143836" sideWeight="0.5030349" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18003026" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5068493" sideWeight="0.50907713" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19440243" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1127,30 +1156,30 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.635274" sideWeight="0.49394855" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39726028" sideWeight="0.4969651" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5068493" sideWeight="0.49092284" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5873288" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38527396" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.54452056" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25718608" sideWeight="0.4900285" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22844176" sideWeight="0.4900285" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5099715" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="SonarLint" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39726028" sideWeight="0.4969651" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1159,8 +1188,8 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45034248" sideWeight="0.5060514" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
-      <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49143836" sideWeight="0.5030349" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40393344" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5068493" sideWeight="0.50907713" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19440243" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1169,20 +1198,20 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.635274" sideWeight="0.49394855" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5068493" sideWeight="0.49092284" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39726028" sideWeight="0.4969651" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5873288" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38527396" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.54452056" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25718608" sideWeight="0.4900285" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.54452056" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22844176" sideWeight="0.4900285" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5099715" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="SonarLint" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
@@ -1206,82 +1235,77 @@
           <properties />
           <option name="timeStamp" value="39" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/cn/mnquan/task/OrderManagerTask.java</url>
-          <line>23</line>
-          <properties />
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="41" />
+      <option name="time" value="63" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/cn/mnquan/mapper/TbMnOrderMapper.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding />
+        <state relative-caret-position="242">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/cn/mnquan/OrderQueryTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/task/DtkTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="20" column="37" lean-forward="false" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="37" />
-          <folding />
+        <state relative-caret-position="248">
+          <caret line="30" column="30" lean-forward="false" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/model/TbMnOrderDoExample.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/manager/impl/DtkManagerImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="48" column="12" lean-forward="false" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
-          <folding />
+        <state relative-caret-position="-17">
+          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/cn/mnquan/BaseSpringTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/cn/mnquan/DtkTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="13" column="69" lean-forward="false" selection-start-line="13" selection-start-column="69" selection-end-line="13" selection-end-column="69" />
-          <folding />
+        <state relative-caret-position="374">
+          <caret line="25" column="26" lean-forward="false" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="21" column="37" lean-forward="false" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/centre.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
-          <caret line="54" column="62" lean-forward="false" selection-start-line="54" selection-start-column="43" selection-end-line="54" selection-end-column="62" />
+          <caret line="32" column="22" lean-forward="true" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbMnUserMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/controller/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="58" lean-forward="false" selection-start-line="3" selection-start-column="58" selection-end-line="3" selection-end-column="58" />
-          <folding>
-            <marker date="1540027841591" expanded="true" signature="3926:4042" ph="select from tb_mn_user" />
-            <marker date="1540027841591" expanded="true" signature="4125:4580" ph="insert into tb_mn_user... " />
-            <marker date="1540027841591" expanded="true" signature="6413:6444" ph="select count... tb_mn_user" />
-            <marker date="1540027841591" expanded="true" signature="7890:8426" ph="update tb_mn_user... " />
-            <marker date="1540027841591" expanded="true" signature="8632:9552" ph="update tb_mn_user... " />
-            <marker date="1540027841591" expanded="true" signature="9647:10116" ph="update tb_mn_user... " />
-          </folding>
+        <state relative-caret-position="362">
+          <caret line="45" column="66" lean-forward="true" selection-start-line="45" selection-start-column="66" selection-end-line="45" selection-end-column="66" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/model/TbMnUserDoExample.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/commons.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/download.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1144">
+          <caret line="52" column="9" lean-forward="false" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/loading.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-datasource.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1289,388 +1313,270 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/cn/mnquan/mapper/TbMnUserMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/super_query.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="15" column="64" lean-forward="false" selection-start-line="15" selection-start-column="64" selection-end-line="15" selection-end-column="64" />
-          <folding />
+        <state relative-caret-position="208">
+          <caret line="12" column="57" lean-forward="false" selection-start-line="12" selection-start-column="57" selection-end-line="12" selection-end-column="57" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/mapper/TbMnUserMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/classify.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="34" lean-forward="true" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+        <state relative-caret-position="157">
+          <caret line="16" column="57" lean-forward="false" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="57" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/mybatis-generator/generatorConfig.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/register.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="99" column="16" lean-forward="false" selection-start-line="99" selection-start-column="16" selection-end-line="99" selection-end-column="16" />
-          <folding />
+        <state relative-caret-position="186">
+          <caret line="14" column="57" lean-forward="false" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="57" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/manager/IUserManager.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/index_bak.jsp" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/choiceness.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="12" column="29" lean-forward="false" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-          <folding />
+        <state relative-caret-position="186">
+          <caret line="11" column="59" lean-forward="true" selection-start-line="11" selection-start-column="59" selection-end-line="11" selection-end-column="59" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/model/TbMnOrderDo.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/classify_product_list_bak.jsp" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/model/TbMnMaterialOptionalDo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/img/coupon.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/js/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="29" column="36" lean-forward="false" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.2.5.RELEASE/spring-web-4.2.5.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
+        <state relative-caret-position="87">
           <caret line="137" column="0" lean-forward="false" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/page/js/common.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="4" column="13046" lean-forward="false" selection-start-line="4" selection-start-column="13046" selection-end-line="4" selection-end-column="13046" />
-          <folding>
-            <element signature="e#619#11714#1" expanded="false" />
-          </folding>
+        <state relative-caret-position="350">
+          <caret line="4" column="13455" lean-forward="false" selection-start-line="4" selection-start-column="13442" selection-end-line="4" selection-end-column="13455" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/js/wap_search.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-246">
+          <caret line="19" column="17" lean-forward="false" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/page/js/wap_common.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="35" column="36" lean-forward="false" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="36" />
-          <folding>
-            <element signature="e#17488#28583#1" expanded="false" />
-          </folding>
+        <state relative-caret-position="190">
+          <caret line="63" column="1" lean-forward="false" selection-start-line="63" selection-start-column="1" selection-end-line="63" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/order_list.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="75" column="17" lean-forward="false" selection-start-line="75" selection-start-column="17" selection-end-line="75" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/product_detail.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="38" column="64" lean-forward="false" selection-start-line="38" selection-start-column="64" selection-end-line="38" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/controller/OrderController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="74" column="64" lean-forward="false" selection-start-line="74" selection-start-column="46" selection-end-line="74" selection-end-column="64" />
-          <folding>
-            <element signature="e#2004#2012#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="2464">
+          <caret line="112" column="62" lean-forward="false" selection-start-line="112" selection-start-column="11" selection-end-line="112" selection-end-column="62" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/page/classify_product.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="162" column="25" lean-forward="false" selection-start-line="162" selection-start-column="25" selection-end-line="162" selection-end-column="25" />
-          <folding />
+        <state relative-caret-position="308">
+          <caret line="50" column="17" lean-forward="false" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/super_query_list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7608">
+          <caret line="413" column="78" lean-forward="false" selection-start-line="413" selection-start-column="78" selection-end-line="413" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/product_detail.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="924">
+          <caret line="42" column="65" lean-forward="false" selection-start-line="42" selection-start-column="65" selection-end-line="42" selection-end-column="65" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/page/classify_product_list.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="55" column="76" lean-forward="false" selection-start-line="55" selection-start-column="76" selection-end-line="55" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/manager/impl/UserManagerImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="79" column="28" lean-forward="false" selection-start-line="79" selection-start-column="28" selection-end-line="79" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/model/TbMnUserDo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="23" />
-          <folding />
+        <state relative-caret-position="330">
+          <caret line="51" column="44" lean-forward="true" selection-start-line="51" selection-start-column="25" selection-end-line="51" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/mapper/TbMnOrderMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="32" column="1" lean-forward="true" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
-          <folding />
+        <state relative-caret-position="88">
+          <caret line="10" column="32" lean-forward="false" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbMnOrderMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="700" column="37" lean-forward="true" selection-start-line="700" selection-start-column="37" selection-end-line="700" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/manager/IOrderManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
-          <caret line="14" column="30" lean-forward="false" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+          <caret line="14" column="30" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/img/return.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/img/quxiao.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/img/daifukuan.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/img/yifukuan.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/img/wodetuijian.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/img/tuijianhaoyou.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/img/shart_button.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/img/live_weixin.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/img/czozuozhinan.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/order_list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4422">
+          <caret line="201" column="42" lean-forward="false" selection-start-line="201" selection-start-column="31" selection-end-line="201" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/model/TbMnOrderDoExample.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <marker date="1531820455354" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1531820455354" expanded="true" signature="277:284" ph="{}" />
-            <marker date="1531820455354" expanded="true" signature="327:499" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbMnOrderMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="690" column="11" lean-forward="false" selection-start-line="690" selection-start-column="11" selection-end-line="690" selection-end-column="11" />
-          <folding>
-            <marker date="1540040112295" expanded="true" signature="6348:6466" ph="select from tb_mn_order" />
-            <marker date="1540040112295" expanded="true" signature="6550:8338" ph="insert into tb_mn_order... " />
-            <marker date="1540040112295" expanded="true" signature="14324:14356" ph="select count... tb_mn_order" />
-            <marker date="1540040112295" expanded="true" signature="18863:20970" ph="update tb_mn_order... " />
-            <marker date="1540040112295" expanded="true" signature="21177:24808" ph="update tb_mn_order... " />
-            <marker date="1540040112295" expanded="true" signature="24904:26769" ph="update tb_mn_order... " />
-            <marker date="1540040112295" expanded="true" signature="26891:27003" ph="SELECT SUM(I... tb_mn_order" />
-            <marker date="1540040112295" expanded="true" signature="26891:27050" ph="SELECT SUM(I... tb_mn_order" />
-            <marker date="1540040112295" expanded="true" signature="27158:27287" ph="SELECT IFNUL... tb_mn_order" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/cn/mnquan/DBTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/cn/mnquan/DtkTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="25" column="26" lean-forward="false" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="26" />
+        <state relative-caret-position="23430">
+          <caret line="1087" column="56" lean-forward="false" selection-start-line="1087" selection-start-column="38" selection-end-line="1087" selection-end-column="56" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/manager/impl/DtkManagerImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/centre.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-861">
-          <caret line="57" column="16" lean-forward="false" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="16" />
+        <state relative-caret-position="1892">
+          <caret line="92" column="16" lean-forward="false" selection-start-line="92" selection-start-column="16" selection-end-line="92" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/super_query_list.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/controller/OrderController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="197" column="48" lean-forward="false" selection-start-line="197" selection-start-column="20" selection-end-line="197" selection-end-column="48" />
+        <state relative-caret-position="1320">
+          <caret line="74" column="64" lean-forward="false" selection-start-line="74" selection-start-column="46" selection-end-line="74" selection-end-column="64" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/commons/Contents.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="36" lean-forward="false" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/manager/ITaobaoApiManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="16" column="34" lean-forward="false" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="53" column="9" lean-forward="false" selection-start-line="40" selection-start-column="7" selection-end-line="53" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_40/src.zip!/java/text/SimpleDateFormat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="577" column="11" lean-forward="false" selection-start-line="577" selection-start-column="11" selection-end-line="577" selection-end-column="11" />
-          <folding>
-            <element signature="e#23443#23444#0" expanded="false" />
-            <element signature="e#23515#23516#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/utils/DateUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="21" column="27" lean-forward="false" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
-          <folding>
-            <element signature="e#655#656#0" expanded="false" />
-            <element signature="e#696#697#0" expanded="false" />
-            <element signature="e#3384#3385#0" expanded="false" />
-            <element signature="e#3453#3454#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/utils/UuidUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="15" lean-forward="false" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
-          <folding>
-            <element signature="e#175#176#0" expanded="false" />
-            <element signature="e#226#227#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="369" column="44" lean-forward="false" selection-start-line="369" selection-start-column="31" selection-end-line="369" selection-end-column="44" />
-          <folding>
-            <marker date="1540034348793" expanded="true" signature="21423:21434" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/manager/impl/TaoBaoApiManagerImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="108" column="7" lean-forward="false" selection-start-line="102" selection-start-column="4" selection-end-line="108" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/register.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="124" column="6" lean-forward="false" selection-start-line="124" selection-start-column="6" selection-end-line="124" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/dangdang/elastic-job-common-core/2.1.1/elastic-job-common-core-2.1.1.jar!/com/dangdang/ddframe/job/api/simple/SimpleJob.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding>
-            <marker date="1531878855758" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1531878855758" expanded="false" signature="159:252" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/manager/impl/OrderManagerImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="41" column="16" lean-forward="false" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/task/OrderManagerTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="21" column="29" lean-forward="false" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+        <state relative-caret-position="1980">
+          <caret line="110" column="118" lean-forward="false" selection-start-line="110" selection-start-column="15" selection-end-line="110" selection-end-column="118" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#5470#5471#0" expanded="true" />
+            <element signature="e#5536#5537#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/manager/impl/TaoBaoManagerImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="45" column="40" lean-forward="false" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/controller/TaoBaoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="164" column="36" lean-forward="false" selection-start-line="164" selection-start-column="36" selection-end-line="164" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/cn/mnquan/TbMaterialOptional.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/logback.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="27" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/elastic-job.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="14" column="45" lean-forward="false" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="254" column="17" lean-forward="false" selection-start-line="254" selection-start-column="17" selection-end-line="254" selection-end-column="17" />
+        <state relative-caret-position="924">
+          <caret line="57" column="58" lean-forward="false" selection-start-line="57" selection-start-column="58" selection-end-line="57" selection-end-column="58" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/properties/config.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="5" column="18" lean-forward="false" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+        <state relative-caret-position="198">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/controller/TaoBaoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2948">
+          <caret line="167" column="100" lean-forward="false" selection-start-line="167" selection-start-column="81" selection-end-line="167" selection-end-column="100" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/mnquan/manager/impl/TaoBaoApiManagerImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="968">
+          <caret line="58" column="34" lean-forward="false" selection-start-line="58" selection-start-column="34" selection-end-line="58" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/elastic-job.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="14" column="45" lean-forward="false" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
           <folding />
         </state>
       </provider>

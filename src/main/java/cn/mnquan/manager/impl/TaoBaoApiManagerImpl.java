@@ -56,7 +56,7 @@ public class TaoBaoApiManagerImpl implements ITaobaoApiManager{
         TaobaoClient client = new DefaultTaobaoClient(Contents.MATERIAL_OPTIONAL_URL, Contents.appkey, Contents.secret);
         TbkDgMaterialOptionalRequest req = new TbkDgMaterialOptionalRequest();
         req.setQ(itemUrl);
-        req.setAdzoneId(Contents.adzone_id);
+        req.setAdzoneId(adzoneId);
         TbkDgMaterialOptionalResponse optionalResponse = client.execute(req);
         TbkDgMaterialOptionalResponse.MapData mapData = optionalResponse.getResultList().get(0);
         return mapData;

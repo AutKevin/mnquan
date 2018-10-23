@@ -9,14 +9,14 @@
     <meta content="telephone=no" name="format-detection">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
     <title>搜券宝</title>
-    <meta name="keywords" content="9.9包邮，白菜价，天天特价，优惠卷,淘券宝">
+    <meta name="keywords" content="9.9包邮，白菜价，天天特价，优惠卷,搜券宝">
     <meta name="description" content="9.9包邮，白菜价，天天特价">
-    <link rel="stylesheet" href="${contextPath}/page/js/bootstrap.min.css">
-    <script src="${contextPath}/page/js/jquery.js" type="text/javascript"></script>
-    <script src="${contextPath}/page/js/bootstrap.min.js"></script>
-    <script src="${contextPath}/page/js/swiper-4.4.1.min.js" type="text/javascript"></script>
-    <link href="${contextPath}/page/js/wap_common.css" rel="stylesheet">
-    <link href="${contextPath}/page/js/wapcat.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../../page/js/bootstrap.min.css">
+    <script src="../../page/js/jquery.js" type="text/javascript"></script>
+    <script src="../../page/js/bootstrap.min.js"></script>
+    <script src="../../page/js/swiper-4.4.1.min.js" type="text/javascript"></script>
+    <link href="../../page/js/wap_common.css" rel="stylesheet">
+    <link href="../../page/js/wapcat.css" rel="stylesheet"/>
 </head>
 <body data-appid="489217" data-in="1" style="">
 <div class="main-title clearfix theme-bg-color-1">
@@ -45,6 +45,9 @@
             </li>
             <li>
                 <a href="/app/user/centre.do"><i class="iconfontv2 icon-gerenzhongxin"></i>我的</a>
+            </li>
+            <li>
+                <a href="/app/user/logout.do"><i class="iconfontv2 icon-datail_feedback"></i>退出</a>
             </li>
         </ul>
     </div>
@@ -148,10 +151,19 @@
 </style>
 <div id="return-top">
     <a>
-        <img style="width: 45px;height: 45px;" src="${contextPath}/page/img/top.png">
+        <img style="width: 45px;height: 45px;" src="../../page/img/top.png">
     </a>
 </div>
 </body>
+<script>
+    document.addEventListener("plusready", function() {
+        // 注册返回按键事件
+        plus.key.addEventListener('backbutton', function() {
+            // 事件处理
+            window.history.back();
+        }, false);
+    });
+</script>
 <script>
     var pageNo = 1;
     var domain = "http://"+window.location.host;

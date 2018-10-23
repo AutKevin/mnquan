@@ -1,7 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" session="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--<%@ include file="/page/commons.jsp" %>--%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +12,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
     <script src="../../page/js/jquery.js" type="text/javascript"></script>
     <title>登录_搜券宝</title>
-    <meta name="keywords" content="9.9包邮，白菜价，天天特价，优惠卷,淘券宝"/>
+    <meta name="keywords" content="9.9包邮，白菜价，天天特价，优惠卷,搜券宝"/>
     <meta name="description" content="9.9包邮，白菜价，天天特价"/>
     <meta itemprop="image" content="_50x50.jpg" />
     <link rel="stylesheet" href="../../page/js/common.css">
@@ -43,7 +42,7 @@
         <div class="col-mar form_input_item" id="form_input_item_01" error >
             <i class="iconfont tab_fl icon-phone"></i>
             <div class="inputtext">
-                <input type="text" maxLength="11" id="accountNo" name="accountNo" value="17521333602" placeholder="手机号码"  />
+                <input type="text" maxLength="11" id="accountNo" name="accountNo" placeholder="手机号码"  />
                 <i class="iconfont icon-closecircle tab col-hr close"></i>
             </div>
             <p class="input_msg">请输入正确11位的手机号码！</p>
@@ -51,10 +50,10 @@
         <div class="col-mar form_input_item" id="form_input_item_02">
             <i class="iconfont tab_fl icon-path"></i>
             <div class="inputtext">
-                <input type="password" maxLength="18" id="pwd" name="pwd" value="mju7nhy6" placeholder="密码"  />
+                <input type="password" maxLength="18" id="pwd" name="pwd" placeholder="密码"  />
                 <i class="iconfont icon-eyeclose tab col-text showPassword"></i>
             </div>
-            <p class="input_msg">密码为8-16位的数字或字母！</p>
+            <p class="input_msg">密码为8-16位的数字和字母！</p>
         </div>
 
 
@@ -73,6 +72,15 @@
 </footer>
 <div style="display: none;"></div>
 </body>
+<script>
+    document.addEventListener("plusready", function() {
+        // 注册返回按键事件
+        plus.key.addEventListener('backbutton', function() {
+            // 事件处理
+            window.history.back();
+        }, false);
+    });
+</script>
 <script>
     var domain = "http://"+window.location.host;
     var accountFlag = true;

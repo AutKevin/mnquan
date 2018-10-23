@@ -4,7 +4,6 @@ import cn.mnquan.manager.IOrderManager;
 import cn.mnquan.manager.IUserManager;
 import cn.mnquan.mapper.TbMnCatItemMapper;
 import cn.mnquan.mapper.TbMnOrderMapper;
-import cn.mnquan.mapper.TbMnUserMapper;
 import cn.mnquan.model.TbMnCatItemDo;
 import cn.mnquan.model.TbMnCatItemDoExample;
 import cn.mnquan.model.TbMnOrderDo;
@@ -57,5 +56,14 @@ public class DBTest extends BaseSpringTest {
         List<TbMnUserDo> userDos = userManager.queryUserList(tbMnUserDo);
             double  teadAmt = orderManager.getTeadAmt(userDos);
         System.out.println(ownAmt +teadAmt );
+    }
+
+    @Test
+    public void addUser(){
+        TbMnUserDo userDo = new TbMnUserDo();
+        userDo.setUserName("王婷");
+        userDo.setAccount("18103873682");
+        userDo.setPwd("XSW2cde3");
+        userManager.addUser(userDo);
     }
 }

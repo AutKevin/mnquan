@@ -30,4 +30,8 @@ public interface TbMnOrderMapper {
     double selectOwmAmt(TbMnUserDo tbMnUserDo);
 
     double selectTeamAmt(List<TbMnUserDo> userDos);
+
+    double selectDaiOwmAmt(TbMnUserDo tbMnUserDo);
+
+    double selectDaiTeamAmt(List<TbMnUserDo> userDos);
 }

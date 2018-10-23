@@ -19,6 +19,7 @@ import org.springframework.stereotype.Service;
 import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
 import java.net.URLEncoder;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -41,7 +42,7 @@ public class OrderManagerImpl implements IOrderManager{
      */
     public void queryOrderByTask() throws ApiException {
         String dateTime = DateUtil.getTenBeforeDate();
-        /*String dateTime = "2018-08-21 21:20:00";*/
+        /*String dateTime = "2018-10-21 01:30:00";*/
         String tenBefore = null;
         try {
             tenBefore = URLEncoder.encode(dateTime,"utf8");
@@ -51,6 +52,7 @@ public class OrderManagerImpl implements IOrderManager{
         }
         HttpClientResponse response =  HttpClientUtils.get(Contents.HM_URL+"?appkey="+Contents.HM_APPKEY+"&appsecret="+Contents.HM_APPSECRET+"&sid=3657&start_time="+tenBefore+"&span=600");
 
+        log.info("自动查询订单,resp:{}",response);
         String json = response.getResponseContent();
         if("[]".equals(json)){
             return;
@@ -90,7 +92,14 @@ public class OrderManagerImpl implements IOrderManager{
         TbMnOrderDoExample example = new TbMnOrderDoExample();
         TbMnOrderDoExample.Criteria criteria = example.createCriteria();
         if(!"1".equals(String.valueOf(tbMnOrderDo.getTkStatus()))){
-            criteria.andTkStatusEqualTo(tbMnOrderDo.getTkStatus());
+            if("14".equals(String.valueOf(tbMnOrderDo.getTkStatus()))){
+                List<Short> values = new ArrayList<Short>();
+                values.add((short)12);
+                values.add((short)14);
+                criteria.andTkStatusIn(values);
+            }else {
+                criteria.andTkStatusEqualTo(tbMnOrderDo.getTkStatus());
+            }
         }
         criteria.andAdzoneIdIn(adzoneIds);
         example.setOrderByClause("create_time desc");
@@ -128,6 +137,25 @@ public class OrderManagerImpl implements IOrderManager{
     public double getTeadAmt(List<TbMnUserDo> userDos) {
         return tbMnOrderMapper.selectTeamAmt(userDos);
     }
+
+    /**
+     *获取用户自己的待结算金额
+     * @param tbMnUserDo
+     * @return
+     */
+    public double getdaiOwnAmt(TbMnUserDo tbMnUserDo) {
+        return tbMnOrderMapper.selectDaiOwmAmt(tbMnUserDo);
+    }
+
+    /**
+     * 获取用户团队的待结算金额
+     * @param userDos
+     * @return
+     */
+    public double getDaiTeadAmt(List<TbMnUserDo> userDos) {
+        return tbMnOrderMapper.selectDaiTeamAmt(userDos);
+    }
+
 
     public static void main(String[] args) {
         double pubSharePreeFee = Double.valueOf("0.52");

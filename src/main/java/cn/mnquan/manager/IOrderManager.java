@@ -20,4 +20,8 @@ public interface IOrderManager {
     double getownAmt(TbMnUserDo tbMnUserDo);
 
     double getTeadAmt(List<TbMnUserDo> userDos);
+
+    double getdaiOwnAmt(TbMnUserDo tbMnUserDo);
+
+    double getDaiTeadAmt(List<TbMnUserDo> userDos);
 }

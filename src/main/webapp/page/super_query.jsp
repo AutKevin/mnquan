@@ -9,12 +9,12 @@
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta content="telephone=no" name="format-detection"/>
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
-    <title>搜索分类_淘券宝</title>
-    <meta name="keywords" content="9.9包邮，白菜价，天天特价，优惠卷,淘券宝"/>
+    <title>搜索分类_搜券宝</title>
+    <meta name="keywords" content="9.9包邮，白菜价，天天特价，优惠卷,搜券宝"/>
     <meta name="description" content="9.9包邮，白菜价，天天特价"/>
-    <link href="${contextPath}/page/js/jquery.min.js" rel="stylesheet">
-    <link href="${contextPath}/page/js/wap_common.css" rel="stylesheet">
-    <link href="${contextPath}/page/js/wap_search.css" rel="stylesheet"/>
+    <link href="../../page/js/jquery.min.js" rel="stylesheet">
+    <link href="../../page/js/wap_common.css" rel="stylesheet">
+    <link href="../../page/js/wap_search.css" rel="stylesheet"/>
 </head>
 <style>
     .main-title .search {
@@ -122,6 +122,16 @@
         <dd style="text-align:center;margin-bottom: 80px">商品准确信息请与商品所属店铺经营者沟通确认</dd>
 
     </div>
+
+    <script>
+        document.addEventListener("plusready", function() {
+            // 注册返回按键事件
+            plus.key.addEventListener('backbutton', function() {
+                // 事件处理
+                window.history.back();
+            }, false);
+        });
+    </script>
 
     <script>
         $(".main-title .search-tab a").on("click",function(){

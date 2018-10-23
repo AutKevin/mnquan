@@ -77,6 +77,7 @@
                 </div>
             </div>
         </div>
+        <a href="/app/user/logout.do" class="iconfont icon-shez setup">退出</a>
         <canvas ui-user-info-canvas id="canvas"></canvas>
     </div>
     <style>
@@ -86,19 +87,19 @@
     </style>
     <ul class="ui_nav_list_01">
         <li class="row-s">
-            <p>${totalAmt}</p>
+            <p style="color: red;">¥${totalAmt}</p>
             <p class="col-12-8 text-left">
                 可提现(元)
             </p>
         </li>
         <li class="row-s">
-            <p>${totalAmt}</p>
+            <p style="color: red;">¥${daiTotalAmt}</p>
             <p class="col-12-8 text-left">
-                上月收益(元)
+                待结算(元)
             </p>
         </li>
         <li class="row-s">
-            <p>${totalAmt}</p>
+            <p style="color: red;">¥${totalAmt}</p>
             <p class="col-12-8 text-left">
                 累计收益(元)
             </p>
@@ -151,7 +152,7 @@
                 <a  href="javascript:void(0);" onclick="myOrder('13');">
                     <i class="iconfont "><img src="../../page/img/quxiao.png" alt=""></i>
                     <p class="col-12-8">
-                        失效
+                        已失效
                     </p>
                 </a>
             </li>
@@ -205,6 +206,15 @@
     </div>
 </div>
 </body>
+<script>
+    document.addEventListener("plusready", function() {
+        // 注册返回按键事件
+        plus.key.addEventListener('backbutton', function() {
+            // 事件处理
+            window.history.back();
+        }, false);
+    });
+</script>
 <script>
     function myOrder(tkStatus){
         $.ajax({

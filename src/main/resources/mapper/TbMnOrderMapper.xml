@@ -689,4 +689,19 @@
       #{item.id,jdbcType=VARCHAR}
     </foreach>
   </select>
+  <select id="selectDaiOwmAmt" parameterType="cn.mnquan.model.TbMnUserDo" resultType="java.lang.Double">
+    SELECT IFNULL(SUM(IFNULL(t.`pub_share_pre_fee`,0)),0)
+    FROM tb_mn_order t
+    WHERE t.`tk_status`in ('12','14')
+    and t.adzone_id = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectDaiTeamAmt" parameterType="java.util.List" resultType="java.lang.Double">
+    SELECT IFNULL(SUM(IFNULL(t.`pub_share_pre_fee`,0)),0)
+    FROM tb_mn_order t
+    WHERE t.`tk_status`in ('12','14')
+    and t.adzone_id in
+    <foreach collection="list" index="index" item="item" open="(" separator="," close=")">
+      #{item.id,jdbcType=VARCHAR}
+    </foreach>
+  </select>
 </mapper>

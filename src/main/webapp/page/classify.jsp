@@ -13,8 +13,8 @@
     <link href="/favicon.ico" rel="icon">
     <link href="/touch-icon-iphone.png" rel="Bookmark">
 
-    <title>全部分类_淘券宝</title>
-    <meta name="keywords" content="9.9包邮，白菜价，天天特价，优惠卷,淘券宝">
+    <title>全部分类_搜券宝</title>
+    <meta name="keywords" content="9.9包邮，白菜价，天天特价，优惠卷,搜券宝">
     <meta name="description" content="9.9包邮，白菜价，天天特价">
     <script src="../page/js/jquery.js" type="text/javascript"></script>
     <link href="../page/js/swiper-4.4.1.min.css" rel="stylesheet">
@@ -45,7 +45,7 @@
         <a data-mold="1" data-el="2" href="javascript:void(0);" class="col-10-2 ">
             <em class="num" style="background-image: -webkit-gradient(linear, left 20, right 0, from(#DC143C), to(	#FF0000));-webkit-background-clip: text;-webkit-text-fill-color: transparent;">新</em>
             <i class="iconfont"><img src="https://img.alicdn.com/imgextra/i4/2053469401/TB23GLTn77mBKNjSZFyXXbydFXa-2053469401.png"></i>
-            <span style="color: rgb(102, 102, 102);">9.9包邮</span>
+            <span style="color: rgb(102, 102, 102);">准备中</span>
         </a>
 
         <a data-mold="1" data-el="3" href="/app/classify" class="col-10-2 ">
@@ -58,7 +58,7 @@
             <span style="color: rgb(102, 102, 102);">收藏</span>
         </a>--%>
 
-        <a data-mold="1" data-el="5" href="/app/user/center.do" class="col-10-2 ">
+        <a data-mold="1" data-el="5" href="/app/user/centre.do" class="col-10-2 ">
             <i class="iconfont"><img src="https://img.alicdn.com/imgextra/i3/2053469401/TB2WXrhqFkoBKNjSZFkXXb4tFXa-2053469401.png"></i>
             <span style="color: rgb(102, 102, 102);">我的</span>
         </a>
@@ -103,6 +103,15 @@
         </div>
     </nav>
 </body>
+<script>
+    document.addEventListener("plusready", function() {
+        // 注册返回按键事件
+        plus.key.addEventListener('backbutton', function() {
+            // 事件处理
+            window.history.back();
+        }, false);
+    });
+</script>
 <script>
     $(function(){
         //左侧类目滑块控制

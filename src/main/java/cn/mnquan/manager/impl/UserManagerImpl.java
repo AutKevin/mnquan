@@ -1,18 +1,17 @@
 package cn.mnquan.manager.impl;
 
 import cn.mnquan.manager.IUserManager;
+import cn.mnquan.mapper.TbMnAdzoneMapper;
 import cn.mnquan.mapper.TbMnAgencyMapper;
 import cn.mnquan.mapper.TbMnUserMapper;
-import cn.mnquan.model.TbMnAgencyDo;
-import cn.mnquan.model.TbMnAgencyDoExample;
-import cn.mnquan.model.TbMnUserDo;
-import cn.mnquan.model.TbMnUserDoExample;
+import cn.mnquan.model.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 /**
  * <p>
@@ -28,6 +27,8 @@ public class UserManagerImpl implements IUserManager{
     private TbMnUserMapper tbMnUserMapper;
     @Autowired
     private TbMnAgencyMapper tbMnAgencyMapper;
+    @Autowired
+    private TbMnAdzoneMapper tbMnAdzoneMapper;
 
     public String addUser(TbMnUserDo tbMnUserDo) {
         TbMnUserDoExample example = new TbMnUserDoExample();
@@ -35,30 +36,50 @@ public class UserManagerImpl implements IUserManager{
 
         List<TbMnUserDo> list = tbMnUserMapper.selectByExample(example);
         if(null != list && list.size() > 0){
-            return "2";//用户名已经存在
+            return "1";//用户名已经存在
         }
 
         //如果用户输入邀请码，则进行校验
-        String agencyId = "000001";
-        if(!agencyId.equals(tbMnUserDo.getAgencyId())){
-            TbMnAgencyDoExample agencyDoExample = new TbMnAgencyDoExample();
-            agencyDoExample.createCriteria().andAgencyCodeEqualTo(tbMnUserDo.getAgencyId());
-
-            List<TbMnAgencyDo> agencyDos = tbMnAgencyMapper.selectByExample(agencyDoExample);
+        String agencyId = "";
+        if(null != tbMnUserDo.getAgencyId() && tbMnUserDo.getAgencyId().length() > 2){
+            TbMnAdzoneDoExample tbMnAdzoneDoExample = new TbMnAdzoneDoExample();
+            tbMnAdzoneDoExample.createCriteria().andRegisterCodeEqualTo(tbMnUserDo.getAgencyId());
+            List<TbMnAdzoneDo> agencyDos = tbMnAdzoneMapper.selectByExample(tbMnAdzoneDoExample);
             if(null != agencyDos && agencyDos.size() > 0){
-                agencyId = agencyDos.get(0).getId();
+                agencyId = agencyDos.get(0).getAdzoneId();
+            }else {
+                return "2";//未匹配到此邀请码的用户！
             }
         }
 
-        TbMnUserDo record = new TbMnUserDo();
-        record.setAccount(tbMnUserDo.getAccount());
-        record.setPwd(tbMnUserDo.getPwd());
-        record.setAgencyId(agencyId);
-        record.setState("1");
-        record.setCreatedAt(new Date());
+        //为用户分配一个可用的广告位Id
+        TbMnAdzoneDoExample adzoneDoExample = new TbMnAdzoneDoExample();
+        TbMnAdzoneDoExample.Criteria criteria = adzoneDoExample.createCriteria();
+        criteria.andStateEqualTo("1");
 
-        tbMnUserMapper.insertSelective(record);
-        return "4";
+        List<TbMnAdzoneDo> adzoneDos = tbMnAdzoneMapper.selectByExample(adzoneDoExample);
+        if(null != adzoneDos && adzoneDos.size() > 0){
+            TbMnAdzoneDo adzoneDo = new TbMnAdzoneDo();
+            adzoneDo.setState("2");
+            adzoneDo.setAccount(tbMnUserDo.getAccount());
+            adzoneDo.setRegisterCode(getRandom());
+
+            String adzoneId = adzoneDos.get(0).getAdzoneId();
+            criteria.andAdzoneIdEqualTo(adzoneId);
+            tbMnAdzoneMapper.updateByExampleSelective(adzoneDo,adzoneDoExample);
+            TbMnUserDo record = new TbMnUserDo();
+            record.setId(adzoneId);
+            record.setAccount(tbMnUserDo.getAccount());
+            record.setPwd(tbMnUserDo.getPwd());
+            record.setAgencyId(agencyId);
+            record.setState("1");
+            record.setCreatedAt(new Date());
+            record.setUserName(tbMnUserDo.getUserName());
+            tbMnUserMapper.insertSelective(record);
+            return "4";
+        }else {
+            return "3";//暂时没有广告位
+        }
     }
 
     public TbMnUserDo queryUserByAccountNo(String account) {
@@ -81,5 +102,23 @@ public class UserManagerImpl implements IUserManager{
         TbMnUserDoExample example = new TbMnUserDoExample();
         example.createCriteria().andAgencyIdEqualTo(tbMnUserDo.getId());
         return tbMnUserMapper.selectByExample(example);
+    }
+
+    private String getRandom(){
+        Random random = new Random();
+        String result="";
+        for (int i=0;i<4;i++)
+        {
+            result+=random.nextInt(10);
+        }
+
+        TbMnAdzoneDoExample example = new TbMnAdzoneDoExample();
+        example.createCriteria().andRegisterCodeEqualTo(result);
+
+        List<TbMnAdzoneDo> adzoneDos = tbMnAdzoneMapper.selectByExample(example);
+        if(null != adzoneDos && adzoneDos.size() > 0){
+            getRandom();
+        }
+       return result;
     }
 }

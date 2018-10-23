@@ -30,7 +30,7 @@
             id="orderManagerTask"
             class="cn.mnquan.task.OrderManagerTask"
             registry-center-ref="regCenter"
-            cron="0 0/1 * * * ?"
+            cron="0 0/2 * * * ?"
             sharding-total-count="1"/>
 
 </beans>

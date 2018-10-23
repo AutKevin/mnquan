@@ -64,6 +64,7 @@ public class OrderController extends BaseController{
         Object accountNo = session.getAttribute("accountNo");
         TbMnUserDo tbMnUserDo = userManager.queryUserByAccountNo(String.valueOf(accountNo));
         List<String> adzoneIds = new ArrayList<String>();
+        tbMnOrderDo.setAdzoneId(tbMnUserDo.getId());
         adzoneIds.add(tbMnUserDo.getId());
         if("2".equals(tbMnUserDo.getIsAgency())){//如果是代理，则需要查询出团队的订单
             List<TbMnUserDo> list = userManager.queryUserList(tbMnUserDo);
@@ -71,7 +72,6 @@ public class OrderController extends BaseController{
                 adzoneIds.add(userDo.getId());//获取团队广告位id
             }
         }
-        tbMnOrderDo.setAdzoneId(tbMnUserDo.getAgencyId());
         List<TbMnOrderDo> list = orderManager.queryOrderByStatus(tbMnOrderDo,adzoneIds);
         sendMessages(response, JSON.toJSONString(list));
     }
