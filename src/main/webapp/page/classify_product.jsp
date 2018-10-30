@@ -13,6 +13,7 @@
     <meta name="description" content="9.9包邮，白菜价，天天特价">
     <link rel="stylesheet" href="../../page/js/bootstrap.min.css">
     <script src="../../page/js/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../../page/js/jquery.lazyload.min.js"></script>
     <script src="../../page/js/bootstrap.min.js"></script>
     <script src="../../page/js/swiper-4.4.1.min.js" type="text/javascript"></script>
     <link href="../../page/js/wap_common.css" rel="stylesheet">
@@ -83,7 +84,7 @@
         <c:forEach items="${catItemDos}" var="item" varStatus="tbkCoupon">
             <li style="" class="cat-item ">
                 <a onclick="myProgress('${item.skipUrl}','2')" href="javascript:void(0);">
-                    <img class="lazy" src="${item.categoryPictureUrl}" style="background: rgb(245, 245, 245); display: block;"><span>${item.categoryName}</span>
+                    <img class="lazy" src="/page/img/rolling.gif" data-original="${item.categoryPictureUrl}" style="background: rgb(245, 245, 245); display: block;"><span>${item.categoryName}</span>
                 </a>
             </li>
         </c:forEach>
@@ -221,7 +222,7 @@
                         classifyProductHtml+='<div class="goods-item"><a data-gid="16537009" onclick="myProgress('+item.numIid+','+'3'+')" href="javascript:void(0);" class="img">' +
                             '<span class="coupon-wrapper  theme-bg-color-1">券 <i>￥</i><b>'+item.couponAmount+'</b></span>' +
                             '<span class="today-wrapper"><b>NEW</b></span>' +
-                            '<img class="lazy" src='+item.pictUrl+' style="background: rgb(245, 245, 245); display: inline;"></a>' +
+                            '<img class="lazy" src="/page/img/rolling.gif" data-original='+item.pictUrl+' style="background: rgb(245, 245, 245); display: inline;"></a>' +
                             '<a data-gid="16537009" href="/index.php?r=p/d&amp;id=16537009&amp;u=489217" class="title">' +
                             '<div class="text">【千选】'+item.shortTitle+'</div></a>' +
                             '<div class="price-wrapper"><span class="price">￥<span>'+accSub(item.zkFinalPrice,item.couponAmount)+'</span></span>' +
@@ -231,6 +232,8 @@
                     $("#classify_product_div").before(classifyProductHtml);
                     pageNo++;
                 }
+                lazy();
+
             }
         });
     }
@@ -291,6 +294,14 @@
                 clearInterval(progressId);
             }
         },50);
+    }
+</script>
+<script type="text/javascript">
+    function lazy() {
+        $(".lazy").lazyload({
+            placeholder : "/page/img/rolling.gif", //加载图片前的占位图片
+            effect      : "fadeIn" //加载图片使用的效果(淡入)
+        });
     }
 </script>
 </html>

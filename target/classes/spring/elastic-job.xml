@@ -12,7 +12,7 @@
                         ">
     <!--配置作业注册中心 172.31.40.25-->
     <reg:zookeeper id="regCenter"
-                   server-lists="172.31.40.25:2181"
+                   server-lists="47.104.192.49:2181"
                    namespace="mnquan-job"
                    base-sleep-time-milliseconds="1000"
                    max-sleep-time-milliseconds="3000"
@@ -26,11 +26,28 @@
             cron="0 20 1  * * ?"
             sharding-total-count="1"/>
 
-    <job:simple
-            id="orderManagerTask"
-            class="cn.mnquan.task.OrderManagerTask"
-            registry-center-ref="regCenter"
-            cron="0 0/2 * * * ?"
-            sharding-total-count="1"/>
+    <job:simple id="orderManagerTask" class="cn.mnquan.task.OrderManagerTask"
+                registry-center-ref="regCenter"
+                cron="0 */5 * * * ?"
+                sharding-total-count="1"
+                monitor-execution="false"
+                misfire="true"
+                overwrite="true"
+                reconcile-interval-minutes="10"
+                description="自动查询订单"
+                job-sharding-strategy-class="com.dangdang.ddframe.job.lite.api.strategy.impl.RotateServerByNameJobShardingStrategy">
+    </job:simple>
+
+    <job:simple id="autoSendWeiBoTask" class="cn.mnquan.task.AutoSendWeiBoTask"
+                registry-center-ref="regCenter"
+                cron="0 */10 * * * ?"
+                sharding-total-count="1"
+                monitor-execution="false"
+                misfire="true"
+                overwrite="true"
+                reconcile-interval-minutes="10"
+                description="微博自动发券"
+                job-sharding-strategy-class="com.dangdang.ddframe.job.lite.api.strategy.impl.RotateServerByNameJobShardingStrategy">
+    </job:simple>
 
 </beans>

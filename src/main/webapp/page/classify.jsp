@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" session="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ include file="/page/zhuanlian.jsp" %>
 <!DOCTYPE html>
 <html style="overflow: hidden;">
 <head>
@@ -35,20 +36,30 @@
 <!-- 主界面具体展示内容 -->
 <a id="ui_class" href="javascript:;" ui-class="" data-bottom="50px" data-url="/index.php" class="active"></a>
 <!--icon-detail_home icon-detail_servicer-->
+<Style>
+    .ui_bot_tab .row-s .col-10-2{
+        width: 20%;
+    }
+</Style>
 <div class="ui_bot_tab" data-mta_name="首页-底部导航" ui-mta-modular="">
     <div class="row-s">
-        <a data-mold="1" data-el="1" href="/app" class="col-10-2 ">
+        <a data-mold="1" data-el="1" href="/app" class="col-10-2">
             <i class="iconfont"><img src="https://img.alicdn.com/imgextra/i1/2053469401/TB2GCzpnVkoBKNjSZFkXXb4tFXa-2053469401.png"></i>
             <span style="color: rgb(102, 102, 102);">首页</span>
         </a>
 
-        <a data-mold="1" data-el="2" href="javascript:void(0);" class="col-10-2 ">
+        <a data-mold="1" data-el="2" href="javascript:void(0);" class="col-10-2">
             <em class="num" style="background-image: -webkit-gradient(linear, left 20, right 0, from(#DC143C), to(	#FF0000));-webkit-background-clip: text;-webkit-text-fill-color: transparent;">新</em>
             <i class="iconfont"><img src="https://img.alicdn.com/imgextra/i4/2053469401/TB23GLTn77mBKNjSZFyXXbydFXa-2053469401.png"></i>
             <span style="color: rgb(102, 102, 102);">准备中</span>
         </a>
 
-        <a data-mold="1" data-el="3" href="/app/classify" class="col-10-2 ">
+        <a data-mold="1" data-el="4" id="zhuanlian" href="javascript:void(0);" class="col-10-2">
+            <i class="iconfont"><img src="../../page/img/zhuanlian.png"></i>
+            <span style="color: rgb(102, 102, 102);">转链</span>
+        </a>
+
+        <a data-mold="1" data-el="3" href="/app/classify" class="col-10-2">
             <i class="iconfont"><img src="https://img.alicdn.com/imgextra/i1/2053469401/TB2y4_qnVkoBKNjSZFkXXb4tFXa-2053469401.png"></i>
             <span style="color: rgb(253, 87, 92);">分类</span>
         </a>
@@ -58,7 +69,7 @@
             <span style="color: rgb(102, 102, 102);">收藏</span>
         </a>--%>
 
-        <a data-mold="1" data-el="5" href="/app/user/centre.do" class="col-10-2 ">
+        <a data-mold="1" data-el="5" href="/app/user/centre.do" class="col-10-2">
             <i class="iconfont"><img src="https://img.alicdn.com/imgextra/i3/2053469401/TB2WXrhqFkoBKNjSZFkXXb4tFXa-2053469401.png"></i>
             <span style="color: rgb(102, 102, 102);">我的</span>
         </a>
@@ -103,6 +114,37 @@
         </div>
     </nav>
 </body>
+</body>
+<script>
+    $("#zhuanlian").click(function () {
+        $(".t-zhuanlian").css("display","inline");
+        $(".t-zhuanlian-body").val("");
+    });
+    $(".t-zhuanlian-header").click(function () {
+        $(".t-zhuanlian").css("display","none");
+        $(".t-zhuanlian-body").val("");
+    });
+    $(".t-zhuanlian-modelButto").click(function () {
+        var zhuanlian = $(".t-zhuanlian-body").val();
+        if(null == zhuanlian){
+            alert("数据不能为空")
+        }
+        $.ajax({
+            url:""+"/app/query/zhuanlian.do",
+            async:false,
+            data: {'zhuanlian':zhuanlian},
+            dataType:'json',
+            type:"post",
+            success:function(data){
+                if("1" == data){
+                    alert("查询失败")
+                }else{
+                    window.location.href = domain+"/app/detail/skipProductDetail.do?numIid="+data;
+                }
+            }
+        });
+    });
+</script>
 <script>
     document.addEventListener("plusready", function() {
         // 注册返回按键事件

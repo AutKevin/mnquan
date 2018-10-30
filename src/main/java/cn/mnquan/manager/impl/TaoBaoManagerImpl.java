@@ -127,4 +127,20 @@ public class TaoBaoManagerImpl implements ITaoBaoManager{
         List<TbMnProductDetailDo> list =tbMnProductDetailMapper.selectByExample(example);
         return list.get(0);
     }
+
+    /**
+     * 查询推荐语
+     * @param optionalDo1
+     */
+    public void queryRecommendMsg(TbMnMaterialOptionalDo optionalDo1) {
+        TbMnMaterialOptionalDoExample example = new TbMnMaterialOptionalDoExample();
+        example.createCriteria().andNumIidEqualTo(optionalDo1.getNumIid());
+
+        List<TbMnMaterialOptionalDo> list =tbMnMaterialOptionalMapper.selectByExample(example);
+        if(null != list && list.size() > 0){
+            optionalDo1.setJddPrice(list.get(0).getJddPrice());
+        }else {
+            optionalDo1.setJddPrice(list.get(0).getTitle());
+        }
+    }
 }

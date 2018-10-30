@@ -14,6 +14,7 @@
     <meta name="description" content="9.9包邮，白菜价，天天特价"/>
     <script src="../../page/js/clipboard.min.js" type="text/javascript"></script>
     <script src="../../page/js/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../../page/js/jquery.lazyload.min.js"></script>
     <script src="../../page/js/bootstrap.min.js"></script>
     <script src="../../page/js/swiper-4.4.1.min.js" type="text/javascript"></script>
     <link rel="stylesheet" href="../../page/js/swiper-4.4.1.min.css">
@@ -110,9 +111,7 @@
                 原价 ¥${itemDetail.zkFinalPrice}
             </div>
             <div class="col-12-6 text-right auth">
-                <c:if test="${itemDetail.freeShipment == true}">
-                    <span><i class="iconfont icon-detail_icon col-money"></i>包邮</span>
-                </c:if>
+                分享赚 ¥${rate}
             </div>
         </div>
 
@@ -130,7 +129,7 @@
             <img src="http://cmsstatic.dataoke.com//wap_new/main/images/goods_quan.png?v=201810101200" alt="">
         </div>
         <div class="goods_desc col-mar col-888">
-            ${optionalDo.title}        </div>
+            ${optionalDo.jddPrice}        </div>
     </div>
     <div class="hr"></div>
     <div class="ov_h" id="anchors_title" ></div>
@@ -138,7 +137,7 @@
         <h3>宝贝详情</h3>
         <div class="imglist">
             <c:forEach items="${images}" var="item" varStatus="tbkCoupon">
-                <img src="${item}" ui-lazyload alt="">
+                <img class="lazy" src="/page/img/rolling.gif" data-original="${item}">
             </c:forEach>
         </div>
     </div>
@@ -362,12 +361,12 @@
 </div>
 <script>
     var domain = "http://"+window.location.host;
-    $(function(){
+   /* $(function(){
         var flag = $("#ifLogin").val();
         if(flag == "false"){//用户未登陆，则进行提示
             $(".to-login").css("display","inline");
         }
-    })
+    })*/
 
     var accountFlag = true;
     var pwdFlat = true;
@@ -437,7 +436,7 @@
             }
         });
     });
-    $(".to-login-header").click(function () {
+    $(".to-login-close").click(function () {
         $(".to-login").css("display","none");
     });
 </script>
@@ -516,6 +515,15 @@
         $(".share-butto").css("background-color","#CD6889");
         $(".share-butto").text("请再复制一次");
     });
+</script>
+<script type="text/javascript">
+    $(document).ready(
+        function($){
+            $(".lazy").lazyload({
+                placeholder : "/page/img/rolling.gif", //加载图片前的占位图片
+                effect      : "fadeIn" //加载图片使用的效果(淡入)
+            });
+        });
 </script>
 </body>
 </html>

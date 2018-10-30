@@ -26,4 +26,6 @@ public interface TbMnMaterialOptionalMapper {
     int updateByPrimaryKey(TbMnMaterialOptionalDo record);
 
     List<TbMnMaterialOptionalDo> getCentreList();
+
+    TbMnMaterialOptionalDo selectWeiBoProduct();
 }

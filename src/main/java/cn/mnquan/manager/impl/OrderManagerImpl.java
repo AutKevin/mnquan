@@ -3,7 +3,9 @@ package cn.mnquan.manager.impl;
 import cn.mnquan.commons.Contents;
 import cn.mnquan.manager.IOrderManager;
 import cn.mnquan.manager.ITaobaoApiManager;
+import cn.mnquan.manager.IUserManager;
 import cn.mnquan.mapper.TbMnOrderMapper;
+import cn.mnquan.mapper.TbMnUserMapper;
 import cn.mnquan.model.*;
 import cn.mnquan.utils.DateUtil;
 import cn.mnquan.utils.HttpClientUtils;
@@ -36,6 +38,8 @@ public class OrderManagerImpl implements IOrderManager{
     private TbMnOrderMapper tbMnOrderMapper;
     @Autowired
     private ITaobaoApiManager taobaoApiManager;
+    @Autowired
+    private IUserManager userManager;
 
     /**
      * 定时任务定时查询订单
@@ -154,6 +158,45 @@ public class OrderManagerImpl implements IOrderManager{
      */
     public double getDaiTeadAmt(List<TbMnUserDo> userDos) {
         return tbMnOrderMapper.selectDaiTeamAmt(userDos);
+    }
+
+    /**
+     * 获取用户的总金额
+     * @param tbMnUserDo
+     * @return
+     */
+    public double getTotalAmt(TbMnUserDo tbMnUserDo) {
+        double ownAmt = 0;
+        double teadAmt = 0;
+        //用户本身的总金额*55%
+        ownAmt = tbMnOrderMapper.selectOwmAmt(tbMnUserDo);
+        ownAmt = new BigDecimal(Double.toString(ownAmt)).multiply(new BigDecimal(Double.toString(55))).divide(new BigDecimal(Double.toString(100))).doubleValue();
+        List<TbMnUserDo> userDos = userManager.queryUserList(tbMnUserDo);
+        if(null != userDos && userDos.size() > 0){
+            //获取用户团队人员的总金额*5%d
+            teadAmt = tbMnOrderMapper.selectTeamAmt(userDos);
+            teadAmt = new BigDecimal(Double.toString(teadAmt)).multiply(new BigDecimal(Double.toString(5))).divide(new BigDecimal(Double.toString(100))).doubleValue();
+        }
+        return new BigDecimal(Double.toString(ownAmt)).add(new BigDecimal(Double.toString(teadAmt))).setScale(2, BigDecimal.ROUND_DOWN).doubleValue();
+    }
+
+    /**
+     * 获取用户待结算的总金额
+     * @param tbMnUserDo
+     * @return
+     */
+    public double getDaiTotalAmt(TbMnUserDo tbMnUserDo) {
+        double daiOwnAmt = 0;
+        double daiTeadAmt = 0;
+        //用户本身的待结算金额*55%
+        daiOwnAmt = tbMnOrderMapper.selectDaiOwmAmt(tbMnUserDo);
+        daiOwnAmt = new BigDecimal(daiOwnAmt).multiply(new BigDecimal(55)).divide(new BigDecimal(100)).doubleValue();
+        List<TbMnUserDo> userDos = userManager.queryUserList(tbMnUserDo);
+        if(null != userDos && userDos.size() > 0){
+            daiTeadAmt = tbMnOrderMapper.selectDaiTeamAmt(userDos);
+            daiTeadAmt = new BigDecimal(daiTeadAmt).multiply(new BigDecimal(5)).divide(new BigDecimal(100)).doubleValue();
+        }
+        return new BigDecimal(daiOwnAmt).add(new BigDecimal(daiTeadAmt)).setScale(2, BigDecimal.ROUND_DOWN).doubleValue();
     }
 
 

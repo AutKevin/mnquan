@@ -1,88 +1,56 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" session="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
+<!DOCTYPE html>
+<html xmlns:wb="http://open.weibo.com/wb">
 <head>
-    <meta charset="UTF-8">
-    <title>大狗子笔记</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
-    <link href="/static/blog/css/base.css" rel="stylesheet">
-    <link href="/static/blog/css/index.css" rel="stylesheet">
-    <link href="/static/blog/css/m.css" rel="stylesheet">
-    <link href="/static/blog/css/main.css" rel="stylesheet">
-    <!--[if lt IE 9]>
-    <script src="js/modernizr.js"></script>
-    <![endif]-->
-    <script type="text/javascript" src="/static/blog/js/jquery.js"></script>
-</head>
+    <title>不可错过！超高佣金！招募优惠券代理</title>
+    <meta charset="UTF-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width"/>
+    <script src="https://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css">
+        *{margin:0;padding:0;outline:0}
+        html{background:#fff center center repeat;color:#3e3e3e;font-size:14px;
+            font-family:-apple-system-font,"Helvetica Neue","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
+        a,a:hover,a:visited{color:#607fa6;text-decoration:none}
+        h1,h2,h3,h4,h5,h6{font-weight:400;font-size:16px}#goal{display:none}.wrap{display:block}.inner{display:block;padding:20px 15px 15px}
+        .title{margin-bottom:10px;line-height:1.4;font-weight:400;font-size:24px;color:#000}
+        .meta{margin-bottom:18px;line-height:20px;font-size:16px;color:#8c8c8c}
+        .meta em{font-style:normal;margin-right:4px}.meta a{margin-right:4px}
+        .content{display:block;padding:10px 0;color:#3e3e3e}
+        .content img{display:block;margin:0 auto;max-width:100%}
+        .content p{clear:both;font-size:18px;line-height:1.6;min-height:1em;text-indent:2em;white-space:pre-wrap;word-wrap:break-word}
+        .content p.tip{margin:5px 0;font-size:14px;color:#999}.content b{background:#f00;padding:1px 3px;border-radius:3px;color:#fff}
+        .content mark{background:#ff0;padding:1px 3px;border-radius:3px}.source{color:#8c8c8c;font-size:16px;line-height:32px}
+        .source em{font-style:normal;margin-right:6px}.source a{margin-right:6px}.source-icon{margin-left:5px}
+        .relative{display:block;font-size:16px;border-top:#f3f3f3 10px solid;border-bottom:#f3f3f3 10px solid}
+        .relative a,.relative a:hover,.relative a:visited{display:block;margin:10px 0;color:#8c8c8c}
+        .footer{display:block;text-align:center;padding:10px 0;color:#8c8c8c;font-size:18px}
+        .qrcode{display:none}.weixin{display:block;padding:10px 0;text-align:center}
+        .weixin .line{margin:10px 0;font-size:18px}
+        .weixin .number{display:block;margin:0 auto;padding:15px 0;text-align:center;font-size:26px;color:#f00;width:240px;background:0;
+            border:#f00 3px solid;border-radius:30px}
+        .weixin .button{display:block;margin:20px auto;padding:15px 0;text-align:center;font-size:18px;color:#fff;width:240px;background:#f00;
+            border-radius:5px;cursor:pointer}.weixin .done{color:#f00;background:transparent}.comments{margin:10px 0}
+       @media screen and (min-width:1024px){.wrap{margin:0 auto;max-width:700px}.relative{margin:0 auto;max-width:700px;border-top-width:1px;border-bottom-width:1px}.footer{padding:50px 0}
+           .qrcode{display:block;padding:16px;position:fixed;right:20px;top:20px;text-align:center;border:#d9dadc 1px solid}.qrcode img{width:102px;height:102px;margin-bottom:5px}.qrcode p{color:#717375}}</style><script>var _hmt=_hmt||[];(function(){var b=document.createElement("script");b.src="//hm.baidu.com/hm.js?12d25e42dd48d79a728148ff55222592";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(b,a)})();</script></head>
 <body>
-<div id="wrapper">
-    <header>
-        <div class="headtop"></div>
-        <div class="contenttop">
-            <div class="logo f_l">一个菜成狗的笔记</div>
-            <div class="search f_r">
-
+    <div class="wrap">
+        <div class="inner">
+            <h2 class="title">不可错过！超高佣金！招募优惠券代理！</h2>
+            <div class="meta"><a href="javascript:;">搜券宝优惠券中心</a></div>
+            <div class="content"><p>世界正在进入“零工经济”时代，你是不是也想获得一份待遇优厚的兼职工作呢？如果你在找一份用零散碎片时间赚钱的零工，千万不要错过，我们将提供给你最火爆的零成本低门槛的<b>淘宝优惠券项目</b>，而且还是<b>全网最高90%佣金比率</b>分佣方案！</p><p></p>
+                <img src="http://cdn.bizhuli.cn/yhq/1.png?20180814" alt="配图"/><p></p><p>你是不是经常被拉入各种<mark>淘宝天猫内部优惠券</mark>的群里，群主每隔几分钟就会推送一款包含大额优惠券的产品，还可以在群里搜索你想要的产品优惠券呢？</p><p>你是不是经常被推荐安装各种打着<mark>自购省钱分享赚钱</mark>的APP应用程序，并且成为会员还提供额外返利呢？</p><p>你是不是觉得很开心，可以买到物美价廉的商品，还觉得非常的方便和实用呢？</p><p></p>
+                <img src="http://cdn.bizhuli.cn/yhq/2.png?20180814" alt="配图"/><p></p><p>在认可这种模式，并且觉得省钱实用的同时，你是否想过优惠券为何如此风靡？答案当然是，推广优惠券<b>可以赚钱</b>啦！</p><p>淘宝天猫有<mark>90%以上的店家</mark>，都提供了推广产品的佣金，并且其中还有数万店家提供了<mark>超高比率的佣金和大额的优惠券</mark>来冲销量。在提供给消费者优惠券的大额优惠后，推广者还能拿到丰厚的佣金回报！</p><p>还有比这个更轻松的赚钱模式嘛？你只需要一部手机，<b>不论你是宝妈、学生还是工作之余有时间的白领，都可以轻松上手赚取佣金</b>！</p>
+                <p>加入我们将获得让你不可拒绝的优势：</p><p>1.<mark>零成本加盟淘宝推广</mark>，我们将提供给你专属的代理后台，可以获取推广物料和查看收入并提现佣金。</p><p>2.<mark>数万优惠券大产品库</mark>，我们将提供给你包含数量庞大的高佣金大额券产品后台，推广获取高额佣金。</p><p>3.<mark>全网最高佣金比率方案</mark>，我们将提供给你<b>90%</b>的税后佣金分成，秒杀一切同行代理方案、APP或者返利。</p><p>4.<mark>推介好友佣金分成传递</mark>，我们将提供给你推荐加入好友<b>5%</b>的税后佣金分成，一起组建一支强大联盟军。</p>
+                <p></p><img src="http://cdn.bizhuli.cn/yhq/3.png?20180814" alt="配图"/><p></p><p>你在心动的同时，是不是也很好奇，做优惠券推广，一个月下来到底能赚多钱呢？上图就是一位我们这边做的还不错的宝妈今年6~7月的佣金打款截图。大部分做的一般的代理一个月都能有几百块的收入，所以想补贴个自己的家用水电费还是轻轻松松的啦！</p><p>除此之外，你是不是还担心自己做不好推广，不懂如何上手呢？没有关系的，我们会<mark>有专门的导师指导你如何建立和维护优惠券群</mark>，帮助你快速上手起步赚钱哈！</p><p></p><p>我们不生产和销售产品，我们<b>只是优惠券的搬运工</b>！</p>
+                <p>赶紧联系下面的客服微信咨询免费开通代理后台吧！晚一天少赚一天哦！</p><p></p><img id="scan1" style="max-width:240px;" src="/page/img/code.jpg" alt="二维码"/><div class="weixin"><div class="line">微信扫描二维码</div><div class="line"><b>添加客服微信</b></div><div class="line">或手工添加客服微信号</div><input id="contact" class="number" type="text" value="nn21wkc"/><div id="copy" class="button">一键复制微信号</div></div><p></p></div>
+            <div class="footer">搜券宝优惠券中心 &copy; 2018</div>
+            <div class="qrcode">
+                <img id="scan2" src="/page/img/code.jpg" alt="二维码"/>
+                <p>微信扫一扫</p>
+                <p>加客服咨询</p>
+                <wb:share-button appkey="3767052176" addition="number" type="button" default_text="%E6%90%9C%E5%88%B8%E5%AE%9D%E4%BC%98%E6%83%A0%E5%88%B8%E4%B8%AD%E5%BF%83-%E6%B7%98%E5%AE%9D%E4%BC%98%E6%83%A0%E5%88%B8%E9%A2%86%E5%8F%96%E7%BD%91%E7%AB%99%2C%E9%A2%86%E5%88%B8%E7%BD%91"></wb:share-button>
             </div>
-            <div class="blank"></div>
-            <nav>
-
-            </nav>
-            <script type="text/javascript">
-                // Navigation Menu
-                $(function() {
-                    $(".menu ul").css({display: "none"}); // Opera Fix
-                    $(".menu li").hover(function(){
-                        $(this).find('ul:first').css({visibility: "visible",display: "none"}).slideDown("normal");
-                    },function(){
-                        $(this).find('ul:first').css({visibility: "hidden"});
-                    });
-                });
-            </script>
-        </div>
-    </header>
-    <div class="jztop"></div>
-
-    <div class="container">
-        <div class="con_content">
-            <div class="about_box">
-
-                <div class="f_box">
-                    <p class="a_title">【转】深度学习笔记1：神经网络理解</p>
-                    <p class="p_title"></p>
-                    <p class="box_p">
-                    <span>
-                        发布时间：2018年8月27日 20:42
-                    </span>
-                        <span>
-                        作者：Master
-                    </span>
-                        <span>
-                        来源：转载
-                    </span>
-                        <span>
-                        点击：52
-                    </span>
-                    </p>
-                    <!-- 可用于内容模板 -->
-                </div>
-                <ul class="about_content">
-
-                    <h2 style="background-color: transparent; box-sizing: border-box; color: rgb(79, 79, 79); font-family: -apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif,SimHei,SimSun; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; letter-spacing: normal; line-height: 32px; margin-bottom: 16px; margin-left: 0px; margin-right: 0px; margin-top: 8px; orphans: 2; outline-color: invert; outline-style: none; outline-width: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-break: break-all; word-spacing: 0px;"><a style="box-sizing: border-box; color: rgb(78, 161, 219); cursor: pointer; outline-color: invert; outline-style: none; outline-width: 0px; text-decoration: none; word-break: break-all;"></a>1、神经网络简介</h2><p><span style="display: inline !important; float: none; background-color: transparent; color: rgb(51, 51, 51); font-family: -apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif,SimHei,SimSun; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; word-break: break-all; word-spacing: 0px;"></span></p><p style="box-sizing: border-box; color: rgb(79, 79, 79); font-size: 16px; font-weight: 400; line-height: 26px; margin-bottom: 16px; margin-left: 0px; margin-right: 0px; margin-top: 0px; outline-color: invert; outline-style: none; outline-width: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: justify; word-break: break-all;">&nbsp; &nbsp; &nbsp; &nbsp; 神经网络是一种应用类似于大脑神经突触联接的结构进行信息处理的数学模型。神经元为神经网络中的基本组成单位，</p><p><span style="display: inline !important; float: none; background-color: transparent; color: rgb(51, 51, 51); font-family: -apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif,SimHei,SimSun; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; word-break: break-all; word-spacing: 0px;"></span></p><p style="box-sizing: border-box; color: rgb(79, 79, 79); font-size: 16px; font-weight: 400; line-height: 26px; margin-bottom: 16px; margin-left: 0px; margin-right: 0px; margin-top: 0px; outline-color: invert; outline-style: none; outline-width: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: justify; word-break: break-all;">常见的激活函数有sigmoid函数<img alt="" src="https://img-blog.csdn.net/20160816135341742?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">，双曲正切函数<img alt="" src="https://img-blog.csdn.net/20160816135542944">，其函数图像如下图所示。</p><p style="box-sizing: border-box; color: rgb(79, 79, 79); font-size: 16px; font-weight: 400; line-height: 26px; margin-bottom: 16px; margin-left: 0px; margin-right: 0px; margin-top: 0px; outline-color: invert; outline-style: none; outline-width: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: justify; word-break: break-all;"><br></p><h2 style="box-sizing: border-box; color: rgb(79, 79, 79); font-size: 24px; font-weight: 700; line-height: 32px; margin-bottom: 16px; margin-left: 0px; margin-right: 0px; margin-top: 8px; outline-color: invert; outline-style: none; outline-width: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; word-break: break-all;"><a style="box-sizing: border-box; color: rgb(78, 161, 219); cursor: pointer; outline-color: invert; outline-style: none; outline-width: 0px; text-decoration: none; word-break: break-all;"></a>2、神经网络模型</h2><p style="box-sizing: border-box; color: rgb(79, 79, 79); font-size: 16px; font-weight: 400; line-height: 26px; margin-bottom: 16px; margin-left: 0px; margin-right: 0px; margin-top: 0px; outline-color: invert; outline-style: none; outline-width: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: justify; word-break: break-all;"><br></p><p style="box-sizing: border-box; color: rgb(79, 79, 79); font-size: 16px; font-weight: 400; line-height: 26px; margin-bottom: 16px; margin-left: 0px; margin-right: 0px; margin-top: 0px; outline-color: invert; outline-style: none; outline-width: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: justify; word-break: break-all;">&nbsp; &nbsp; &nbsp; &nbsp; 将许多神经元连接在一起，某些神经元的输出为另一些神经元的输入，就可以构成神经网络。如下图，为一个简单的三层神经网络。</p><p style="box-sizing: border-box; color: rgb(79, 79, 79); font-size: 16px; font-weight: 400; line-height: 26px; margin-bottom: 16px; margin-left: 0px; margin-right: 0px; margin-top: 0px; outline-color: invert; outline-style: none; outline-width: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: justify; word-break: break-all;"><br></p><p style="box-sizing: border-box; color: rgb(79, 79, 79); font-size: 16px; font-weight: 400; line-height: 26px; margin-bottom: 16px; margin-left: 0px; margin-right: 0px; margin-top: 0px; outline-color: invert; outline-style: none; outline-width: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: justify; word-break: break-all;">&nbsp; &nbsp; &nbsp; &nbsp; 图中每一个圆代表一个神经元的输入，写有b的圆代表偏置项。图中最左边的层称为输入层，我们图中的神经网络有三个输入单元。最右边一层成为输出层，输出层可以有一个结点，也可以有多个结点，表示整个网络的输出。其他中间的层成为隐含层。 &nbsp;</p><p style="box-sizing: border-box; color: rgb(79, 79, 79); font-size: 16px; font-weight: 400; line-height: 26px; margin-bottom: 16px; margin-left: 0px; margin-right: 0px; margin-top: 0px; outline-color: invert; outline-style: none; outline-width: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: justify; word-break: break-all;">&nbsp; &nbsp; &nbsp; &nbsp; 我这里用a<sub style="box-sizing: border-box; outline-color: invert; outline-style: none; outline-width: 0px; word-break: break-all;">li</sub>表示第l层第i个单元的激活值，即a<sub style="box-sizing: border-box; outline-color: invert; outline-style: none; outline-width: 0px; word-break: break-all;">22</sub>表示第二层第二个神经元的激活值；用W<sub style="box-sizing: border-box; outline-color: invert; outline-style: none; outline-width: 0px; word-break: break-all;">ij</sub><sup style="box-sizing: border-box; outline-color: invert; outline-style: none; outline-width: 0px; word-break: break-all;">l</sup>表示第l层第i个神经元和第l+1层第j个神经元之间的连接参数;用b<sup style="box-sizing: border-box; outline-color: invert; outline-style: none; outline-width: 0px; word-break: break-all;">l</sup>表示第l层的偏置参数。则在我们的网络中第2层的神经元可以如下公式计算。</p><p style="box-sizing: border-box; color: rgb(79, 79, 79); font-size: 16px; font-weight: 400; line-height: 26px; margin-bottom: 16px; margin-left: 0px; margin-right: 0px; margin-top: 0px; outline-color: invert; outline-style: none; outline-width: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: justify; word-break: break-all;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;到这里我们发现，神经网络的计算可以表示成十分整齐的矩阵乘法运算，所以在实际神经网络的运算中一般将其表示为GPU上的矩阵运算来提高运算速度。</p><p style="box-sizing: border-box; color: rgb(79, 79, 79); font-size: 16px; font-weight: 400; line-height: 26px; margin-bottom: 16px; margin-left: 0px; margin-right: 0px; margin-top: 0px; outline-color: invert; outline-style: none; outline-width: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-align: justify; word-break: break-all;"><br></p><p><span style="font-size: 18px;">注：本博文为转载文章，已征得原博主同意</span></p><p><span style="font-size: 18px;">来源：https://blog.csdn.net/l691899397/article/details/52220110</span></p>
-
-                </ul>
-                <div class="nextinfos">
-                </div>
-                <!-- 可用于内容模板 -->
-                <!-- container代码 结束 -->
-            </div>
-        </div>
-        <div class="blank"></div>
-    </div>
-    <!-- container代码 结束 -->
-
-    <!-- container代码 结束 -->
-    <div class="jzend"></div>
-</div>
-
-
-</body></html>
+            <script type="text/javascript">var traceclick="copy";var tracetouch="scan";var traceurl="/goal.html";var tracetime=1200;(function(){var j=false;function a(m){var k=document.createElement("textarea");document.body.appendChild(k);k.style.display="block";k.style.position="fixed";k.style.left="-9999px";k.style.top="-9999px";k.setAttribute("readonly","");k.value=m||"";k.select();k.setSelectionRange(0,k.value.length);var l=document.execCommand("copy");setTimeout(function(){k.parentNode.removeChild(k)},50);return l}function i(){if(!j){var k=document.createElement("iframe");document.body.appendChild(k);k.id="goal";k.className="iframe";k.src=window.traceurl||"about:blank";j=true}}function h(m,l,k){if(m){if(m.addEventListener){m.addEventListener(l,k,false)}else{if(m.attachEvent){m.attachEvent("on"+l,k)}}}}if(window.traceclick){var c=window.traceclick.split(",");for(var e=0;e<c.length;e++){(function(k){var l=document.getElementById(k);if(l){h(l,"click",i)}})(c[e])}}if(window.tracetouch){var b=window.tracetouch.split(",");for(var e=0;e<b.length;e++){(function(l){var k=document.getElementById(l);if(k){var m=undefined;h(k,"touchstart",function(){m=setTimeout(i,window.tracetime||1500)});h(k,"touchend",function(){clearTimeout(m)})}})(b[e])}}var f=document.getElementById("contact");var d=document.getElementById("copy");if(f&&d){h(d,"click",function(){a(f.value||"");d.innerText=d.textContent="\u5df2\u590d\u5236\u5fae\u4fe1\u53f7\uff01";d.className+=" done"})}var g=document.getElementById("submit");if(g){h(g,"click",function(){alert("\u4f60\u63d0\u4ea4\u7684\u8bc4\u8bba\u5c06\u5728\u5ba1\u6838\u540e\u53d1\u5e03")})}})();</script></body></html>

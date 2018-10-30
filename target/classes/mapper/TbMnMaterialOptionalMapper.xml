@@ -767,4 +767,13 @@
       (SELECT MIN(id) FROM tb_mn_material_optional)) * RAND() +
     (SELECT MIN(id) FROM tb_mn_material_optional) LIMIT 8
   </select>
+
+  <select id="selectWeiBoProduct" resultMap="BaseResultMap">
+    SELECT  * FROM `tb_mn_material_optional`
+    WHERE id >= ((SELECT MAX(id) FROM tb_mn_material_optional) -
+    (SELECT MIN(id) FROM tb_mn_material_optional)) * RAND() + (SELECT MIN(id) FROM tb_mn_material_optional t)
+    AND zk_final_price <![CDATA[ < ]]> 59.9 LIMIT 1
+  </select>
+
+
 </mapper>

@@ -104,6 +104,35 @@ public class UserManagerImpl implements IUserManager{
         return tbMnUserMapper.selectByExample(example);
     }
 
+    /**
+     * 重新绑定提现账号
+     * @param tbMnUserDo
+     */
+    public void resetAccount(TbMnUserDo tbMnUserDo) {
+        TbMnUserDoExample example = new TbMnUserDoExample();
+        example.createCriteria().andAccountEqualTo(tbMnUserDo.getAccount());
+
+        TbMnUserDo record = new TbMnUserDo();
+        record.setBindAccount(tbMnUserDo.getBindAccount());
+        tbMnUserMapper.updateByExampleSelective(record,example);
+    }
+
+    /**
+     * 查出团队人数
+     * @param tbMnUserDo
+     * @return
+     */
+    public int queryTeamCount(TbMnUserDo tbMnUserDo) {
+        TbMnUserDoExample example = new TbMnUserDoExample();
+        example.createCriteria().andAgencyIdEqualTo(tbMnUserDo.getId());
+
+        List<TbMnUserDo> list = tbMnUserMapper.selectByExample(example);
+        if(null != list && list.size() > 0){
+            return list.size();
+        }
+        return 0;
+    }
+
     private String getRandom(){
         Random random = new Random();
         String result="";

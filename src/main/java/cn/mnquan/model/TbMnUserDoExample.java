@@ -811,6 +811,76 @@ public class TbMnUserDoExample {
             addCriterion("is_agency not between", value1, value2, "isAgency");
             return (Criteria) this;
         }
+
+        public Criteria andBindAccountIsNull() {
+            addCriterion("bind_account is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBindAccountIsNotNull() {
+            addCriterion("bind_account is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBindAccountEqualTo(String value) {
+            addCriterion("bind_account =", value, "bindAccount");
+            return (Criteria) this;
+        }
+
+        public Criteria andBindAccountNotEqualTo(String value) {
+            addCriterion("bind_account <>", value, "bindAccount");
+            return (Criteria) this;
+        }
+
+        public Criteria andBindAccountGreaterThan(String value) {
+            addCriterion("bind_account >", value, "bindAccount");
+            return (Criteria) this;
+        }
+
+        public Criteria andBindAccountGreaterThanOrEqualTo(String value) {
+            addCriterion("bind_account >=", value, "bindAccount");
+            return (Criteria) this;
+        }
+
+        public Criteria andBindAccountLessThan(String value) {
+            addCriterion("bind_account <", value, "bindAccount");
+            return (Criteria) this;
+        }
+
+        public Criteria andBindAccountLessThanOrEqualTo(String value) {
+            addCriterion("bind_account <=", value, "bindAccount");
+            return (Criteria) this;
+        }
+
+        public Criteria andBindAccountLike(String value) {
+            addCriterion("bind_account like", value, "bindAccount");
+            return (Criteria) this;
+        }
+
+        public Criteria andBindAccountNotLike(String value) {
+            addCriterion("bind_account not like", value, "bindAccount");
+            return (Criteria) this;
+        }
+
+        public Criteria andBindAccountIn(List<String> values) {
+            addCriterion("bind_account in", values, "bindAccount");
+            return (Criteria) this;
+        }
+
+        public Criteria andBindAccountNotIn(List<String> values) {
+            addCriterion("bind_account not in", values, "bindAccount");
+            return (Criteria) this;
+        }
+
+        public Criteria andBindAccountBetween(String value1, String value2) {
+            addCriterion("bind_account between", value1, value2, "bindAccount");
+            return (Criteria) this;
+        }
+
+        public Criteria andBindAccountNotBetween(String value1, String value2) {
+            addCriterion("bind_account not between", value1, value2, "bindAccount");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

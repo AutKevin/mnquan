@@ -23,4 +23,6 @@ public interface ITaoBaoManager {
     TbMnCatDo getCatName(String catId);
 
     TbMnProductDetailDo getProductDetail(Long numIid);
+
+    void queryRecommendMsg(TbMnMaterialOptionalDo optionalDo1);
 }

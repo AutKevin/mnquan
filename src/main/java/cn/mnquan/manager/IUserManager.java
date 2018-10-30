@@ -16,4 +16,8 @@ public interface IUserManager {
     TbMnUserDo queryUserByAccountNo(String s);
 
     List<TbMnUserDo> queryUserList(TbMnUserDo tbMnUserDo);
+
+    void resetAccount(TbMnUserDo tbMnUserDo);
+
+    int queryTeamCount(TbMnUserDo tbMnUserDo);
 }

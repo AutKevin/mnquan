@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" session="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ include file="/page/zhuanlian.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,6 +20,7 @@
     <link href="/favicon.ico" rel="icon">
     <link href="/touch-icon-iphone.png" rel="Bookmark" />
 
+    <script src="../../page/js/clipboard.min.js" type="text/javascript"></script>
     <link rel="stylesheet" href="../../page/js/common.css">
     <link rel="stylesheet" href="../../page/js/main.css">
     <script src="../../page/js/jquery.js" type="text/javascript"></script>
@@ -37,13 +39,18 @@
 ">首页</span>
         </a>
 
-        <a data-mold="1" data-el="2" href="/index.php?r=nine/wap" class="col-10-2 ">
+        <a data-mold="1" data-el="2" href="" class="col-10-2 ">
             <em class="num" style="background-image: -webkit-gradient(linear, left 20, right 0, from(#DC143C), to(	#FF0000));
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;">新</em>
             <i class="iconfont"><img src="https://img.alicdn.com/imgextra/i4/2053469401/TB23GLTn77mBKNjSZFyXXbydFXa-2053469401.png"></i>
             <span style="color: rgb(102, 102, 102);
-">9.9包邮</span>
+">准备中</span>
+        </a>
+
+        <a data-mold="1" data-el="4" id="zhuanlian" href="javascript:void(0);" class="col-10-2 ">
+            <i class="iconfont"><img src="../../page/img/zhuanlian.png"></i>
+            <span style="color: rgb(102, 102, 102);">转链</span>
         </a>
 
         <a data-mold="1" data-el="3" href="/app/classify" class="col-10-2 ">
@@ -87,7 +94,7 @@
     </style>
     <ul class="ui_nav_list_01">
         <li class="row-s">
-            <p style="color: red;">¥${totalAmt}</p>
+            <p style="color: red;">¥${canRecvAmt}</p>
             <p class="col-12-8 text-left">
                 可提现(元)
             </p>
@@ -171,23 +178,23 @@
     <div class="div2_nav_list">
         <ul class="ui_nav_list_2">
             <li class="row-s row-s-2">
-                <a  href="javascript:void(0);">
+                <a  href="/app/user/invite.do">
                     <i class="iconfont "><img src="../../page/img/tuijianhaoyou.png" alt=""></i>
                     <p class="col-12-8">
                         推荐好友
                     </p>
                 </a>
             </li>
-            <li class="row-s row-s-2">
+            <%--<li class="row-s row-s-2">
                 <a  href="javascript:void(0);">
                     <i class="iconfont "><img src="../../page/img/czozuozhinan.png" alt=""></i>
                     <p class="col-12-8">
                         操作指南
                     </p>
                 </a>
-            </li>
+            </li>--%>
             <li class="row-s row-s-2">
-                <a  href="javascript:void(0);">
+                <a  href="/app/user/team.do">
                     <i class="iconfont "><img src="../../page/img/wodetuijian.png" alt=""></i>
                     <p class="col-12-8">
                         我的推荐
@@ -195,10 +202,18 @@
                 </a>
             </li>
             <li class="row-s row-s-2">
-                <a  href="javascript:void(0);">
+                <a id="receive" href="javascript:void(0);">
                     <i class="iconfont "><img src="../../page/img/tiqujilu.png" alt=""></i>
                     <p class="col-12-8">
                         提取记录
+                    </p>
+                </a>
+            </li>
+            <li class="row-s row-s-2">
+                <a  href="/app/user/contact.do">
+                    <i class="iconfont "><img src="../../page/img/contact.png" alt=""></i>
+                    <p class="col-12-8">
+                        联系我们
                     </p>
                 </a>
             </li>
@@ -206,6 +221,37 @@
     </div>
 </div>
 </body>
+</body>
+<script>
+    $("#zhuanlian").click(function () {
+        $(".t-zhuanlian").css("display","inline");
+        $(".t-zhuanlian-body").val("");
+    });
+    $(".t-zhuanlian-header").click(function () {
+        $(".t-zhuanlian").css("display","none");
+        $(".t-zhuanlian-body").val("");
+    });
+    $(".t-zhuanlian-modelButto").click(function () {
+        var zhuanlian = $(".t-zhuanlian-body").val();
+        if(null == zhuanlian){
+            alert("数据不能为空")
+        }
+        $.ajax({
+            url:""+"/app/query/zhuanlian.do",
+            async:false,
+            data: {'zhuanlian':zhuanlian},
+            dataType:'json',
+            type:"post",
+            success:function(data){
+                if("1" == data){
+                    alert("查询失败")
+                }else{
+                    window.location.href = domain+"/app/detail/skipProductDetail.do?numIid="+data;
+                }
+            }
+        });
+    });
+</script>
 <script>
     document.addEventListener("plusready", function() {
         // 注册返回按键事件
@@ -223,7 +269,6 @@
             dataType:'json',
             type:"post",
             success:function(data){
-                console.log(data);
                 if("true" == data){//用户已登陆
                     window.location.href = "/app/order/skipOrderPage.do?tkStatus="+tkStatus;
                 }else{//用户未登陆
@@ -233,5 +278,22 @@
             }
         });
     }
+
+    $("#receive").click(function () {
+        $.ajax({
+            url:""+"/app/receive/skipRecvPage.do",
+            async:false,
+            dataType:'json',
+            type:"post",
+            success:function(data){
+                if("true" == data){//用户已登陆
+                    window.location.href = "/app/receive/recvPage.do";
+                }else{//用户未登陆
+                    var txt=  "小主，请先登陆！";
+                    window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
+                }
+            }
+        });
+    });
 </script>
 </html>

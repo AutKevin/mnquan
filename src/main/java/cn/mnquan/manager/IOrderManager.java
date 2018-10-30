@@ -24,4 +24,8 @@ public interface IOrderManager {
     double getdaiOwnAmt(TbMnUserDo tbMnUserDo);
 
     double getDaiTeadAmt(List<TbMnUserDo> userDos);
+
+    double getTotalAmt(TbMnUserDo tbMnUserDo);
+
+    double getDaiTotalAmt(TbMnUserDo tbMnUserDo);
 }

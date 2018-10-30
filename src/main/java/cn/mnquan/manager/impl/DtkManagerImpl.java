@@ -106,23 +106,27 @@ public class DtkManagerImpl implements IDtkManager {
                         //获取优惠券金额
                         couponAmonunt = getCouponAmount(mapData);
                         smallImages = getSmallImages(mapData.getSmallImages());
+
+                        //获取详情页的商品推荐语
+                        String datagId = rows.get(j).attr("id").replace("goods-items_","");
+                        HttpClientResponse rsp1 = HttpClientUtils.get("http://www.dataoke.com/item?id="+datagId);
+                        Document doc1 = Jsoup.parse(rsp1.getResponseContent());
+                        //获得所有p标签
+                        Elements links = doc1.select("div.goods-info div.goods-tit > p");
+                        String tuiJianYu = links.get(0).text();
+
+                        TbMnMaterialOptionalDo record = BeanMapperUtil.objConvert(mapData,TbMnMaterialOptionalDo.class);
+                        record.setLevelOneCategoryId(Long.valueOf(productDo.getCatId()));
+                        record.setCategoryId(Long.valueOf(productDo.getCategoryId()));
+                        record.setTokenTime(DateUtil.dateFormat(new Date()));
+                        record.setToken(command);
+                        record.setSmallImages(smallImages);
+                        record.setCouponAmount(couponAmonunt);
+                        record.setJddPrice(tuiJianYu);
+                        tbMnMaterialOptionalMapper.insertSelective(record);
                     } catch (Exception e) {
                         continue;
                     }
-                    TbMnMaterialOptionalDo record = BeanMapperUtil.objConvert(mapData,TbMnMaterialOptionalDo.class);
-                    System.out.println(record.toString());
-                    record.setLevelOneCategoryId(Long.valueOf(productDo.getCatId()));
-                    record.setCategoryId(Long.valueOf(productDo.getCategoryId()));
-                    record.setTokenTime(DateUtil.dateFormat(new Date()));
-                    record.setToken(command);
-                    record.setSmallImages(smallImages);
-                    record.setCouponAmount(couponAmonunt);
-                    tbMnMaterialOptionalMapper.insertSelective(record);
-
-                    //获取商品详情
-                    /*TbkItemInfoGetResponse.NTbkItem item = taobaoApiManager.queryProductItem(String.valueOf(mapData.getNumIid()));
-                    TbMnProductDetailDo productDetailDo = BeanMapperUtil.objConvert(item,TbMnProductDetailDo.class);
-                    tbMnProductDetailMapper.insertSelective(productDetailDo);*/
                 }
             }
         }

@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" session="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--<%@ include file="/page/commons.jsp" %>--%>
+<%@ include file="/page/zhuanlian.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,10 +16,11 @@
     <meta name="description" content="9.9包邮，白菜价，天天特价">
     <meta itemprop="image" content="_50x50.jpg">
     <link rel="stylesheet" href="../page/js/bootstrap.min.css">
-    <script src="../page/js/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/page/js/jquery.js"></script>
+    <script type="text/javascript" src="../../page/js/jquery.lazyload.min.js"></script>
     <script src="../page/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../page/js/common.css">
-    <link rel="stylesheet" type="text/css" href="../page/js/index.css" charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../page/css/index.css" charset="utf-8">
     <link rel="stylesheet" href="../page/js/main.css">
     <link rel="stylesheet" href="../page/js/swiper-4.4.1.min.css">
     <script src="../page/js/swiper-4.4.1.min.js" type="text/javascript"></script>
@@ -65,15 +67,15 @@
             <span style="color: rgb(102, 102, 102);">准备中</span>
         </a>
 
+        <a data-mold="1" data-el="4" id="zhuanlian" href="javascript:void(0);" class="col-10-2 ">
+            <i class="iconfont"><img src="../../page/img/zhuanlian.png"></i>
+            <span style="color: rgb(102, 102, 102);">转链</span>
+        </a>
+
         <a data-mold="1" data-el="3" href="/app/classify" class="col-10-2 ">
             <i class="iconfont"><img src="https://img.alicdn.com/imgextra/i2/2053469401/TB2nLTXn7omBKNjSZFqXXXtqVXa-2053469401.png"></i>
             <span style="color: rgb(102, 102, 102);">分类</span>
         </a>
-
-        <%--<a data-mold="1" data-el="4" data-addr="/index.php?r=user/list" href="/index.php?r=user/list" class="col-10-2 ">
-            <i class="iconfont"><img src="https://img.alicdn.com/imgextra/i1/2053469401/TB26bEfnQZmBKNjSZPiXXXFNVXa-2053469401.png"></i>
-            <span style="color: rgb(102, 102, 102);">收藏</span>
-        </a>--%>
 
         <a data-mold="1" data-el="5"  href="/app/user/centre.do" class="col-10-2 ">
             <i class="iconfont"><img src="https://img.alicdn.com/imgextra/i3/2053469401/TB2WXrhqFkoBKNjSZFkXXb4tFXa-2053469401.png"></i>
@@ -241,17 +243,17 @@
             <div class="swiper-wrapper" ui-mta-modular="" data-mta_name="首页-Banner" isload="true" style="transform: translate3d(-963px, 0px, 0px); transition-duration: 0ms;">
                 <div class="swiper-slide" style="width: 321px;">
                     <a data-gid="16581846" data-ci="682858" data-in="1" data-uid="489217" data-cn="25" data-position="" ui-utm="" href="javascript:void(0);" data-mold="3" data-el="1">
-                        <img src="https://img.alicdn.com/imgextra/i2/1015405008/O1CN011mrhxbO9Ksmw0xU_!!1015405008.jpg" alt="">
+                        <img src="/page/img/top_img1.jpg" alt="">
                     </a>
                 </div>
                 <div class="swiper-slide" style="width: 321px;">
                     <a data-gid="16557302" data-ci="678103" data-in="1" data-uid="489217" data-cn="25" data-position="" ui-utm="" href="javascript:void(0);" data-mold="3" data-el="2">
-                        <img src="https://img.alicdn.com/imgextra/i3/1015405008/O1CN011mrhxci1ag9BLOa_!!1015405008.jpg" alt="">
+                        <img src="/page/img/top_img2.jpg" alt="">
                     </a>
                 </div>
                 <div class="swiper-slide" style="width: 321px;">
                     <a data-gid="16583437" data-ci="682456" data-in="1" data-uid="489217" data-cn="25" data-position="" ui-utm="" href="javascript:void(0);" data-mold="3" data-el="3">
-                        <img src="https://img.alicdn.com/imgextra/i2/1015405008/O1CN011mrhxalDEkSAMWH_!!1015405008.jpg" alt="">
+                        <img src="/page/img/top_img3.jpg" alt="">
                     </a>
                 </div>
             </div>
@@ -339,13 +341,43 @@
 </div>
 </body>
 <script>
+    $("#zhuanlian").click(function () {
+        $(".t-zhuanlian").css("display","inline");
+        $(".t-zhuanlian-body").val("");
+    });
+    $(".t-zhuanlian-header").click(function () {
+        $(".t-zhuanlian").css("display","none");
+        $(".t-zhuanlian-body").val("");
+    });
+    $(".t-zhuanlian-modelButto").click(function () {
+        var zhuanlian = $(".t-zhuanlian-body").val();
+        if(null == zhuanlian){
+            alert("数据不能为空")
+        }
+        $.ajax({
+            url:""+"/app/query/zhuanlian.do",
+            async:false,
+            data: {'zhuanlian':zhuanlian},
+            dataType:'json',
+            type:"post",
+            success:function(data){
+                if("1" == data){
+                    alert("查询失败")
+                }else{
+                    window.location.href = domain+"/app/detail/skipProductDetail.do?numIid="+data;
+                }
+            }
+        });
+    });
+</script>
+<script>
     document.addEventListener("plusready", function() {
         // 注册返回按键事件
         plus.key.addEventListener('backbutton', function() {
             // 事件处理
             plus.nativeUI.confirm("退出程序？", function(event) {
                 plus.runtime.quit();
-            }, null, ["取消", "确定"]);
+            }, null, ["确定"]);
         }, false);
     });
 </script>
@@ -447,7 +479,7 @@
                             createLi.className = "row-s listpage1";
                             createLi.innerHTML+="<a onclick='myProgress("+item.numIid+",3"+")' href='javascript:void(0);'>" +
                                 "<p class='img'>" +
-                                    "<img src="+item.pictUrl+" style='background: rgb(245, 245, 245); display: block;'>" +
+                                    "<img class='lazy' src='/page/img/rolling.gif' data-original="+item.pictUrl+" style='background: rgb(245, 245, 245); display: block;'>" +
                                 "</p>" +
                                 "<div class='cent'>" +
                                     "<h3>新券~"+item.shortTitle+"</h3>" +
@@ -462,6 +494,7 @@
                         });
                         pageNo++;
                     }
+                    lazy();
                 }
             });
         }
@@ -506,6 +539,14 @@
                 clearInterval(progressId);
             }
         },50);
+    }
+</script>
+<script type="text/javascript">
+    function lazy() {
+        $(".lazy").lazyload({
+            placeholder : "/page/img/rolling.gif", //加载图片前的占位图片
+            effect      : "fadeIn" //加载图片使用的效果(淡入)
+        });
     }
 </script>
 </html>

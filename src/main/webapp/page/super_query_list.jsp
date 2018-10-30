@@ -12,7 +12,8 @@
     <title>超级查询</title>
     <meta name="keywords" content="9.9包邮，白菜价，天天特价，优惠卷,搜券宝"/>
     <meta name="description" content="9.9包邮，白菜价，天天特价"/>
-    <script src="../../page/js/jquery.js" type="text/javascript"></script>
+    <script src="../../page/js/jquery.min.js" type="text/javascript"></script>
+    <%--<script type="text/javascript" src="../../page/js/jquery.lazyload.min.js"></script>--%>
     <link href="../../page/js/wap_common.css" rel="stylesheet">
     <link href="../../page/js/wap_search.css" rel="stylesheet"/>
     <link href="../../page/js/style.css" rel="stylesheet">
@@ -358,17 +359,13 @@
                     var superQueryListHtml = '';
                     $.each(data,function(index,item){
                         var couponAmt = 0;
-                        var strCouponAmt = '';
-                        var strCouponCount = '';
                         if(null != item.couponInfo  && '' != item.couponInfo){
                             var temp = item.couponInfo;
                             var temp1 = temp.replace("满","").replace("元","").replace("元","").split("减");
                             couponAmt = temp1[1];
-                            /*strCouponAmt = '<span class="coupon-wrapper  theme-bg-color-1">券<b>'+couponAmt+'</b></span>';
-                            strCouponCount = '<span class="text">剩余 </span><span class="sold-num">'+item.couponRemainCount+'</span>';*/
                             superQueryListHtml+='<div class="sort_main ads-list2"><div class="goods-item clearfix">' +
                                 '<a data-transition="slide" href="/app/detail/skipProductDetail.do?type=1&numIid='+item.numIid+'" class="img ui-link">' +
-                                '<img src="'+item.pictUrl+'"></a><div class="text"><div>' +
+                                '<img class="lazy" data-original="/page/img/rolling.gif" src="'+item.pictUrl+'"></a><div class="text"><div>' +
                                 '<a data-transition="slide" href="/app/detail/skipProductDetail.do?type=1&numIid='+item.numIid+'" class="title ui-link">'+item.shortTitle+'<div class="share-wrapper">' +
                                 '<img src="../../page/img/share.png"><span class="price_yj">现价'+item.zkFinalPrice+'</span><span class="text">已售'+item.volume+'件</span>' +
                                 '<p>赚￥'+getRate(item.zkFinalPrice,item.commissionRate)+'</p></div><div class="price-wrapper1">' +
@@ -379,23 +376,12 @@
                             superQueryListHtml+='<div class="sort_main ads-list2">' +
                                 '<div class="goods-item clearfix">' +
                                 '<a data-transition="slide" href="/app/detail/skipProductDetail.do?type=1&numIid='+item.numIid+'" class="img ui-link">' +
-                                '<img src="'+item.pictUrl+'"></a><div class="text"><div>' +
+                                '<img class="lazy" data-original="/page/img/rolling.gif" src="'+item.pictUrl+'"></a><div class="text"><div>' +
                                 '<a data-transition="slide" href="/app/detail/skipProductDetail.do?type=1&numIid='+item.numIid+'" class="title ui-link">'+item.shortTitle+'<div class="share-wrapper">' +
                                 '<img src="../../page/img/share.png"><span class="text">已售'+item.volume+'件</span><p>赚￥'+getRate(item.zkFinalPrice,item.commissionRate)+'</p></div>' +
                                 '<div class="price-wrapper1"><span class="price_qh">现价</span><span class="price">￥<span>'+item.zkFinalPrice+'</span></span></div></a></div></div></div></div>';
 
                         }
-                        /*superQueryListHtml+='<div class="sort_main ads-list2">' +
-                            '<div class="goods-item clearfix">' +
-                                '<a data-transition="slide" href="/app/detail/skipProductDetail.do?type=1&numIid='+item.numIid+'" class="img ui-link">' +
-                                    '<img src="'+item.pictUrl+'"></a><div class="text"><div>' +
-                                     '<a data-transition="slide" href="/app/detail/skipProductDetail.do?type=1&numIid='+item.numIid+'" class="title ui-link">'+item.shortTitle+'<div class="share-wrapper">' +
-                            '<img src="../../page/img/share.png"><p>赚￥'+getRate(item.zkFinalPrice,item.commissionRate)+'</p>'+strCouponAmt+
-                            '</div><div class="price-wrapper1">' +
-                            '<span class="price_yj">现价</span><span class="price">￥<span>'+item.zkFinalPrice+'</span></span>' +
-                            '<span class="text">销量 </span><span class="sold-num">'+item.volume+'</span><div class="price-wrapper2">' +
-                            '<span class="price_qh">券后</span><span class="price">￥<span>'+accSub(item.zkFinalPrice,couponAmt)+'</span></span>'+strCouponCount +
-                            '</div></div></a></div></div></div></div>';*/
                     });
                     $(".pullup-goods").before(superQueryListHtml);
                     pageNo++;
@@ -416,8 +402,7 @@
         n = (r1 >= r2) ? r1 : r2;
         return ((arg1 * m - arg2 * m) / m).toFixed(n);
     }
-    function getRate(arg1,arg2)
-    {
+    function getRate(arg1,arg2){
         return (Number(arg1)*Number(arg2)*Number(55)/1000000).toFixed(2);
     }
 
@@ -438,4 +423,12 @@
         $('#my-search').submit();
     });
 </script>
+<%--<script type="text/javascript">
+    function lazy() {
+        $(".lazy").lazyload({
+            placeholder : "/page/img/rolling.gif", //加载图片前的占位图片
+            effect      : "fadeIn" //加载图片使用的效果(淡入)
+        });
+    }
+</script>--%>
 </html>

@@ -23,6 +23,8 @@ public class TbMnUserDo {
 
     private String isAgency;
 
+    private String bindAccount;
+
     public String getAccount() {
         return account;
     }
@@ -101,5 +103,13 @@ public class TbMnUserDo {
 
     public void setIsAgency(String isAgency) {
         this.isAgency = isAgency;
+    }
+
+    public String getBindAccount() {
+        return bindAccount;
+    }
+
+    public void setBindAccount(String bindAccount) {
+        this.bindAccount = bindAccount;
     }
 }

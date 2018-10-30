@@ -8,8 +8,12 @@ import cn.mnquan.manager.IUserManager;
 import cn.mnquan.model.*;
 import cn.mnquan.utils.BeanMapperUtil;
 import cn.mnquan.utils.DateUtil;
+import cn.mnquan.utils.HttpClientUtils;
 import cn.mnquan.utils.UuidUtil;
 import com.alibaba.fastjson.JSON;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import com.google.gson.JsonSyntaxException;
 import com.taobao.api.ApiException;
 import com.taobao.api.DefaultTaobaoClient;
 import com.taobao.api.TaobaoClient;
@@ -30,6 +34,8 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * <p>
@@ -139,12 +145,54 @@ public class TaoBaoController extends BaseController{
     }
 
     /**
-     * 跳转到产品列表
+     * 转链
+     * @param zhuanlian
+     */
+    @RequestMapping(value="/app/query/zhuanlian.do",method = RequestMethod.POST)
+    public void zhanlian(String zhuanlian, HttpServletResponse response){
+        String numIid = "1";
+        String url = null;
+        log.info("转链请求,zhuanlian:{}",zhuanlian);
+        try {
+            if (zhuanlian.contains("€")) {
+                Pattern pattern1 = Pattern.compile("€(\\w+)€");
+                Matcher matcher1 = pattern1.matcher(zhuanlian);
+                if (matcher1.find()) {
+                    url = "https://api.open.21ds.cn/apiv1/tpwdtoid?apkey=105bc582-a6b2-9c26-4e9d-e5bb9657c2c8&tpwd=€" + matcher1.group(1) + "€";
+                }
+            }
+
+            if (zhuanlian.contains("￥")) {
+                Pattern pattern2 = Pattern.compile("￥(\\w+)￥");
+                Matcher matcher2 = pattern2.matcher(zhuanlian);
+                if (matcher2.find()) {
+                    url = "https://api.open.21ds.cn/apiv1/tpwdtoid?apkey=105bc582-a6b2-9c26-4e9d-e5bb9657c2c8&tpwd=￥" + matcher2.group(1) + "￥";
+                }
+            }
+            log.info(url);
+            HttpClientResponse rsp = HttpClientUtils.get(url);
+            log.info(rsp.getResponseContent());
+            JsonObject jsonObject = (JsonObject) new JsonParser().parse(rsp.getResponseContent());
+
+            log.info(jsonObject.get("code").getAsString());
+            if ("200".equals(jsonObject.get("code").getAsString())) {
+                log.info("转链成功");
+                sendMessages(response, JSON.toJSONString(jsonObject.get("data").getAsString()));
+                return;
+            }
+        } catch(JsonSyntaxException e){
+            log.error(e.getMessage(), e);
+        }
+        sendMessages(response, JSON.toJSONString(numIid));
+    }
+
+    /**
+     * 跳转到商品详情
      * @param optionalDo
      * @param model
      */
     @RequestMapping(value="/app/detail/skipProductDetail.do",method = RequestMethod.GET)
-    public String skipProductDetail(TbMnMaterialOptionalDo optionalDo, Model model, HttpSession session){
+    public String skipProductDetail(TbMnMaterialOptionalDo optionalDo,String type, Model model, HttpSession session){
         try {
             log.info("开始跳转到商品详情,numIid:{},date:{}",optionalDo.getNumIid(), DateUtil.getCurrentTimeBySecond());
             Object accountNo = session.getAttribute("accountNo");
@@ -179,13 +227,16 @@ public class TaoBaoController extends BaseController{
                 optionalDo1.setCouponAmount(couponAmonunt);
                 optionalDo1.setSmallImages(smallImages);
                 optionalDo1.setToken(command);
+                model.addAttribute("rate" ,new BigDecimal(optionalDo1.getZkFinalPrice()).multiply(new BigDecimal(optionalDo1.getCommissionRate())).multiply(new BigDecimal(Double.toString(55))).divide(new BigDecimal(Double.toString(1000000))).setScale(2, BigDecimal.ROUND_DOWN).doubleValue());
                 //获取商品详情
                 TbkItemInfoGetResponse.NTbkItem item = taobaoApiManager.queryProductItem(String.valueOf(mapData.getNumIid()));
                 itemDetail = BeanMapperUtil.objConvert(item,TbMnProductDetailDo.class);
+
+                //如果商品存在本地库，则查询出推荐语
+                taoBaoManager.queryRecommendMsg(optionalDo1);
             } catch (ApiException e) {
                 e.printStackTrace();
             }
-
             String afterAmount = getAfterAmount(optionalDo1);
             model.addAttribute("optionalDo",optionalDo1);
             model.addAttribute("images",optionalDo1.getSmallImages().split(","));
@@ -195,6 +246,9 @@ public class TaoBaoController extends BaseController{
             log.info("结束跳转到商品详情,numIid:{},date:{}",optionalDo.getNumIid(), DateUtil.getCurrentTimeBySecond());
         } catch (Exception e) {
             log.error(e.getMessage(),e);
+        }
+        if("weibo".equals(type)){
+            return "page/weibo_detail";
         }
         return "page/product_detail";
     }
@@ -235,6 +289,8 @@ public class TaoBaoController extends BaseController{
         }
         sendMessages(response, JSON.toJSONString(mapData));
     }
+
+
 
     private String getAfterAmount(TbMnMaterialOptionalDo optionalDo) {
         BigDecimal bigA = new BigDecimal(optionalDo.getZkFinalPrice());

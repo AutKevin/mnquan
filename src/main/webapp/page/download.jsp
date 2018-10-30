@@ -24,7 +24,7 @@
 </head>
 <body>
     <div class="share-header">
-        <img src="../page/img/share.jpg">
+        <img src="../../page/img/share.jpg">
     </div>
     <div class="share-floot">
         <div>
@@ -39,7 +39,7 @@
     <!--弹层-->
     <div id="weixin-tip">
         <p>
-            <img style="width:100%;" src="../page/img/live_weixin.png" alt="微信打开"><span id="close" title="关闭" class="close">×</span></p>
+            <img style="width:100%;" src="../../page/img/live_weixin.png" alt="微信打开"><span id="close" title="关闭" class="close">×</span></p>
     </div>
 </body>
 <script>
