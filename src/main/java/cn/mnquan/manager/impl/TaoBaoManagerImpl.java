@@ -140,7 +140,7 @@ public class TaoBaoManagerImpl implements ITaoBaoManager{
         if(null != list && list.size() > 0){
             optionalDo1.setJddPrice(list.get(0).getJddPrice());
         }else {
-            optionalDo1.setJddPrice(list.get(0).getTitle());
+            optionalDo1.setJddPrice(optionalDo1.getTitle());
         }
     }
 }

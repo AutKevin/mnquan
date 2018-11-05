@@ -1,12 +1,15 @@
 package cn.mnquan;
 
+import cn.mnquan.utils.DateUtil;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import net.sf.json.JSONObject;
 import org.junit.Test;
 
+import javax.xml.bind.SchemaOutputResolver;
 import java.math.BigDecimal;
+import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -35,5 +38,13 @@ public class DemoTest {
             System.out.println(m.group(1));
 
         }
+    }
+
+    @Test
+    public void testDate(){
+        System.out.println(DateUtil.getDateFormat(DateUtil.get12dian(),"yyyyMMdd HH:mm:ss"));
+
+        System.out.println(DateUtil.get7dian().getTime() > new Date().getTime());
+        System.out.println(DateUtil.get12dian().getTime() < new Date().getTime());
     }
 }

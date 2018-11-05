@@ -20,7 +20,7 @@ public class Send {
         try {
             //http://www.mnquan.cn/app/detail/skipProductDetail.do?numIid=576356392290
         String access_token = "2.002S3P4HE3KwGE3ad98af740k43PDC";
-        String statuses = URLEncoder.encode("【优惠券详情链接】 http://www.mnquan.cn/app/detail/skipProductDetail.do?numIid=576356392290\n【app下载链接】 http://www.mnquan.cn/app/apk/download.do","utf-8");
+        String statuses = URLEncoder.encode("【优惠券详情链接】 http://www.mnquan.cn/app/detail/skipProductDetail.do?numIid=576356392290&type=weibo\n【app下载链接】 http://www.mnquan.cn/app/apk/download.do","utf-8");
         Timeline tm = new Timeline(access_token);
 
             ImageItem imageItem1 = new ImageItem(loadImageByte("https://img.alicdn.com/bao/uploaded/i4/47011887/O1CN011PoHpdFZctdOzLx_!!47011887.jpg"));

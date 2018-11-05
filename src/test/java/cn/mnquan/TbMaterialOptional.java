@@ -28,7 +28,7 @@ public class TbMaterialOptional{
     public final static String url = "https://eco.taobao.com/router/rest";
     public final static String appkey = "24810297";
     public final static String secret = "76250cfab3f567fdb5e90e7d03c1b10c";
-    public final static long adzone_id = 71344394;
+    public final static long adzone_id = 45446900332l;
 
     @Test
     public void getProducts() throws ApiException {
@@ -49,7 +49,7 @@ public class TbMaterialOptional{
     public void getProductByItemUrl() throws ApiException {
         TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);
         TbkDgMaterialOptionalRequest req = new TbkDgMaterialOptionalRequest();
-        req.setQ("https://detail.tmall.com/item.htm?id=577406087388");
+        req.setQ("https://item.taobao.com/item.htm?id=574347805573");
         req.setAdzoneId(adzone_id);
         TbkDgMaterialOptionalResponse rsp = client.execute(req);
         JSONObject jsonObject = JSONObject.fromObject(rsp.getBody());

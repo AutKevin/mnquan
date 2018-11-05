@@ -14,6 +14,7 @@ import weibo4j.http.ImageItem;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.Date;
 
 /**
  * <p>
@@ -29,19 +30,23 @@ public class AutoSendWeiBoTask implements SimpleJob {
 
     public void execute(ShardingContext shardingContext) {
         log.info("开发发送微博");
-        //随机送表内获取一个少于29.9的商品发微博
-        TbMnMaterialOptionalDo item = tbMnMaterialOptionalMapper.selectWeiBoProduct();
-        try {
-            String access_token = "2.002S3P4HE3KwGE3ad98af740k43PDC";
-            String statuses = URLEncoder.encode(item.getShortTitle()+"\n【原价】"+item.getZkFinalPrice()+"元，【"+item.getCouponInfo()+"】\n"+item.getJddPrice()+"\n【优惠券详情链接】 http://www.mnquan.cn/app/detail/skipProductDetail.do?numIid="+item.getNumIid()+"\n【app下载链接】 http://www.mnquan.cn/app/apk/download.do","utf-8");
-            Timeline tm = new Timeline(access_token);
+        System.out.println();
+        System.out.println();
+        if(DateUtil.get7dian().getTime() < new Date().getTime() && DateUtil.get12dian().getTime() > new Date().getTime()){
+            //随机送表内获取一个少于29.9的商品发微博
+            TbMnMaterialOptionalDo item = tbMnMaterialOptionalMapper.selectWeiBoProduct();
+            try {
+                String access_token = "2.002S3P4HE3KwGE3ad98af740k43PDC";
+                String statuses = URLEncoder.encode(item.getShortTitle()+"\n【原价】"+item.getZkFinalPrice()+"元，【"+item.getCouponInfo()+"】\n"+item.getJddPrice()+"\n【优惠券详情链接】 http://www.mnquan.cn/app/detail/skipProductDetail.do?type=weibo&numIid="+item.getNumIid()+"\n【app下载链接】 http://www.mnquan.cn/app/apk/download.do","utf-8");
+                Timeline tm = new Timeline(access_token);
 
-            ImageItem imageItem1 = new ImageItem(loadImageByte(item.getPictUrl()));
+                ImageItem imageItem1 = new ImageItem(loadImageByte(item.getPictUrl()));
 
-            tm.share(statuses,imageItem1);
-            log.info("微博发送成功,dateTime:{}", DateUtil.getCurrentTimeBySecond());
-        } catch (Exception e) {
-            log.error(e.getMessage(),e);
+                tm.share(statuses,imageItem1);
+                log.info("微博发送成功,dateTime:{}", DateUtil.getCurrentTimeBySecond());
+            } catch (Exception e) {
+                log.error(e.getMessage(),e);
+            }
         }
     }
 

@@ -564,5 +564,21 @@ public class DateUtil {
         String time = sdf.format(beforeTime.getTime());
         return time;
     }
+
+    public static Date get7dian() {
+        Calendar c = Calendar.getInstance();
+        c.set(Calendar.HOUR_OF_DAY, 6);
+        c.set(Calendar.MINUTE, 0);
+        c.set(Calendar.SECOND, 0);
+        return c.getTime();
+    }
+
+    public static Date get12dian() {
+        Calendar c = Calendar.getInstance();
+        c.set(Calendar.HOUR_OF_DAY, 24);
+        c.set(Calendar.MINUTE, 0);
+        c.set(Calendar.SECOND, 0);
+        return c.getTime();
+    }
 }
 

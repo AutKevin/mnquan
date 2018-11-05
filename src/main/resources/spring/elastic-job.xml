@@ -40,7 +40,7 @@
 
     <job:simple id="autoSendWeiBoTask" class="cn.mnquan.task.AutoSendWeiBoTask"
                 registry-center-ref="regCenter"
-                cron="0 */10 * * * ?"
+                cron="0 */12 * * * ?"
                 sharding-total-count="1"
                 monitor-execution="false"
                 misfire="true"

@@ -44,7 +44,7 @@
       </configuration>
     </facet>
   </component>
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_5">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
@@ -58,6 +58,9 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.6" level="project" />
     <orderEntry type="library" name="Maven: commons-httpclient:commons-httpclient:3.1" level="project" />
+    <orderEntry type="library" name="Maven: net.dongliu:requests:2.1.5" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpmime:4.5.1" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.2.28" level="project" />
     <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.10" level="project" />
     <orderEntry type="library" name="Maven: org.webjars.bower:qrcode:1.0.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.12" level="project" />
@@ -107,7 +110,6 @@
     <orderEntry type="library" name="Maven: org.slf4j:log4j-over-slf4j:1.7.5" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:jcl-over-slf4j:1.7.5" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:jul-to-slf4j:1.7.5" level="project" />
-    <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.2.28" level="project" />
     <orderEntry type="library" name="Maven: com.dangdang:elastic-job-lite-core:2.1.5" level="project" />
     <orderEntry type="library" name="Maven: com.dangdang:elastic-job-common-core:2.1.5" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:guava:18.0" level="project" />

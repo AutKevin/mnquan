@@ -342,7 +342,7 @@
     <div class="top-dow-header">
     </div>
     <div class="top-dow-footer">
-        <a class="top-dow-a"  type="button">
+        <a class="top-dow-a"  href="/app/apk/download.do" type="button">
             搜券宝APP下载
         </a>
     </div>
