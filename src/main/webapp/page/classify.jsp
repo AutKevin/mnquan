@@ -139,7 +139,7 @@
                 if("1" == data){
                     alert("查询失败")
                 }else{
-                    window.location.href = domain+"/app/detail/skipProductDetail.do?numIid="+data;
+                    window.location.href = "/app/detail/skipProductDetail.do?numIid="+data;
                 }
             }
         });
@@ -176,7 +176,7 @@
             dataType:'json',
             type:"post",
             success:function(data){
-                console.log(data);
+                /*console.log(data);*/
                 var arrLen = data.length;
                 if(arrLen > 0){
                     var classifyListHtml = '';

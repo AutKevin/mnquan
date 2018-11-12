@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  * <p>
@@ -30,7 +29,7 @@ public class LoginController extends BaseController {
      * @return
      */
     @RequestMapping("/app/login/login.do")
-    public void login(HttpSession session, HttpServletResponse response, TbMnUserDo tbMnUserDo){
+    public void login(HttpServletRequest request, HttpServletResponse response, TbMnUserDo tbMnUserDo){
         String result = null;
         if(null == tbMnUserDo.getAccount() || null == tbMnUserDo.getPwd()){
             result = "1";//用户名或密码不能为空！
@@ -43,7 +42,7 @@ public class LoginController extends BaseController {
             sendMessages(response, JSON.toJSONString(result));
             return;
         }
-        session.setAttribute("accountNo",tbMnUserDo.getAccount());
+        addCookie(response,"accountNo",tbMnUserDo.getAccount());
         result = "3";//校验成功
         sendMessages(response, JSON.toJSONString(result));
     }

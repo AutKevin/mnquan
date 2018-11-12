@@ -315,7 +315,7 @@
                 if("1" == data){
                     alert("查询失败")
                 }else{
-                    window.location.href = domain+"/app/detail/skipProductDetail.do?numIid="+data;
+                    window.location.href = "/app/detail/skipProductDetail.do?numIid="+data;
                 }
             }
         });

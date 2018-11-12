@@ -52,9 +52,9 @@ public class DBTest extends BaseSpringTest {
         //查出用户信息
         TbMnUserDo tbMnUserDo = userManager.queryUserByAccountNo("17521333602");
         //获取用户累计收益=自己收益*55%+团队收益*5
-         double ownAmt = orderManager.getownAmt(tbMnUserDo);
+        double ownAmt = orderManager.getownAmt(tbMnUserDo);
         List<TbMnUserDo> userDos = userManager.queryUserList(tbMnUserDo);
-            double  teadAmt = orderManager.getTeadAmt(userDos);
+        double  teadAmt = orderManager.getTeadAmt(userDos);
         System.out.println(ownAmt +teadAmt );
     }
 

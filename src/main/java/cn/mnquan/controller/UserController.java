@@ -4,26 +4,25 @@ import cn.mnquan.manager.IOrderManager;
 import cn.mnquan.manager.IRecvManager;
 import cn.mnquan.manager.IUserManager;
 import cn.mnquan.mapper.TbMnAdzoneMapper;
-import cn.mnquan.model.TbMnAdzoneDo;
-import cn.mnquan.model.TbMnAdzoneDoExample;
-import cn.mnquan.model.TbMnUserDo;
-import cn.mnquan.model.TbMnUserDoExample;
+import cn.mnquan.model.*;
+import cn.mnquan.utils.DateUtil;
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import weibo4j.Timeline;
+import weibo4j.http.ImageItem;
 
-import javax.naming.Context;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import java.awt.*;
-import java.awt.datatransfer.Clipboard;
-import java.awt.datatransfer.DataFlavor;
-import java.awt.datatransfer.Transferable;
+import java.io.InputStream;
 import java.math.BigDecimal;
+import java.net.URL;
+import java.net.URLEncoder;
 import java.util.List;
 
 /**
@@ -50,16 +49,16 @@ public class UserController extends BaseController {
      * @return
      */
     @RequestMapping("/app/user/centre.do")
-    public String userCenter(HttpSession session, Model model){
-        //如果sessionz中有值，跳转到用户中心
+    public String userCenter(HttpServletRequest request, Model model){
+        //如果cookie中有值，跳转到用户中心
         try {
-            Object accountNo = session.getAttribute("accountNo");
+            Cookie cookie = getCookieByName(request,"accountNo");
             double totalAmt = 0;//总金额
             double daiTotalAmt = 0;//待结算
             double hasRecvTotalAmt = 0;//已领取的金额
-            if(accountNo != null){
+            if(cookie != null){
                 //查出用户信息
-                TbMnUserDo tbMnUserDo = userManager.queryUserByAccountNo(String.valueOf(accountNo));
+                TbMnUserDo tbMnUserDo = userManager.queryUserByAccountNo(cookie.getValue());
                 model.addAttribute("userDo",tbMnUserDo);
                 //获取用户的总金额
                 totalAmt = orderManager.getTotalAmt(tbMnUserDo);
@@ -82,10 +81,10 @@ public class UserController extends BaseController {
      * @return
      */
     @RequestMapping("/app/user/register.do")
-    public void register(HttpServletResponse response, TbMnUserDo tbMnUserDo,HttpSession session){
+    public void register(HttpServletResponse response, TbMnUserDo tbMnUserDo){
         String result = userManager.addUser(tbMnUserDo);
         if("4".equals(result)){
-            session.setAttribute("accountNo",tbMnUserDo.getAccount());
+            addCookie(response,"accountNo",tbMnUserDo.getAccount());
         }
         sendMessages(response, JSON.toJSONString(result));
     }
@@ -95,8 +94,8 @@ public class UserController extends BaseController {
      * @return
      */
     @RequestMapping("/app/user/logout.do")
-    public String logout(HttpSession session){
-       session.removeAttribute("accountNo");
+    public String logout(HttpServletRequest request,HttpServletResponse response){
+        delCookie(request,response,"accountNo");
        return "page/centre";
     }
 
@@ -105,12 +104,12 @@ public class UserController extends BaseController {
      * @return
      */
     @RequestMapping("/app/user/resetAccount.do")
-    public void resetAccount(HttpServletResponse response, TbMnUserDo tbMnUserDo,HttpSession session){
+    public void resetAccount(HttpServletResponse response, TbMnUserDo tbMnUserDo,HttpServletRequest request){
         boolean flag = false;
         try {
-            Object accountNo = session.getAttribute("accountNo");
-            if(accountNo != null){
-                tbMnUserDo.setAccount(String.valueOf(accountNo));
+            Cookie cookie = getCookieByName(request,"accountNo");
+            if(cookie != null){
+                tbMnUserDo.setAccount(cookie.getValue());
                 userManager.resetAccount(tbMnUserDo);
                 sendMessages(response, JSON.toJSONString(tbMnUserDo.getBindAccount()));
                 return;
@@ -135,12 +134,12 @@ public class UserController extends BaseController {
      * @return
      */
     @RequestMapping("/app/user/invite.do")
-    public String invite(HttpSession session,Model model){
+    public String invite(HttpServletRequest request,Model model){
         try {
-            Object accountNo = session.getAttribute("accountNo");
-            if(accountNo != null){
+            Cookie cookie = getCookieByName(request,"accountNo");
+            if(cookie != null){
                 TbMnAdzoneDoExample example = new TbMnAdzoneDoExample();
-                example.createCriteria().andAccountEqualTo(String.valueOf(accountNo));
+                example.createCriteria().andAccountEqualTo(cookie.getValue());
 
                 List<TbMnAdzoneDo> list = tbMnAdzoneMapper.selectByExample(example);
                 if(null != list && list.size() > 0){
@@ -168,13 +167,13 @@ public class UserController extends BaseController {
      * @return
      */
     @RequestMapping("/app/user/team.do")
-    public String team(HttpSession session,Model model){
+    public String team(HttpServletRequest request,Model model){
         int teamCount = 0;
         try {
-            Object accountNo = session.getAttribute("accountNo");
-            if(accountNo != null){
+            Cookie cookie = getCookieByName(request,"accountNo");
+            if(cookie != null){
                 //查出用户信息
-                TbMnUserDo tbMnUserDo = userManager.queryUserByAccountNo(String.valueOf(accountNo));
+                TbMnUserDo tbMnUserDo = userManager.queryUserByAccountNo(cookie.getValue());
                 //根据用户信息查出团队人数
                 teamCount = userManager.queryTeamCount(tbMnUserDo);
             }
@@ -183,5 +182,35 @@ public class UserController extends BaseController {
         }
         model.addAttribute("teamCount",teamCount);
         return "page/team";
+    }
+    /**
+     * 后台发微博
+     * @return
+     */
+    @RequestMapping("/app/user/htSendWeiBo.do")
+    public void htSendWeiBo(TbMnMaterialOptionalDo item){
+        try {
+            String access_token = "2.002S3P4HE3KwGE3ad98af740k43PDC";
+            String statuses = URLEncoder.encode(item.getShortTitle()+"\n【原价】"+item.getZkFinalPrice()+"元，【"+item.getCouponInfo()+"】\n【优惠券详情链接】 http://www.mnquan.cn/app/detail/skipProductDetail.do?type=weibo&numIid="+item.getNumIid()+"\n【app下载链接】 http://www.mnquan.cn/app/apk/download.do","utf-8");
+            Timeline tm = new Timeline(access_token);
+
+            ImageItem imageItem1 = new ImageItem(loadImageByte(item.getPictUrl()));
+
+            tm.share(statuses,imageItem1);
+            log.info("微博发送成功,dateTime:{}", DateUtil.getCurrentTimeBySecond());
+        } catch (Exception e) {
+            log.error(e.getMessage(),e);
+        }
+    }
+
+    public byte[] loadImageByte(String imgUrl) {
+        byte[] picData = null;
+        try {
+            InputStream inputImage = new URL(imgUrl).openStream();
+            picData = IOUtils.toByteArray(inputImage);
+        } catch (Exception e) {
+            log.error(e.getMessage(),e);
+        }
+        return picData;
     }
 }

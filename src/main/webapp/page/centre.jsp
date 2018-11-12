@@ -20,16 +20,15 @@
     <link href="/favicon.ico" rel="icon">
     <link href="/touch-icon-iphone.png" rel="Bookmark" />
 
-    <script src="../../page/js/clipboard.min.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="../../page/js/common.css">
-    <link rel="stylesheet" href="../../page/js/main.css">
-    <script src="../../page/js/jquery.js" type="text/javascript"></script>
-    <link rel="stylesheet" type="text/css" href="../../page/js/xcConfirm.css"/>
-    <script src="../../page/js/xcConfirm.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="/page/js/mobile/layer.js"></script>
+    <script src="/page/js/clipboard.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="/page/js/common.css">
+    <link rel="stylesheet" href="/page/js/main.css">
+    <script src="/page/js/jquery.js" type="text/javascript"></script>
 </head>
 
 <body data-appid="489217" data-in="1">
-<link rel="stylesheet" href="../../page/js/user.css" />
+<link rel="stylesheet" href="/page/js/user.css" />
 
 <div class="ui_bot_tab" data-mta_name="首页-底部导航" ui-mta-modular>
     <div class="row-s">
@@ -49,7 +48,7 @@
         </a>
 
         <a data-mold="1" data-el="4" id="zhuanlian" href="javascript:void(0);" class="col-10-2 ">
-            <i class="iconfont"><img src="../../page/img/zhuanlian.png"></i>
+            <i class="iconfont"><img src="/page/img/zhuanlian.png"></i>
             <span style="color: rgb(102, 102, 102);">转链</span>
         </a>
 
@@ -133,7 +132,7 @@
         <ul class="ui_nav_list">
             <li class="row-s">
                 <a  href="javascript:void(0);" onclick="myOrder('1');">
-                    <i class="iconfont "><img src="../../page/img/quanbu.png" alt=""></i>
+                    <i class="iconfont "><img src="/page/img/quanbu.png" alt=""></i>
                     <p class="col-12-8">
                         全部
                     </p>
@@ -141,7 +140,7 @@
             </li>
             <li class="row-s">
                 <a  href="javascript:void(0);" onclick="myOrder('14');">
-                    <i class="iconfont "><img src="../../page/img/daifukuan.png" alt=""></i>
+                    <i class="iconfont "><img src="/page/img/daifukuan.png" alt=""></i>
                     <p class="col-12-8">
                         待结算
                     </p>
@@ -149,7 +148,7 @@
             </li>
             <li class="row-s">
                 <a  href="javascript:void(0);" onclick="myOrder('3');">
-                    <i class="iconfont "><img src="../../page/img/yifukuan.png" alt=""></i>
+                    <i class="iconfont "><img src="/page/img/yifukuan.png" alt=""></i>
                     <p class="col-12-8">
                         已结算
                     </p>
@@ -157,7 +156,7 @@
             </li>
             <li class="row-s">
                 <a  href="javascript:void(0);" onclick="myOrder('13');">
-                    <i class="iconfont "><img src="../../page/img/quxiao.png" alt=""></i>
+                    <i class="iconfont "><img src="/page/img/quxiao.png" alt=""></i>
                     <p class="col-12-8">
                         已失效
                     </p>
@@ -179,7 +178,7 @@
         <ul class="ui_nav_list_2">
             <li class="row-s row-s-2">
                 <a  href="/app/user/invite.do">
-                    <i class="iconfont "><img src="../../page/img/tuijianhaoyou.png" alt=""></i>
+                    <i class="iconfont "><img src="/page/img/tuijianhaoyou.png" alt=""></i>
                     <p class="col-12-8">
                         推荐好友
                     </p>
@@ -187,7 +186,7 @@
             </li>
             <%--<li class="row-s row-s-2">
                 <a  href="javascript:void(0);">
-                    <i class="iconfont "><img src="../../page/img/czozuozhinan.png" alt=""></i>
+                    <i class="iconfont "><img src="/page/img/czozuozhinan.png" alt=""></i>
                     <p class="col-12-8">
                         操作指南
                     </p>
@@ -195,7 +194,7 @@
             </li>--%>
             <li class="row-s row-s-2">
                 <a  href="/app/user/team.do">
-                    <i class="iconfont "><img src="../../page/img/wodetuijian.png" alt=""></i>
+                    <i class="iconfont "><img src="/page/img/wodetuijian.png" alt=""></i>
                     <p class="col-12-8">
                         我的推荐
                     </p>
@@ -203,7 +202,7 @@
             </li>
             <li class="row-s row-s-2">
                 <a id="receive" href="javascript:void(0);">
-                    <i class="iconfont "><img src="../../page/img/tiqujilu.png" alt=""></i>
+                    <i class="iconfont "><img src="/page/img/tiqujilu.png" alt=""></i>
                     <p class="col-12-8">
                         提取记录
                     </p>
@@ -211,7 +210,7 @@
             </li>
             <li class="row-s row-s-2">
                 <a  href="/app/user/contact.do">
-                    <i class="iconfont "><img src="../../page/img/contact.png" alt=""></i>
+                    <i class="iconfont "><img src="/page/img/contact.png" alt=""></i>
                     <p class="col-12-8">
                         联系我们
                     </p>
@@ -243,10 +242,11 @@
             dataType:'json',
             type:"post",
             success:function(data){
+                console.log(data)
                 if("1" == data){
                     alert("查询失败")
                 }else{
-                    window.location.href = domain+"/app/detail/skipProductDetail.do?numIid="+data;
+                    window.location.href = "/app/detail/skipProductDetail.do?numIid="+data;
                 }
             }
         });
@@ -272,8 +272,7 @@
                 if("true" == data){//用户已登陆
                     window.location.href = "/app/order/skipOrderPage.do?tkStatus="+tkStatus;
                 }else{//用户未登陆
-                    var txt=  "小主，请先登陆！";
-                    window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
+                    layer_msg();
                 }
             }
         });
@@ -289,11 +288,18 @@
                 if("true" == data){//用户已登陆
                     window.location.href = "/app/receive/recvPage.do";
                 }else{//用户未登陆
-                    var txt=  "小主，请先登陆！";
-                    window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
+                    layer_msg();
                 }
             }
         });
     });
+    
+    function layer_msg() {
+        layer.open({
+            content: '亲，请先去登陆哦！'
+            ,skin: 'msg'
+            ,time: 2 //2秒后自动关闭
+        });
+    }
 </script>
 </html>

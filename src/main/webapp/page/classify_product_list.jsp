@@ -169,7 +169,6 @@
 
     //加载页面元素
     function get_list(sort){
-        console.log("sort="+sort)
         $.ajax({
             url:""+"/app/index/getProductList.do",
             async:false,

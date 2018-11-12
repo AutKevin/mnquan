@@ -13,6 +13,8 @@
     <result column="user_name" jdbcType="VARCHAR" property="userName" />
     <result column="is_agency" jdbcType="VARCHAR" property="isAgency" />
     <result column="bind_account" jdbcType="VARCHAR" property="bindAccount" />
+    <result column="own_rate" jdbcType="VARCHAR" property="ownRate" />
+    <result column="team_rate" jdbcType="VARCHAR" property="teamRate" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -74,7 +76,7 @@
   </sql>
   <sql id="Base_Column_List">
     account, id, pwd, state, agency_id, error_times, created_at, updated_at, user_name, 
-    is_agency, bind_account
+    is_agency, bind_account, own_rate, team_rate
   </sql>
   <select id="selectByExample" parameterType="cn.mnquan.model.TbMnUserDoExample" resultMap="BaseResultMap">
     select
@@ -100,11 +102,13 @@
     insert into tb_mn_user (account, id, pwd, 
       state, agency_id, error_times, 
       created_at, updated_at, user_name, 
-      is_agency, bind_account)
+      is_agency, bind_account, own_rate, 
+      team_rate)
     values (#{account,jdbcType=VARCHAR}, #{id,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR}, 
       #{state,jdbcType=VARCHAR}, #{agencyId,jdbcType=VARCHAR}, #{errorTimes,jdbcType=VARCHAR}, 
       #{createdAt,jdbcType=DATE}, #{updatedAt,jdbcType=DATE}, #{userName,jdbcType=VARCHAR}, 
-      #{isAgency,jdbcType=VARCHAR}, #{bindAccount,jdbcType=VARCHAR})
+      #{isAgency,jdbcType=VARCHAR}, #{bindAccount,jdbcType=VARCHAR}, #{ownRate,jdbcType=VARCHAR}, 
+      #{teamRate,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.mnquan.model.TbMnUserDo">
     insert into tb_mn_user
@@ -142,6 +146,12 @@
       <if test="bindAccount != null">
         bind_account,
       </if>
+      <if test="ownRate != null">
+        own_rate,
+      </if>
+      <if test="teamRate != null">
+        team_rate,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="account != null">
@@ -176,6 +186,12 @@
       </if>
       <if test="bindAccount != null">
         #{bindAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="ownRate != null">
+        #{ownRate,jdbcType=VARCHAR},
+      </if>
+      <if test="teamRate != null">
+        #{teamRate,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -221,6 +237,12 @@
       <if test="record.bindAccount != null">
         bind_account = #{record.bindAccount,jdbcType=VARCHAR},
       </if>
+      <if test="record.ownRate != null">
+        own_rate = #{record.ownRate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.teamRate != null">
+        team_rate = #{record.teamRate,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -238,7 +260,9 @@
       updated_at = #{record.updatedAt,jdbcType=DATE},
       user_name = #{record.userName,jdbcType=VARCHAR},
       is_agency = #{record.isAgency,jdbcType=VARCHAR},
-      bind_account = #{record.bindAccount,jdbcType=VARCHAR}
+      bind_account = #{record.bindAccount,jdbcType=VARCHAR},
+      own_rate = #{record.ownRate,jdbcType=VARCHAR},
+      team_rate = #{record.teamRate,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -276,6 +300,12 @@
       <if test="bindAccount != null">
         bind_account = #{bindAccount,jdbcType=VARCHAR},
       </if>
+      <if test="ownRate != null">
+        own_rate = #{ownRate,jdbcType=VARCHAR},
+      </if>
+      <if test="teamRate != null">
+        team_rate = #{teamRate,jdbcType=VARCHAR},
+      </if>
     </set>
     where account = #{account,jdbcType=VARCHAR}
   </update>
@@ -290,7 +320,9 @@
       updated_at = #{updatedAt,jdbcType=DATE},
       user_name = #{userName,jdbcType=VARCHAR},
       is_agency = #{isAgency,jdbcType=VARCHAR},
-      bind_account = #{bindAccount,jdbcType=VARCHAR}
+      bind_account = #{bindAccount,jdbcType=VARCHAR},
+      own_rate = #{ownRate,jdbcType=VARCHAR},
+      team_rate = #{teamRate,jdbcType=VARCHAR}
     where account = #{account,jdbcType=VARCHAR}
   </update>
 </mapper>

@@ -184,7 +184,6 @@
             dataType:'json',
             type:"post",
             success:function(data){
-                console.log(data);
                 if("1" == data){//手机号已经存在，请去登陆！
                     var txt=  "手机号已经存在，请去登陆！";
                     window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);

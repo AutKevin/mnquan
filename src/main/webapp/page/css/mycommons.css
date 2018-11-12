@@ -1,0 +1,48 @@
+.t-zhuanlian{
+    position: fixed;
+    left: 6%;
+    top: 25%;
+    background: #999;
+    width: 86%;
+    height: 35%;
+    border-radius: 7px;
+    z-index: 10000;
+    display: none;
+    text-align: center;
+}
+.t-zhuanlian .t-zhuanlian-header{
+    background-image: url("/page/img/close.png");
+    position:absolute;
+    right:50px;width:30px;
+    height: 30px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    bottom: -18px;
+    margin-right: -60px;
+    box-shadow: 0 2px 5px #999;
+    border: 2px solid #fff;
+    border-radius: 50px;
+}
+.t-zhuanlian .t-zhuanlian-p{
+    margin-top: 2%;
+}
+.t-zhuanlian .t-zhuanlian-body{
+    margin: auto;
+    border: 2px dashed #e35132;
+    width: 80%;
+    height: 88px;
+    margin-top: 4%;
+    text-align: center;
+}
+.t-zhuanlian .t-zhuanlian-footer{
+    text-align: center;
+    margin-top: 7%
+}
+.t-zhuanlian .t-zhuanlian-footer .t-zhuanlian-modelButto {
+    width: 36%;
+    line-height: 32px;
+    background-color: #ff3300;
+    border-radius: 24px;
+    color: #F5F5F5;
+    border: 0px;
+}

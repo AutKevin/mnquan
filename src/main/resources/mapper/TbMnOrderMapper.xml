@@ -704,4 +704,9 @@
       #{item.id,jdbcType=VARCHAR}
     </foreach>
   </select>
+  
+  
+  <delete id="deleteOrder" parameterType="cn.mnquan.model.TbMnOrderDo">
+    DELETE FROM tb_mn_order WHERE create_time = #{createTime,jdbcType=VARCHAR}
+  </delete>
 </mapper>

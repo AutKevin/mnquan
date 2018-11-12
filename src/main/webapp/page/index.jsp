@@ -1,6 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" session="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--<%@ include file="/page/commons.jsp" %>--%>
 <%@ include file="/page/zhuanlian.jsp" %>
 <!DOCTYPE html>
 <html>
@@ -15,15 +14,16 @@
     <meta name="keywords" content="9.9包邮，白菜价，天天特价，优惠卷,搜券宝">
     <meta name="description" content="9.9包邮，白菜价，天天特价">
     <meta itemprop="image" content="_50x50.jpg">
-    <link rel="stylesheet" href="../page/js/bootstrap.min.css">
+    <link rel="stylesheet" href="/page/js/bootstrap.min.css">
     <script type="text/javascript" src="/page/js/jquery.js"></script>
-    <script type="text/javascript" src="../../page/js/jquery.lazyload.min.js"></script>
-    <script src="../page/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../page/js/common.css">
-    <link rel="stylesheet" type="text/css" href="../page/css/index.css" charset="utf-8">
-    <link rel="stylesheet" href="../page/js/main.css">
-    <link rel="stylesheet" href="../page/js/swiper-4.4.1.min.css">
-    <script src="../page/js/swiper-4.4.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/page/js/jquery.lazyload.min.js"></script>
+    <script src="/page/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/page/js/common.css">
+    <link rel="stylesheet" type="text/css" href="/page/css/index.css" charset="utf-8">
+    <link rel="stylesheet" href="/page/js/main.css">
+    <link rel="stylesheet" href="/page/js/swiper-4.4.1.min.css">
+    <script src="/page/js/swiper-4.4.1.min.js" type="text/javascript"></script>
+    <script src="/page/js/layer.js"></script>
     <style>
         #return-top{position:fixed;bottom:10%;right:50px; width:60px;height:60px;text-align:center;display:none;}
         #return-top a{text-decoration:none;}
@@ -68,7 +68,7 @@
         </a>
 
         <a data-mold="1" data-el="4" id="zhuanlian" href="javascript:void(0);" class="col-10-2 ">
-            <i class="iconfont"><img src="../../page/img/zhuanlian.png"></i>
+            <i class="iconfont"><img src="/page/img/zhuanlian.png"></i>
             <span style="color: rgb(102, 102, 102);">转链</span>
         </a>
 
@@ -132,7 +132,7 @@
                     <li class="col-12-3 text-center">
                         <a onclick="myProgress(2,1);" href="javascript:void(0);">
                             <i class="iconfont ">
-                                <img src="https://img.alicdn.com/imgextra/i4/2053469401/TB2PFV2HL9TBuNjy0FcXXbeiFXa-2053469401.png">
+                                <img src="https://img.alicdn.com/imgextra/i1/2053469401/TB2n7WyHN9YBuNjy0FfXXXIsVXa-2053469401.png">
                             </i>
                             <span>男装</span>
                         </a>
@@ -140,7 +140,7 @@
                     <li class="col-12-3 text-center">
                         <a onclick="myProgress(3,1);" href="javascript:void(0);">
                             <i class="iconfont ">
-                                <img src="https://img.alicdn.com/imgextra/i1/2053469401/TB2QybZHL1TBuNjy0FjXXajyXXa-2053469401.png">
+                                <img src="https://img.alicdn.com/imgextra/i1/2053469401/TB2g79yHN9YBuNjy0FfXXXIsVXa-2053469401.png">
                             </i>
                             <span>鞋品</span>
                         </a>
@@ -148,7 +148,7 @@
                     <li class="col-12-3 text-center">
                         <a onclick="myProgress(4,1);" href="javascript:void(0);">
                             <i class="iconfont ">
-                                <img src="https://img.alicdn.com/imgextra/i3/2053469401/TB2FCJnHFGWBuNjy0FbXXb4sXXa-2053469401.png">
+                                <img src="https://img.alicdn.com/imgextra/i3/2053469401/TB2cnZWzfiSBuNkSnhJXXbDcpXa-2053469401.png">
                             </i>
                             <span>内衣</span>
                         </a>
@@ -156,7 +156,7 @@
                     <li class="col-12-3 text-center">
                         <a onclick="myProgress(5,1);" href="javascript:void(0);">
                             <i class="iconfont ">
-                                <img src="https://img.alicdn.com/imgextra/i1/2053469401/TB2n7WyHN9YBuNjy0FfXXXIsVXa-2053469401.png">
+                                <img src="https://img.alicdn.com/imgextra/i2/2053469401/TB2i36ZazfguuRjy1zeXXb0KFXa-2053469401.png">
                             </i>
                             <span>配饰</span>
                         </a>
@@ -164,7 +164,7 @@
                     <li class="col-12-3 text-center">
                         <a onclick="myProgress(6,1);" href="javascript:void(0);">
                             <i class="iconfont ">
-                                <img src="https://img.alicdn.com/imgextra/i1/2053469401/TB2g79yHN9YBuNjy0FfXXXIsVXa-2053469401.png">
+                                <img src="https://img.alicdn.com/imgextra/i1/2053469401/TB2QybZHL1TBuNjy0FjXXajyXXa-2053469401.png">
                             </i>
                             <span>美妆</span>
                         </a>
@@ -172,7 +172,7 @@
                     <li class="col-12-3 text-center">
                         <a onclick="myProgress(7,1);" href="javascript:void(0);">
                             <i class="iconfont ">
-                                <img src="https://img.alicdn.com/imgextra/i3/2053469401/TB230SXHL9TBuNjy1zbXXXpepXa-2053469401.png">
+                                <img src="https://img.alicdn.com/imgextra/i4/2053469401/TB2QMv0ay6guuRjy1XdXXaAwpXa-2053469401.png">
                             </i>
                             <span>母婴</span>
                         </a>
@@ -180,7 +180,7 @@
                     <li class="col-12-3 text-center">
                         <a onclick="myProgress(8,1);" href="javascript:void(0);">
                             <i class="iconfont ">
-                                <img src="https://img.alicdn.com/imgextra/i4/2053469401/TB2QMv0ay6guuRjy1XdXXaAwpXa-2053469401.png">
+                                <img src="https://img.alicdn.com/imgextra/i4/2053469401/TB2PFV2HL9TBuNjy0FcXXbeiFXa-2053469401.png">
                             </i>
                             <span>美食</span>
                         </a>
@@ -196,7 +196,7 @@
                     <li class="col-12-3 text-center">
                         <a onclick="myProgress(10,1);" href="javascript:void(0);">
                             <i class="iconfont ">
-                                <img src="https://img.alicdn.com/imgextra/i3/2053469401/TB2cnZWzfiSBuNkSnhJXXbDcpXa-2053469401.png">
+                                <img src="https://img.alicdn.com/imgextra/i3/2053469401/TB2FCJnHFGWBuNjy0FbXXb4sXXa-2053469401.png">
                             </i>
                             <span>居家日用</span>
                         </a>
@@ -204,7 +204,7 @@
                     <li class="col-12-3 text-center">
                         <a onclick="myProgress(11,1);" href="javascript:void(0);">
                             <i class="iconfont ">
-                                <img src="https://img.alicdn.com/imgextra/i4/2053469401/TB21.plHQKWBuNjy1zjXXcOypXa-2053469401.png">
+                                <img src="https://img.alicdn.com/imgextra/i3/2053469401/TB230SXHL9TBuNjy1zbXXXpepXa-2053469401.png">
                             </i>
                             <span>数码家电</span>
                         </a>
@@ -212,7 +212,7 @@
                     <li class="col-12-3 text-center">
                         <a onclick="myProgress(12,1);" href="javascript:void(0);">
                             <i class="iconfont ">
-                                <img src="https://img.alicdn.com/imgextra/i2/2053469401/TB2i36ZazfguuRjy1zeXXb0KFXa-2053469401.png">
+                                <img src="https://img.alicdn.com/imgextra/i4/2053469401/TB21.plHQKWBuNjy1zjXXcOypXa-2053469401.png">
                             </i>
                             <span>文娱车品</span>
                         </a>
@@ -364,7 +364,7 @@
                 if("1" == data){
                     alert("查询失败")
                 }else{
-                    window.location.href = domain+"/app/detail/skipProductDetail.do?numIid="+data;
+                    window.location.href = "/app/detail/skipProductDetail.do?numIid="+data;
                 }
             }
         });
@@ -454,6 +454,7 @@
         }
     }
     $(function(){
+        $(window).scrollTop(0);
         getProjects();
         //获取商品列表
         get_list();
@@ -463,56 +464,69 @@
                 get_list();
             }
         });
-        //加载页面元素
-        function get_list(){
-            $.ajax({
-                url:""+"/app/index/getProductList.do",
-                async:false,
-                data: {'pageNo':pageNo},
-                dataType:'json',
-                type:"post",
-                success:function(data){
-                    var arrLen = data.length;
-                    if(arrLen > 0){
-                        $.each(data,function(index,item){
-                            var createLi = document.createElement("li");
-                            createLi.className = "row-s listpage1";
-                            createLi.innerHTML+="<a onclick='myProgress("+item.numIid+",3"+")' href='javascript:void(0);'>" +
-                                "<p class='img'>" +
-                                    "<img class='lazy' src='/page/img/rolling.gif' data-original="+item.pictUrl+" style='background: rgb(245, 245, 245); display: block;'>" +
-                                "</p>" +
-                                "<div class='cent'>" +
-                                    "<h3>新券~"+item.shortTitle+"</h3>" +
-                                    "<div class='num col-aaa '><span> 淘宝价 ¥"+item.zkFinalPrice+"</span>"+
-                                        "<span class='fr'>已售"+item.volume+"件</span>" +
-                                   "</div>" +
-                                    "<div class='money col-money'>" +
-                                        "<p class='quan fr'><i>"+item.couponAmount+"元券</i></p>券后价 <span><i>¥</i>"+accSub(item.zkFinalPrice,item.couponAmount)+"</span>" +
-                                    "</div>" +
-                            "</div></a>"
-                            document.getElementById("indexUl").appendChild(createLi);
-                        });
-                        pageNo++;
-                    }
-                    lazy();
-                }
-            });
-        }
-        //返回顶部按钮控制
-        $('#return-top').hide();
-        $(function(){
-            $(window).scroll(function(){
-                if($(window).scrollTop()>300){
-                    $('#return-top').fadeIn(300);
-                }
-                else{$('#return-top').fadeOut(200);}
-            });
-            $('#return-top').click(function(){
-                $('body,html').animate({scrollTop:0},300);
-                return false;
-            })
+    })
+
+    //返回顶部按钮控制
+    $('#return-top').hide();
+    $(function(){
+        $(window).scroll(function(){
+            if($(window).scrollTop()>300){
+                $('#return-top').fadeIn(300);
+            }
+            else{$('#return-top').fadeOut(200);}
+        });
+        $('#return-top').click(function(){
+            $('body,html').animate({scrollTop:0},300);
+            return false;
         })
     })
+
+    //加载页面元素
+    function get_list(){
+        $.ajax({
+            layerIndex:-1,
+            url:""+"/app/index/getProductList.do",
+            async:false,
+            data: {'pageNo':pageNo},
+            dataType:'json',
+            type:"post",
+            beforeSend: function () {
+                this.layerIndex = layer.open(2,
+                    {shade: false});
+            },
+            success:function(data){
+                var arrLen = data.length;
+                if(arrLen > 0){
+                    $.each(data,function(index,item){
+                        var createLi = document.createElement("li");
+                        createLi.className = "row-s listpage1";
+                        createLi.innerHTML+="<a onclick='myProgress("+item.numIid+",3"+")' href='javascript:void(0);'>" +
+                            "<p class='img'>" +
+                            "<img class='lazy' src='/page/img/rolling.gif' data-original="+item.pictUrl+" style='background: rgb(245, 245, 245); display: block;'>" +
+                            "</p>" +
+                            "<div class='cent'>" +
+                            "<h3>新券~"+item.shortTitle+"</h3>" +
+                            "<div class='num col-aaa '><span> 淘宝价 ¥"+item.zkFinalPrice+"</span>"+
+                            "<span class='fr'>已售"+item.volume+"件</span>" +
+                            "</div>" +
+                            "<div class='money col-money'>" +
+                            "<p class='quan fr'><i>"+item.couponAmount+"元券</i></p>券后价 <span><i>¥</i>"+accSub(item.zkFinalPrice,item.couponAmount)+"</span>" +
+                            "</div>" +
+                            "</div></a>"
+                        document.getElementById("indexUl").appendChild(createLi);
+                    });
+                    pageNo++;
+                }
+            },
+            error: function () {
+                //ajax请求失败
+            },
+            complete: function () {//请求完成，不管成功或者失败
+                lazy();
+                layer.close(this.layerIndex);
+            },
+        });
+    }
 
     //减法避免丢失精度
     function accSub(arg1, arg2) {

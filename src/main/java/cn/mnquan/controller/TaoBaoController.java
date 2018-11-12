@@ -28,10 +28,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.math.BigDecimal;
-import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 import java.util.regex.Matcher;
@@ -192,17 +192,20 @@ public class TaoBaoController extends BaseController{
      * @param model
      */
     @RequestMapping(value="/app/detail/skipProductDetail.do",method = RequestMethod.GET)
-    public String skipProductDetail(TbMnMaterialOptionalDo optionalDo,String type, Model model, HttpSession session){
+    public String skipProductDetail(TbMnMaterialOptionalDo optionalDo,String type, Model model, HttpServletRequest request){
         try {
             log.info("开始跳转到商品详情,numIid:{},date:{}",optionalDo.getNumIid(), DateUtil.getCurrentTimeBySecond());
-            Object accountNo = session.getAttribute("accountNo");
+            Cookie cookie = getCookieByName(request,"accountNo");
             //判断用户是否登陆，登陆后才能获取到返利，否则算是自己的
             Long adzoneId = Contents.adzone_id;
+            String tbkRate = "60";
             boolean flag = false;
-            if(accountNo != null){
-                TbMnUserDo tbMnUserDo = userManager.queryUserByAccountNo(String.valueOf(accountNo));
+            if(cookie != null){
+                TbMnUserDo tbMnUserDo = userManager.queryUserByAccountNo(cookie.getValue());
                 adzoneId = Long.valueOf(tbMnUserDo.getId());
                 flag = true;
+                log.info("查询订单详情,adzoneId:{},accountNo:{}",adzoneId,cookie.getValue());
+                tbkRate = tbMnUserDo.getOwnRate();
             }
             TbMnProductDetailDo itemDetail = null;
             TbMnMaterialOptionalDo optionalDo1 = null;
@@ -212,7 +215,7 @@ public class TaoBaoController extends BaseController{
             String smallImages = null;
             String command = null;
             try {
-                log.info("查询订单详情,adzoneId:{},accountNo:{}",adzoneId,accountNo);
+                log.info("查询订单详情,adzoneId:{}",adzoneId);
                 TbkDgMaterialOptionalResponse.MapData mapData = taobaoApiManager.getProductByItemUrl(itemUrl,adzoneId);
                 optionalDo1 = BeanMapperUtil.objConvert(mapData,TbMnMaterialOptionalDo.class);
                 smallImages = getSmallImages(mapData.getSmallImages());
@@ -227,7 +230,7 @@ public class TaoBaoController extends BaseController{
                 optionalDo1.setCouponAmount(couponAmonunt);
                 optionalDo1.setSmallImages(smallImages);
                 optionalDo1.setToken(command);
-                model.addAttribute("rate" ,new BigDecimal(optionalDo1.getZkFinalPrice()).multiply(new BigDecimal(optionalDo1.getCommissionRate())).multiply(new BigDecimal(Double.toString(55))).divide(new BigDecimal(Double.toString(1000000))).setScale(2, BigDecimal.ROUND_DOWN).doubleValue());
+                model.addAttribute("rate" ,(new BigDecimal(optionalDo1.getZkFinalPrice()).subtract(new BigDecimal(couponAmonunt))).multiply(new BigDecimal(optionalDo1.getCommissionRate())).multiply(new BigDecimal(tbkRate)).divide(new BigDecimal(Double.toString(1000000))).setScale(2, BigDecimal.ROUND_DOWN).doubleValue());
                 //获取商品详情
                 TbkItemInfoGetResponse.NTbkItem item = taobaoApiManager.queryProductItem(String.valueOf(mapData.getNumIid()));
                 itemDetail = BeanMapperUtil.objConvert(item,TbMnProductDetailDo.class);
@@ -269,7 +272,13 @@ public class TaoBaoController extends BaseController{
      * @return
      */
     @RequestMapping(value="/app/query/super_query.do",method = RequestMethod.GET)
-    public String superQuery(Model model,String title){
+    public String superQuery(Model model,String title,HttpServletRequest request){
+        Cookie cookie = getCookieByName(request,"accountNo");
+        if(cookie != null){
+            //查出用户信息
+            TbMnUserDo tbMnUserDo = userManager.queryUserByAccountNo(cookie.getValue());
+            model.addAttribute("ownRate",tbMnUserDo.getOwnRate());
+        }
         model.addAttribute("title",title);
         return "page/super_query_list";
     }

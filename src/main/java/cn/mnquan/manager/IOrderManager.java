@@ -15,7 +15,7 @@ import java.util.List;
 public interface IOrderManager {
     void queryOrderByTask() throws ApiException;
 
-    List<TbMnOrderDo> queryOrderByStatus(TbMnOrderDo tbMnOrderDo,List<String> adzoneIds);
+    List<TbMnOrderDo> queryOrderByStatus(TbMnOrderDo tbMnOrderDo,List<String> adzoneIds,TbMnUserDo tbMnUserDo);
 
     double getownAmt(TbMnUserDo tbMnUserDo);
 
@@ -28,4 +28,6 @@ public interface IOrderManager {
     double getTotalAmt(TbMnUserDo tbMnUserDo);
 
     double getDaiTotalAmt(TbMnUserDo tbMnUserDo);
+
+    void queryOrderAndUpdate() throws ApiException;
 }

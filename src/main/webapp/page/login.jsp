@@ -134,7 +134,6 @@
             dataType:'json',
             type:"post",
             success:function(data){
-                console.log(data);
                 if("1" == data){//用户名或密码不能为空！
                     var txt=  "用户名或密码不能为空,请重新登陆！";
                     window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);

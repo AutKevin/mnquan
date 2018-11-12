@@ -49,15 +49,10 @@ public class TbMaterialOptional{
     public void getProductByItemUrl() throws ApiException {
         TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);
         TbkDgMaterialOptionalRequest req = new TbkDgMaterialOptionalRequest();
-        req.setQ("https://item.taobao.com/item.htm?id=574347805573");
+        req.setQ("langtian浪天电动牙刷男女成人款非充电式声波自动牙刷软毛防水");
         req.setAdzoneId(adzone_id);
         TbkDgMaterialOptionalResponse rsp = client.execute(req);
-        JSONObject jsonObject = JSONObject.fromObject(rsp.getBody());
-        String tbkResp = jsonObject.get("tbk_dg_material_optional_response").toString();
-        JSONObject jsonObject1 = JSONObject.fromObject(tbkResp);
-        String resultList = jsonObject1.get("result_list").toString();
-        JSONObject jsonObject2 = JSONObject.fromObject(resultList);
-        String mapData = jsonObject2.get("map_data").toString();
+        System.out.println(rsp);
     }
 
     @Test

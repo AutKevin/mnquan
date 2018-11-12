@@ -25,6 +25,26 @@ public class TbMnUserDo {
 
     private String bindAccount;
 
+    private String ownRate;
+
+    private String teamRate;
+
+    public String getOwnRate() {
+        return ownRate;
+    }
+
+    public void setOwnRate(String ownRate) {
+        this.ownRate = ownRate;
+    }
+
+    public String getTeamRate() {
+        return teamRate;
+    }
+
+    public void setTeamRate(String teamRate) {
+        this.teamRate = teamRate;
+    }
+
     public String getAccount() {
         return account;
     }

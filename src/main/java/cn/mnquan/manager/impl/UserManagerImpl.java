@@ -75,6 +75,8 @@ public class UserManagerImpl implements IUserManager{
             record.setState("1");
             record.setCreatedAt(new Date());
             record.setUserName(tbMnUserDo.getUserName());
+            record.setOwnRate("60");//默认佣金比率60%
+            record.setTeamRate("10");
             tbMnUserMapper.insertSelective(record);
             return "4";
         }else {

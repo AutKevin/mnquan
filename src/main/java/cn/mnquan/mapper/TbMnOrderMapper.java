@@ -34,4 +34,6 @@ public interface TbMnOrderMapper {
     double selectDaiOwmAmt(TbMnUserDo tbMnUserDo);
 
     double selectDaiTeamAmt(List<TbMnUserDo> userDos);
+
+    void deleteOrder(TbMnOrderDo item);
 }

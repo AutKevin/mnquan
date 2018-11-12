@@ -6,13 +6,15 @@ import cn.mnquan.model.TbMnOrderDo;
 import cn.mnquan.model.TbMnUserDo;
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.tools.ant.taskdefs.condition.Http;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,9 +38,9 @@ public class OrderController extends BaseController{
      * @return
      */
     @RequestMapping("/app/order/queryOrderCheckLoginStats.do")
-    public void queryOrderCheckLoginStats(HttpSession session,HttpServletResponse response){
-        Object accountNo = session.getAttribute("accountNo");
-        if(accountNo != null){//用户已经登陆
+    public void queryOrderCheckLoginStats(HttpServletRequest request, HttpServletResponse response){
+        Cookie cookie = getCookieByName(request,"accountNo");
+        if(cookie != null){//用户已经登陆
             sendMessages(response, JSON.toJSONString("true"));
         }else {//未登陆
             sendMessages(response, JSON.toJSONString("false"));
@@ -59,10 +61,10 @@ public class OrderController extends BaseController{
      * @return
      */
     @RequestMapping("/app/order/queryOrders.do")
-    public void queryOrders(TbMnOrderDo tbMnOrderDo,HttpServletResponse response,HttpSession session){
+    public void queryOrders(TbMnOrderDo tbMnOrderDo,HttpServletResponse response,HttpServletRequest request){
         //获取当前登陆的账号，查出广告位id
-        Object accountNo = session.getAttribute("accountNo");
-        TbMnUserDo tbMnUserDo = userManager.queryUserByAccountNo(String.valueOf(accountNo));
+        Cookie cookie = getCookieByName(request,"accountNo");
+        TbMnUserDo tbMnUserDo = userManager.queryUserByAccountNo(cookie.getValue());
         List<String> adzoneIds = new ArrayList<String>();
         tbMnOrderDo.setAdzoneId(tbMnUserDo.getId());
         adzoneIds.add(tbMnUserDo.getId());
@@ -72,7 +74,7 @@ public class OrderController extends BaseController{
                 adzoneIds.add(userDo.getId());//获取团队广告位id
             }
         }
-        List<TbMnOrderDo> list = orderManager.queryOrderByStatus(tbMnOrderDo,adzoneIds);
+        List<TbMnOrderDo> list = orderManager.queryOrderByStatus(tbMnOrderDo,adzoneIds,tbMnUserDo);
         sendMessages(response, JSON.toJSONString(list));
     }
 }

@@ -87,7 +87,7 @@
                enableDeleteByExample="false">
         </table>-->
 
-       <!-- <table tableName="tb_mn_user" mapperName="TbMnUserMapper"
+        <table tableName="tb_mn_user" mapperName="TbMnUserMapper"
                domainObjectName="TbMnUserDo"
                enableInsert="true"
                enableSelectByPrimaryKey="true"
@@ -97,7 +97,7 @@
                enableSelectByExample="true"
                enableUpdateByExample="true"
                enableDeleteByExample="false">
-        </table>-->
+        </table>
        <!-- <table tableName="tb_mn_adzone" mapperName="TbMnAdzoneMapper"
                domainObjectName="TbMnAdzoneDo"
                enableInsert="true"
@@ -110,7 +110,7 @@
                enableDeleteByExample="false">
         </table>-->
 
-        <table tableName="tb_mn_receive" mapperName="TbMnReceiveMapper"
+        <!--<table tableName="tb_mn_receive" mapperName="TbMnReceiveMapper"
                domainObjectName="TbMnReceiveDo"
                enableInsert="true"
                enableSelectByPrimaryKey="true"
@@ -120,7 +120,7 @@
                enableSelectByExample="true"
                enableUpdateByExample="true"
                enableDeleteByExample="false">
-        </table>
+        </table>-->
 
         <!--<table tableName="tb_mn_agency" mapperName="TbMnAgencyMapper"
                domainObjectName="TbMnAgencyDo"

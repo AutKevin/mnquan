@@ -13,7 +13,6 @@
     <meta name="keywords" content="9.9包邮，白菜价，天天特价，优惠卷,搜券宝"/>
     <meta name="description" content="9.9包邮，白菜价，天天特价"/>
     <script src="../../page/js/jquery.min.js" type="text/javascript"></script>
-    <%--<script type="text/javascript" src="../../page/js/jquery.lazyload.min.js"></script>--%>
     <link href="../../page/js/wap_common.css" rel="stylesheet">
     <link href="../../page/js/wap_search.css" rel="stylesheet"/>
     <link href="../../page/js/style.css" rel="stylesheet">
@@ -75,7 +74,7 @@
 <div class="search-pop" style="display:block;">
     <div class="main-title clearfix theme-bg-color-1" style="height: 48px">
         <input type="hidden" name="wsw-status" value="1">
-
+        <input type="hidden" id="tbkRate" value="${ownRate}">
         <a href="/app" class="close-src" style="margin-top: 10px"></a>
 
         <form action="/app/query/super_query.do" method="GET" id="my-search" style="margin-top: 10px">
@@ -366,9 +365,9 @@
                             superQueryListHtml+='<div class="sort_main ads-list2"><div class="goods-item clearfix">' +
                                 '<a data-transition="slide" href="/app/detail/skipProductDetail.do?type=1&numIid='+item.numIid+'" class="img ui-link">' +
                                 '<img class="lazy" data-original="/page/img/rolling.gif" src="'+item.pictUrl+'"></a><div class="text"><div>' +
-                                '<a data-transition="slide" href="/app/detail/skipProductDetail.do?type=1&numIid='+item.numIid+'" class="title ui-link">'+item.shortTitle+'<div class="share-wrapper">' +
+                                '<a data-transition="slide" href="/app/detail/skipProductDetail.do?type=1&numIid='+item.numIid+'" class="title ui-link">'+item.title+'<div class="share-wrapper">' +
                                 '<img src="../../page/img/share.png"><span class="price_yj">现价'+item.zkFinalPrice+'</span><span class="text">已售'+item.volume+'件</span>' +
-                                '<p>赚￥'+getRate(item.zkFinalPrice,item.commissionRate)+'</p></div><div class="price-wrapper1">' +
+                                '<p>赚￥'+getRate(item.zkFinalPrice-couponAmt,item.commissionRate)+'</p></div><div class="price-wrapper1">' +
                                 '<span class="price_qh">券后</span><span class="price">￥<span>'+accSub(item.zkFinalPrice,couponAmt)+'</span></span></div>' +
                                 '<div class="price-wrapper2"><span class="coupon-wrapper  theme-bg-color-1">券<b>'+couponAmt+'</b></span>' +
                                 '<span class="price_qh">剩余'+item.couponRemainCount+'张</span></div></a></div></div></div></div>';
@@ -377,8 +376,8 @@
                                 '<div class="goods-item clearfix">' +
                                 '<a data-transition="slide" href="/app/detail/skipProductDetail.do?type=1&numIid='+item.numIid+'" class="img ui-link">' +
                                 '<img class="lazy" data-original="/page/img/rolling.gif" src="'+item.pictUrl+'"></a><div class="text"><div>' +
-                                '<a data-transition="slide" href="/app/detail/skipProductDetail.do?type=1&numIid='+item.numIid+'" class="title ui-link">'+item.shortTitle+'<div class="share-wrapper">' +
-                                '<img src="../../page/img/share.png"><span class="text">已售'+item.volume+'件</span><p>赚￥'+getRate(item.zkFinalPrice,item.commissionRate)+'</p></div>' +
+                                '<a data-transition="slide" href="/app/detail/skipProductDetail.do?type=1&numIid='+item.numIid+'" class="title ui-link">'+item.title+'<div class="share-wrapper">' +
+                                '<img src="../../page/img/share.png"><span class="text">已售'+item.volume+'件</span><p>赚￥'+getRate(item.zkFinalPrice-couponAmt,item.commissionRate)+'</p></div>' +
                                 '<div class="price-wrapper1"><span class="price_qh">现价</span><span class="price">￥<span>'+item.zkFinalPrice+'</span></span></div></a></div></div></div></div>';
 
                         }
@@ -403,7 +402,13 @@
         return ((arg1 * m - arg2 * m) / m).toFixed(n);
     }
     function getRate(arg1,arg2){
-        return (Number(arg1)*Number(arg2)*Number(55)/1000000).toFixed(2);
+        var tbkRate = $("#tbkRate").val();
+        console.log(tbkRate);
+        if(null == tbkRate || "" ==  tbkRate){
+            tbkRate = 55;
+        }
+        console.log("tbkRate="+tbkRate)
+        return (Number(arg1)*Number(arg2)*Number(tbkRate)/1000000).toFixed(2);
     }
 
     $(function(){

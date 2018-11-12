@@ -68,7 +68,8 @@ public class OrderManagerImpl implements IOrderManager{
         for(TbMnOrderDo orderDo : orderDos){
             //判断表内是否存在，如果存在则更新
             TbMnOrderDoExample example = new TbMnOrderDoExample();
-            example.createCriteria().andTradeIdEqualTo(orderDo.getTradeId());
+            example.createCriteria().andTradeIdEqualTo(orderDo.getTradeId()).andNumIidEqualTo(orderDo.getNumIid());
+
 
             List<TbMnOrderDo> tbMnOrderDos = tbMnOrderMapper.selectByExample(example);
             if(null != tbMnOrderDos && tbMnOrderDos.size() > 0){
@@ -91,7 +92,7 @@ public class OrderManagerImpl implements IOrderManager{
      * @param adzoneIds
      * @return
      */
-    public List<TbMnOrderDo> queryOrderByStatus(TbMnOrderDo tbMnOrderDo,List<String> adzoneIds) {
+    public List<TbMnOrderDo> queryOrderByStatus(TbMnOrderDo tbMnOrderDo,List<String> adzoneIds,TbMnUserDo tbMnUserDo) {
         PageHelper.startPage(tbMnOrderDo.getPageNo(),tbMnOrderDo.getPageSize());
         TbMnOrderDoExample example = new TbMnOrderDoExample();
         TbMnOrderDoExample.Criteria criteria = example.createCriteria();
@@ -112,12 +113,12 @@ public class OrderManagerImpl implements IOrderManager{
         for(TbMnOrderDo orderDo : orderDos){//对预估收入进行结算
             if(tbMnOrderDo.getAdzoneId().equals(orderDo.getAdzoneId())){//说明是代理本身的订单，则预估收入是原有的55%
                 double temp = Double.valueOf(orderDo.getPubSharePreFee());
-                BigDecimal bigDecimal = new BigDecimal(temp).multiply(new BigDecimal(55)).divide(new BigDecimal(100));
+                BigDecimal bigDecimal = new BigDecimal(temp).multiply(new BigDecimal(tbMnUserDo.getOwnRate())).divide(new BigDecimal(100));
                 double pubSharePreeFee = bigDecimal.setScale(2, BigDecimal.ROUND_DOWN).doubleValue();
                 orderDo.setPubSharePreFee(String.valueOf(pubSharePreeFee));
             }else{//团队预估收入的5%
                 double temp = Double.valueOf(orderDo.getPubSharePreFee());
-                BigDecimal bigDecimal = new BigDecimal(temp).multiply(new BigDecimal(5)).divide(new BigDecimal(100));
+                BigDecimal bigDecimal = new BigDecimal(temp).multiply(new BigDecimal(tbMnUserDo.getTeamRate())).divide(new BigDecimal(100));
                 double pubSharePreeFee = bigDecimal.setScale(2, BigDecimal.ROUND_DOWN).doubleValue();
                 orderDo.setPubSharePreFee(String.valueOf(pubSharePreeFee));
             }
@@ -170,12 +171,12 @@ public class OrderManagerImpl implements IOrderManager{
         double teadAmt = 0;
         //用户本身的总金额*55%
         ownAmt = tbMnOrderMapper.selectOwmAmt(tbMnUserDo);
-        ownAmt = new BigDecimal(Double.toString(ownAmt)).multiply(new BigDecimal(Double.toString(55))).divide(new BigDecimal(Double.toString(100))).doubleValue();
+        ownAmt = new BigDecimal(Double.toString(ownAmt)).multiply(new BigDecimal(tbMnUserDo.getOwnRate())).divide(new BigDecimal(Double.toString(100))).doubleValue();
         List<TbMnUserDo> userDos = userManager.queryUserList(tbMnUserDo);
         if(null != userDos && userDos.size() > 0){
             //获取用户团队人员的总金额*5%d
             teadAmt = tbMnOrderMapper.selectTeamAmt(userDos);
-            teadAmt = new BigDecimal(Double.toString(teadAmt)).multiply(new BigDecimal(Double.toString(5))).divide(new BigDecimal(Double.toString(100))).doubleValue();
+            teadAmt = new BigDecimal(Double.toString(teadAmt)).multiply(new BigDecimal(tbMnUserDo.getTeamRate())).divide(new BigDecimal(Double.toString(100))).doubleValue();
         }
         return new BigDecimal(Double.toString(ownAmt)).add(new BigDecimal(Double.toString(teadAmt))).setScale(2, BigDecimal.ROUND_DOWN).doubleValue();
     }
@@ -190,20 +191,73 @@ public class OrderManagerImpl implements IOrderManager{
         double daiTeadAmt = 0;
         //用户本身的待结算金额*55%
         daiOwnAmt = tbMnOrderMapper.selectDaiOwmAmt(tbMnUserDo);
-        daiOwnAmt = new BigDecimal(daiOwnAmt).multiply(new BigDecimal(55)).divide(new BigDecimal(100)).doubleValue();
+        daiOwnAmt = new BigDecimal(daiOwnAmt).multiply(new BigDecimal(tbMnUserDo.getOwnRate())).divide(new BigDecimal(100)).doubleValue();
         List<TbMnUserDo> userDos = userManager.queryUserList(tbMnUserDo);
         if(null != userDos && userDos.size() > 0){
             daiTeadAmt = tbMnOrderMapper.selectDaiTeamAmt(userDos);
-            daiTeadAmt = new BigDecimal(daiTeadAmt).multiply(new BigDecimal(5)).divide(new BigDecimal(100)).doubleValue();
+            daiTeadAmt = new BigDecimal(daiTeadAmt).multiply(new BigDecimal(tbMnUserDo.getTeamRate())).divide(new BigDecimal(100)).doubleValue();
         }
         return new BigDecimal(daiOwnAmt).add(new BigDecimal(daiTeadAmt)).setScale(2, BigDecimal.ROUND_DOWN).doubleValue();
     }
 
+    @Override
+    public void queryOrderAndUpdate() throws ApiException {
+        //查询所有未结算的订单
+        List<Short> values = new ArrayList<>();
+        values.add((short)12);
+        values.add((short)14);
+        TbMnOrderDoExample example = new TbMnOrderDoExample();
+        example.createCriteria().andTkStatusIn(values);
 
-    public static void main(String[] args) {
-        double pubSharePreeFee = Double.valueOf("0.52");
-        BigDecimal b = new BigDecimal(pubSharePreeFee).multiply(new BigDecimal(55)).divide(new BigDecimal(100));
-        double df = b.setScale(2, BigDecimal.ROUND_DOWN).doubleValue();
-        System.out.println(df);
+        List<TbMnOrderDo> list = tbMnOrderMapper.selectByExample(example);
+        for(TbMnOrderDo tbMnOrderDo : list){
+            String createTime = null;
+            try {
+                createTime = URLEncoder.encode(tbMnOrderDo.getCreateTime(),"utf8");
+            } catch (UnsupportedEncodingException e) {
+                log.error("urlencoder编码失败，msg:{}",e.getMessage());
+                log.error(e.getMessage(),e);
+            }
+            HttpClientResponse response =  HttpClientUtils.get(Contents.HM_URL+"?appkey="+Contents.HM_APPKEY+"&appsecret="+Contents.HM_APPSECRET+"&sid=3657&start_time="+createTime+"&span=600");
+
+            log.info("自动查询订单,resp:{}",response);
+            String json = response.getResponseContent();
+            if("[]".equals(json)){
+                return;
+            }
+            Gson gson = new Gson();
+            java.lang.reflect.Type type = new TypeToken<JsonBean>(){}.getType();
+            JsonBean jsonBean = gson.fromJson(response.getResponseContent(), type);
+            List<TbMnOrderDo> orderDos = jsonBean.getMnOrderDos();
+            for(TbMnOrderDo orderDo : orderDos){
+                //判断表内是否存在，如果存在则更新
+                TbMnOrderDoExample example1 = new TbMnOrderDoExample();
+                example.createCriteria().andTradeIdEqualTo(orderDo.getTradeId()).andNumIidEqualTo(orderDo.getNumIid());
+
+                List<TbMnOrderDo> tbMnOrderDos = tbMnOrderMapper.selectByExample(example1);
+                if(null != tbMnOrderDos && tbMnOrderDos.size() > 0){
+                    tbMnOrderMapper.updateByExampleSelective(orderDo,example1);
+                    continue;
+                }
+            }
+        }
+    }
+
+
+    public static void main(String[] args) {//
+        String createTime = "2018-10-21 01:31:41";
+        try {
+            createTime = URLEncoder.encode(createTime,"utf8");
+        } catch (UnsupportedEncodingException e) {
+            log.error("urlencoder编码失败，msg:{}",e.getMessage());
+            log.error(e.getMessage(),e);
+        }
+        HttpClientResponse response =  HttpClientUtils.get(Contents.HM_URL+"?appkey="+Contents.HM_APPKEY+"&appsecret="+Contents.HM_APPSECRET+"&sid=3657&start_time="+createTime+"&span=600");
+
+        log.info("自动查询订单,resp:{}",response);
+        String json = response.getResponseContent();
+        if("[]".equals(json)){
+            return;
+        }
     }
 }

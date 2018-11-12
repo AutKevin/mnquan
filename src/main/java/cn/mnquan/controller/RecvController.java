@@ -12,8 +12,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -38,9 +39,9 @@ public class RecvController extends BaseController {
      * @return
      */
     @RequestMapping("/app/receive/skipRecvPage.do")
-    public void skipRecvPage(HttpSession session, HttpServletResponse response){
-        Object accountNo = session.getAttribute("accountNo");
-        if(accountNo != null){//用户已经登陆
+    public void skipRecvPage(HttpServletRequest request, HttpServletResponse response){
+        Cookie cookie = getCookieByName(request,"accountNo");
+        if(cookie != null){//用户已经登陆
             sendMessages(response, JSON.toJSONString("true"));
         }else {//未登陆
             sendMessages(response, JSON.toJSONString("false"));
@@ -48,18 +49,18 @@ public class RecvController extends BaseController {
     }
 
     /**
-     * 获取详情页的数据
+     * 获取领取页的数据
      * @return
      */
     @RequestMapping("/app/receive/recvPage.do")
-    public String recvPage(HttpSession session, Model model){
+    public String recvPage(HttpServletRequest request, Model model){
         double totalAmt = 0.00;//总金额
         double hasRecvTotalAmt = 0.00;//已领取的金额
         try {
-            Object accountNo = session.getAttribute("accountNo");
-            if(accountNo != null){//用户已经登陆
+            Cookie cookie = getCookieByName(request,"accountNo");
+            if(cookie != null){//用户已经登陆
                 //根据当前登陆的账号，绑定的支付宝账号
-                TbMnUserDo userDo = userManager.queryUserByAccountNo(String.valueOf(accountNo));
+                TbMnUserDo userDo = userManager.queryUserByAccountNo(cookie.getValue());
                 //用户的领取记录
                 List<TbMnReceiveDo> receiveDos = recvManager.getTbMnReceiveDo(userDo.getId());
                 //获取用户可提现余额 = 总金额-已经提现的金额
@@ -86,15 +87,15 @@ public class RecvController extends BaseController {
      * @return
      */
     @RequestMapping("/app/receive/receive.do")
-    public void receive(HttpSession session, HttpServletResponse response,TbMnReceiveDo receiveDo){
+    public void receive(HttpServletRequest request, HttpServletResponse response,TbMnReceiveDo receiveDo){
         double totalAmt = 0.00;//总金额
         double hasRecvTotalAmt = 0.00;//已领取的金额
         double canRecvTotalAmt = 0.00;//可提现的金额
         try {
-            Object accountNo = session.getAttribute("accountNo");
-            if(accountNo != null){//用户已经登陆
+            Cookie cookie = getCookieByName(request,"accountNo");
+            if(cookie != null){//用户已经登陆
                 //根据当前登陆的账号，绑定的支付宝账号
-                TbMnUserDo userDo = userManager.queryUserByAccountNo(String.valueOf(accountNo));
+                TbMnUserDo userDo = userManager.queryUserByAccountNo(cookie.getValue());
                 //获取用户可提现余额 = 总金额-已经提现的金额
                 totalAmt = orderManager.getTotalAmt(userDo);
                 //用户可提现余额=总金额-已经提现的额度

@@ -197,7 +197,6 @@
     });
 
     function get_list(tkStatus) {
-        console.log(tkStatus);
         $.ajax({
             url:""+"/app/order/queryOrders.do",
             async:false,
@@ -205,7 +204,6 @@
             dataType:'json',
             type:"post",
             success:function(data){
-                console.log(data);
                 var arrLen = data.length;
                 if(arrLen > 0){
                     var myOrderListHeml = '';

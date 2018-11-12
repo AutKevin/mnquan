@@ -18,6 +18,6 @@ public class OrderQueryTest extends BaseSpringTest{
 
     @Test
     public void queryOrder() throws ApiException {
-        orderManager.queryOrderByTask();
+        orderManager.queryOrderAndUpdate();
     }
 }

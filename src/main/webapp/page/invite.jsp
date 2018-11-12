@@ -11,16 +11,15 @@
     <meta name="version" version="201810101200">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
     <title>我的_搜券宝</title>
-    <meta name="keywords" content="9.9包邮，白菜价，天天特价，优惠卷,搜券宝"/>
-    <meta name="description" content="9.9包邮，白菜价，天天特价"/>
-    <script src="../../page/js/clipboard.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="../../page/js/jquery.js"></script>
-    <script type="text/javascript" src="../../page/js/swiper-4.4.1.min.js"></script>
-    <link rel="stylesheet" href="../../page/js/swiper-4.4.1.min.css">
-    <link rel="stylesheet" href="../../page/js/common.css">
-    <link href="../../page/js/wap_common.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../page/js/mycommons.css">
-    <script type="text/javascript" src="../../page/js/mui.min.js"></script>
+    <script src="/page/js/clipboard.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/page/js/jquery.js"></script>
+    <script type="text/javascript" src="/page/js/swiper-4.4.1.min.js"></script>
+    <link rel="stylesheet" href="/page/js/swiper-4.4.1.min.css">
+    <link rel="stylesheet" href="/page/js/common.css">
+    <link href="/page/js/wap_common.css" rel="stylesheet">
+    <link rel="stylesheet" href="/page/js/mycommons.css">
+    <script type="text/javascript" src="/page/js/mobile/layer.js"></script>
+
     <style>
         html, body {
             position: relative;
@@ -93,9 +92,9 @@
 <div class="layout">
     <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div onclick="savePicture('http://www.mnquan.cn/page/img/share_01.jpg')" class="swiper-slide"><img src="../../page/img/share_01.jpg"></div>
-            <div onclick="savePicture('http://www.mnquan.cn/page/img/share_02.jpg')" class="swiper-slide"><img src="../../page/img/share_02.jpg"></div>
-            <div onclick="savePicture('http://www.mnquan.cn/page/img/share_01.jpg')" class="swiper-slide"><img src="../../page/img/share_01.jpg"></div>
+            <div onclick="savePicture('http://www.mnquan.cn/page/img/share_01.jpg')" class="swiper-slide"><img src="/page/img/share_01.jpg"></div>
+            <div onclick="savePicture('http://www.mnquan.cn/page/img/share_02.jpg')" class="swiper-slide"><img src="/page/img/share_02.jpg"></div>
+            <div onclick="savePicture('http://www.mnquan.cn/page/img/share_01.jpg')" class="swiper-slide"><img src="/page/img/share_01.jpg"></div>
         </div>
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
@@ -177,7 +176,7 @@
         </a>
 
         <a data-mold="1" data-el="4" id="zhuanlian" href="javascript:void(0);" class="col-10-2 ">
-            <i class="iconfont"><img src="../../page/img/zhuanlian.png"></i>
+            <i class="iconfont"><img src="/page/img/zhuanlian.png"></i>
             <span style="color: rgb(102, 102, 102);">转链</span>
         </a>
 
@@ -243,7 +242,7 @@
                 if("1" == data){
                     alert("查询失败")
                 }else{
-                    window.location.href = domain+"/app/detail/skipProductDetail.do?numIid="+data;
+                    window.location.href = "/app/detail/skipProductDetail.do?numIid="+data;
                 }
             }
         });
@@ -287,16 +286,31 @@
             if (status == 200) {
                 plus.gallery.save(d.filename, function () {//保存到相册方法
                     plus.nativeUI.closeWaiting()
-                    alert("已保存到手机相册！");
+                    layer_msg_sucess();
                 }, function () {
                     plus.nativeUI.closeWaiting()
-                    alert("保存失败，请重试！");
+                    layer_msg_fail();
                 });
             } else {
-                alert("下载失败！");
+                layer_msg_fail();
             }
         });
         dtask.start();
+    }
+    
+    function layer_msg_sucess() {
+        layer.open({
+            content: '图片保存成功'
+            ,skin: 'msg'
+            ,time: 2 //2秒后自动关闭
+        });
+    }
+    function layer_msg_fail() {
+        layer.open({
+            content: '保存失败，请重试！'
+            ,skin: 'msg'
+            ,time: 2 //2秒后自动关闭
+        });
     }
 </script>
 </html>

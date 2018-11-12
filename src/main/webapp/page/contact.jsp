@@ -64,7 +64,7 @@
 </style>
 <div class="layout">
     <div>QQ:</div>
-    <div>3363063622   备注，搜券宝</div>
+    <div>1197039606   备注，搜券宝</div>
     <div>微信号:</div>
     <div>17521333602</div>
     <div>手机号:</div>
@@ -208,7 +208,7 @@
                 if("1" == data){
                     alert("查询失败")
                 }else{
-                    window.location.href = domain+"/app/detail/skipProductDetail.do?numIid="+data;
+                    window.location.href = "/app/detail/skipProductDetail.do?numIid="+data;
                 }
             }
         });

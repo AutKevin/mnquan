@@ -171,7 +171,6 @@
     });
 
     function getToken() {
-        console.log("bei")
         $('#myModal').modal('show');
     }
     //调用模态框时动态传入参数

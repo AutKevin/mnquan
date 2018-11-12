@@ -26,6 +26,13 @@
             cron="0 20 1  * * ?"
             sharding-total-count="1"/>
 
+    <job:simple
+            id="orderUpdateTask"
+            class="cn.mnquan.task.OrderUpdateTask"
+            registry-center-ref="regCenter"
+            cron="0 0 1  * * ?"
+            sharding-total-count="1"/>
+
     <job:simple id="orderManagerTask" class="cn.mnquan.task.OrderManagerTask"
                 registry-center-ref="regCenter"
                 cron="0 */5 * * * ?"
