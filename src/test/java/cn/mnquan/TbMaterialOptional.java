@@ -34,13 +34,16 @@ public class TbMaterialOptional{
     public void getProducts() throws ApiException {
         TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);
         TbkDgMaterialOptionalRequest req = new TbkDgMaterialOptionalRequest();
+        req.setStartDsr(5l);//店铺评分
+        req.setIncludeGoodRate(true);
         req.setPageSize(30L);//每页数
         req.setPageNo(1L);//第几页
-        req.setSort("total_sales");//按销量排序
-        req.setQ("女装");
+        req.setSort("price_asc");//按销量排序
+        req.setQ("耳机");
         req.setHasCoupon(true);
         req.setAdzoneId(Contents.adzone_id);
         req.setPlatform(2l);
+        req.setNeedFreeShipment(true);//包邮
         TbkDgMaterialOptionalResponse rsp = client.execute(req);
         List<TbkDgMaterialOptionalResponse.MapData> mapData =  rsp.getResultList();
     }

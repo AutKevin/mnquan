@@ -57,28 +57,28 @@
 <div class="ui_bot_tab" data-mta_name="首页-底部导航" ui-mta-modular="">
     <div class="row-s">
         <a data-mold="1" data-el="1" href="/app" class="col-10-2 ">
-            <i class="iconfont"><img src="https://img.alicdn.com/imgextra/i4/2053469401/TB24KbjnZj_B1NjSZFHXXaDWpXa-2053469401.png"></i>
+            <i class="iconfont"><img src="/page/img/footimages/shouye.png"></i>
             <span style="color: rgb(253, 87, 92);">首页</span>
         </a>
 
-        <a data-mold="1" data-el="2" href="javascript:void(0);" class="col-10-2 ">
+        <a data-mold="1" data-el="2" href="/app/choiceness" class="col-10-2 ">
             <em class="num" style="background-image: -webkit-gradient(linear, left 20, right 0, from(#DC143C), to(	#FF0000));-webkit-background-clip: text;-webkit-text-fill-color: transparent;">新</em>
-            <i class="iconfont"><img src="https://img.alicdn.com/imgextra/i4/2053469401/TB23GLTn77mBKNjSZFyXXbydFXa-2053469401.png"></i>
-            <span style="color: rgb(102, 102, 102);">准备中</span>
+            <i class="iconfont"><img src="/page/img/footimages/99.png"></i>
+            <span style="color: rgb(102, 102, 102);">9.9包邮</span>
         </a>
 
         <a data-mold="1" data-el="4" id="zhuanlian" href="javascript:void(0);" class="col-10-2 ">
-            <i class="iconfont"><img src="/page/img/zhuanlian.png"></i>
+            <i class="iconfont"><img src="/page/img/footimages/zhuanlian.png"></i>
             <span style="color: rgb(102, 102, 102);">转链</span>
         </a>
 
         <a data-mold="1" data-el="3" href="/app/classify" class="col-10-2 ">
-            <i class="iconfont"><img src="https://img.alicdn.com/imgextra/i2/2053469401/TB2nLTXn7omBKNjSZFqXXXtqVXa-2053469401.png"></i>
+            <i class="iconfont"><img src="/page/img/footimages/fenlei.png"></i>
             <span style="color: rgb(102, 102, 102);">分类</span>
         </a>
 
         <a data-mold="1" data-el="5"  href="/app/user/centre.do" class="col-10-2 ">
-            <i class="iconfont"><img src="https://img.alicdn.com/imgextra/i3/2053469401/TB2WXrhqFkoBKNjSZFkXXb4tFXa-2053469401.png"></i>
+            <i class="iconfont"><img src="/page/img/footimages/wode.png"></i>
             <span style="color: rgb(102, 102, 102);">我的</span>
         </a>
     </div>
@@ -124,7 +124,7 @@
                     <li class="col-12-3 text-center">
                         <a onclick="myProgress(1,1);" href="javascript:void(0);">
                             <i class="iconfont ">
-                                <img src="https://img.alicdn.com/imgextra/i1/2053469401/TB2oX82HL9TBuNjy0FcXXbeiFXa-2053469401.png">
+                                <img src="/page/img/idximages/nvzhuang.png">
                             </i>
                             <span>女装</span>
                         </a>
@@ -132,7 +132,7 @@
                     <li class="col-12-3 text-center">
                         <a onclick="myProgress(2,1);" href="javascript:void(0);">
                             <i class="iconfont ">
-                                <img src="https://img.alicdn.com/imgextra/i1/2053469401/TB2n7WyHN9YBuNjy0FfXXXIsVXa-2053469401.png">
+                                <img src="/page/img/idximages/nanzhuang.png">
                             </i>
                             <span>男装</span>
                         </a>
@@ -140,7 +140,7 @@
                     <li class="col-12-3 text-center">
                         <a onclick="myProgress(3,1);" href="javascript:void(0);">
                             <i class="iconfont ">
-                                <img src="https://img.alicdn.com/imgextra/i1/2053469401/TB2g79yHN9YBuNjy0FfXXXIsVXa-2053469401.png">
+                                <img src="/page/img/idximages/xiepin.png">
                             </i>
                             <span>鞋品</span>
                         </a>
@@ -148,7 +148,7 @@
                     <li class="col-12-3 text-center">
                         <a onclick="myProgress(4,1);" href="javascript:void(0);">
                             <i class="iconfont ">
-                                <img src="https://img.alicdn.com/imgextra/i3/2053469401/TB2cnZWzfiSBuNkSnhJXXbDcpXa-2053469401.png">
+                                <img src="/page/img/idximages/neiyi.png">
                             </i>
                             <span>内衣</span>
                         </a>
@@ -156,7 +156,7 @@
                     <li class="col-12-3 text-center">
                         <a onclick="myProgress(5,1);" href="javascript:void(0);">
                             <i class="iconfont ">
-                                <img src="https://img.alicdn.com/imgextra/i2/2053469401/TB2i36ZazfguuRjy1zeXXb0KFXa-2053469401.png">
+                                <img src="/page/img/idximages/peishi.png">
                             </i>
                             <span>配饰</span>
                         </a>
@@ -164,7 +164,7 @@
                     <li class="col-12-3 text-center">
                         <a onclick="myProgress(6,1);" href="javascript:void(0);">
                             <i class="iconfont ">
-                                <img src="https://img.alicdn.com/imgextra/i1/2053469401/TB2QybZHL1TBuNjy0FjXXajyXXa-2053469401.png">
+                                <img src="/page/img/idximages/meizhuang.png">
                             </i>
                             <span>美妆</span>
                         </a>
@@ -172,7 +172,7 @@
                     <li class="col-12-3 text-center">
                         <a onclick="myProgress(7,1);" href="javascript:void(0);">
                             <i class="iconfont ">
-                                <img src="https://img.alicdn.com/imgextra/i4/2053469401/TB2QMv0ay6guuRjy1XdXXaAwpXa-2053469401.png">
+                                <img src="/page/img/idximages/muying.png">
                             </i>
                             <span>母婴</span>
                         </a>
@@ -180,7 +180,7 @@
                     <li class="col-12-3 text-center">
                         <a onclick="myProgress(8,1);" href="javascript:void(0);">
                             <i class="iconfont ">
-                                <img src="https://img.alicdn.com/imgextra/i4/2053469401/TB2PFV2HL9TBuNjy0FcXXbeiFXa-2053469401.png">
+                                <img src="/page/img/idximages/meishi.png">
                             </i>
                             <span>美食</span>
                         </a>
@@ -188,7 +188,7 @@
                     <li class="col-12-3 text-center">
                         <a onclick="myProgress(9,1);" href="javascript:void(0);">
                             <i class="iconfont ">
-                                <img src="https://img.alicdn.com/imgextra/i2/2053469401/TB27Cw.HwaTBuNjSszfXXXgfpXa-2053469401.png">
+                                <img src="/page/img/idximages/xiangbao.png">
                             </i>
                             <span>箱包</span>
                         </a>
@@ -196,7 +196,7 @@
                     <li class="col-12-3 text-center">
                         <a onclick="myProgress(10,1);" href="javascript:void(0);">
                             <i class="iconfont ">
-                                <img src="https://img.alicdn.com/imgextra/i3/2053469401/TB2FCJnHFGWBuNjy0FbXXb4sXXa-2053469401.png">
+                                <img src="/page/img/idximages/jujiariyong.png">
                             </i>
                             <span>居家日用</span>
                         </a>
@@ -204,7 +204,7 @@
                     <li class="col-12-3 text-center">
                         <a onclick="myProgress(11,1);" href="javascript:void(0);">
                             <i class="iconfont ">
-                                <img src="https://img.alicdn.com/imgextra/i3/2053469401/TB230SXHL9TBuNjy1zbXXXpepXa-2053469401.png">
+                                <img src="/page/img/idximages/shumajiadian.png">
                             </i>
                             <span>数码家电</span>
                         </a>
@@ -212,7 +212,7 @@
                     <li class="col-12-3 text-center">
                         <a onclick="myProgress(12,1);" href="javascript:void(0);">
                             <i class="iconfont ">
-                                <img src="https://img.alicdn.com/imgextra/i4/2053469401/TB21.plHQKWBuNjy1zjXXcOypXa-2053469401.png">
+                                <img src="/page/img/idximages/wenyuchepin.png">
                             </i>
                             <span>文娱车品</span>
                         </a>
@@ -220,7 +220,7 @@
                     <li class="col-12-3 text-center">
                         <a onclick="myProgress(13,1);" href="javascript:void(0);">
                             <i class="iconfont ">
-                                <img src="https://img.alicdn.com/imgextra/i1/2053469401/TB2uI3VzcyYBuNkSnfoXXcWgVXa-2053469401.png">
+                                <img src="/page/img/idximages/jiazhuangjiafang.png">
                             </i>
                             <span>家装家纺</span>
                         </a>
@@ -228,7 +228,7 @@
                     <li class="col-12-3 text-center">
                         <a onclick="myProgress(14,1);" href="javascript:void(0);">
                             <i class="iconfont ">
-                                <img src="https://img.alicdn.com/imgextra/i4/2053469401/TB2rrnsHH9YBuNjy0FgXXcxcXXa-2053469401.png">
+                                <img src="/page/img/idximages/huwaiyundong.png">
                             </i>
                             <span>户外运动</span>
                         </a>

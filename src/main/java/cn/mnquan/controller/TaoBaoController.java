@@ -78,6 +78,14 @@ public class TaoBaoController extends BaseController{
     }
 
     /**
+     * 9.9精选
+     * @return
+     */
+    @RequestMapping("/app/choiceness")
+    public String choiceness(){
+        return "page/choiceness";
+    }
+    /**
      * 获取首页商品列表
      * @param page
      * @param response
@@ -218,7 +226,12 @@ public class TaoBaoController extends BaseController{
                 log.info("查询订单详情,adzoneId:{}",adzoneId);
                 TbkDgMaterialOptionalResponse.MapData mapData = taobaoApiManager.getProductByItemUrl(itemUrl,adzoneId);
                 optionalDo1 = BeanMapperUtil.objConvert(mapData,TbMnMaterialOptionalDo.class);
-                smallImages = getSmallImages(mapData.getSmallImages());
+
+                if(null == mapData.getSmallImages()){
+                    smallImages = mapData.getPictUrl();
+                }else {
+                    smallImages = getSmallImages(mapData.getSmallImages());
+                }
                 if(null != optionalDo1.getCouponEndTime()){
                     couponAmonunt = dtkManager.getCouponAmount(mapData);
                     optionalDo1.setCouponShareUrl(optionalDo1.getCouponShareUrl());

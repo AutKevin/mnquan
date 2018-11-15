@@ -28,4 +28,6 @@ public interface TbMnMaterialOptionalMapper {
     List<TbMnMaterialOptionalDo> getCentreList();
 
     TbMnMaterialOptionalDo selectWeiBoProduct();
+
+    List<TbMnMaterialOptionalDo> selectChoiceness(TbMnMaterialOptionalDo optionalDo);
 }

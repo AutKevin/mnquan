@@ -775,5 +775,22 @@
     AND zk_final_price <![CDATA[ < ]]> 59.9 LIMIT 1
   </select>
 
-
+  <select id="selectChoiceness" resultMap="BaseResultMap" resultType="cn.mnquan.model.TbMnMaterialOptionalDo">
+    SELECT * FROM tb_mn_material_optional t WHERE t.zk_final_price BETWEEN 1+0 AND 9.9+0
+    <if test="sort == 'shop_dsr'">
+      ORDER BY t.shop_dsr desc
+    </if>
+    <if test="sort == 'latest'">
+      ORDER BY t.token_time desc
+    </if>
+    <if test="sort == 'volume'">
+      ORDER BY t.volume+0 desc
+    </if>
+    <if test="sort == 'desc'">
+      ORDER BY t.zk_final_price desc
+    </if>
+    <if test="sort == 'asc'">
+      ORDER BY t.zk_final_price asc
+    </if>
+  </select>
 </mapper>

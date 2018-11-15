@@ -44,23 +44,23 @@
 <div class="ui_bot_tab" data-mta_name="首页-底部导航" ui-mta-modular="">
     <div class="row-s">
         <a data-mold="1" data-el="1" href="/app" class="col-10-2">
-            <i class="iconfont"><img src="https://img.alicdn.com/imgextra/i1/2053469401/TB2GCzpnVkoBKNjSZFkXXb4tFXa-2053469401.png"></i>
+            <i class="iconfont"><img src="/page/img/footimages/shouye.png"></i>
             <span style="color: rgb(102, 102, 102);">首页</span>
         </a>
 
-        <a data-mold="1" data-el="2" href="javascript:void(0);" class="col-10-2">
+        <a data-mold="1" data-el="2" href="/app/choiceness" class="col-10-2 ">
             <em class="num" style="background-image: -webkit-gradient(linear, left 20, right 0, from(#DC143C), to(	#FF0000));-webkit-background-clip: text;-webkit-text-fill-color: transparent;">新</em>
-            <i class="iconfont"><img src="https://img.alicdn.com/imgextra/i4/2053469401/TB23GLTn77mBKNjSZFyXXbydFXa-2053469401.png"></i>
-            <span style="color: rgb(102, 102, 102);">准备中</span>
+            <i class="iconfont"><img src="/page/img/footimages/99.png"></i>
+            <span style="color: rgb(102, 102, 102);">9.9包邮</span>
         </a>
 
         <a data-mold="1" data-el="4" id="zhuanlian" href="javascript:void(0);" class="col-10-2">
-            <i class="iconfont"><img src="../../page/img/zhuanlian.png"></i>
+            <i class="iconfont"><img src="/page/img/footimages/zhuanlian.png"></i>
             <span style="color: rgb(102, 102, 102);">转链</span>
         </a>
 
         <a data-mold="1" data-el="3" href="/app/classify" class="col-10-2">
-            <i class="iconfont"><img src="https://img.alicdn.com/imgextra/i1/2053469401/TB2y4_qnVkoBKNjSZFkXXb4tFXa-2053469401.png"></i>
+            <i class="iconfont"><img src="/page/img/footimages/fenlei.png"></i>
             <span style="color: rgb(253, 87, 92);">分类</span>
         </a>
 
@@ -70,7 +70,7 @@
         </a>--%>
 
         <a data-mold="1" data-el="5" href="/app/user/centre.do" class="col-10-2">
-            <i class="iconfont"><img src="https://img.alicdn.com/imgextra/i3/2053469401/TB2WXrhqFkoBKNjSZFkXXb4tFXa-2053469401.png"></i>
+            <i class="iconfont"><img src="/page/img/footimages/wode.png"></i>
             <span style="color: rgb(102, 102, 102);">我的</span>
         </a>
     </div>

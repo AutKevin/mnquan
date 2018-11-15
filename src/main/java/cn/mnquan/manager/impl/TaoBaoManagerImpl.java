@@ -62,7 +62,12 @@ public class TaoBaoManagerImpl implements ITaoBaoManager{
             example.setOrderByClause("token_time desc");
         }
 
-        List<TbMnMaterialOptionalDo> optionalDos = tbMnMaterialOptionalMapper.selectByExample(example);
+        List<TbMnMaterialOptionalDo> optionalDos = null;
+        if("99".equals(optionalDo.getType())){//9.9包邮单独拼接sql
+            optionalDos = tbMnMaterialOptionalMapper.selectChoiceness(optionalDo);
+        }else {
+            optionalDos = tbMnMaterialOptionalMapper.selectByExample(example);
+        }
         return optionalDos;
     }
 
